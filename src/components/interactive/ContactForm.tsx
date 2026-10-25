@@ -1,7 +1,9 @@
 'use client';
 
 import {ChevronDown, CircleCheck, Clock, Lock} from 'lucide-react';
+import {useLocale} from 'next-intl';
 import {useId, useRef, useState, type ComponentProps, type FormEvent, type ReactNode} from 'react';
+import {cmsConfigured, restInsert} from '@/lib/cms/rest';
 import {cn} from '@/lib/utils';
 import {WhatsAppIcon} from '../ui/Icons';
 
@@ -54,13 +56,16 @@ const inputClass =
   'w-full rounded-2xl border border-white/15 bg-navy-950/40 px-4 py-3.5 text-base text-white placeholder:text-white/40 transition hover:border-white/25 focus:border-gold-400 focus:outline-none focus:ring-4 focus:ring-gold-400/15 aria-[invalid=true]:border-red-400 aria-[invalid=true]:ring-red-400/15 [&_option]:bg-navy-900 [&_option]:text-white';
 
 /**
- * Booking form: validates input, then formats a structured message in the active language
- * and opens WhatsApp with it pre-filled. Nothing is sent to or stored on this website.
+ * Booking form: validates input, saves the request to the dashboard (Consultation leads) and
+ * opens WhatsApp with a structured message in the active language pre-filled.
  * Styled as a glass card to match the contact info cards beside it, and stretches to their height.
  */
 export function ContactForm({labelledBy, labels, requestTypes, services, clinics, whatsappNumber, className}: Props) {
+  const locale = useLocale();
   const formId = useId();
   const formRef = useRef<HTMLFormElement>(null);
+  // Honeypot: invisible to people, often filled in by spam bots.
+  const trapRef = useRef<HTMLInputElement>(null);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [sent, setSent] = useState(false);
   const [values, setValues] = useState<Values>({
@@ -117,11 +122,39 @@ export function ContactForm({labelledBy, labels, requestTypes, services, clinics
       return;
     }
 
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(buildMessage(values))}`;
-    const win = window.open(url, '_blank');
-    if (win) win.opener = null;
-    else window.location.href = url; // Pop-up blocked: open WhatsApp in the same tab.
+    if (trapRef.current?.value) {
+      setSent(true);
+      return;
+    }
+
+    // Save first (async, never blocks), then open WhatsApp synchronously so pop-up blockers allow it.
+    saveLead(values);
+    if (whatsappNumber) {
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(buildMessage(values))}`;
+      const win = window.open(url, '_blank');
+      if (win) win.opener = null;
+      else window.location.assign(url); // Pop-up blocked: open WhatsApp in the same tab.
+    }
     setSent(true);
+  }
+
+  function saveLead(v: Values) {
+    if (!cmsConfigured) return;
+    const labelOf = (options: Option[], value: string) => options.find((o) => o.value === value)?.label || null;
+    const age = Number.parseInt(v.age, 10);
+    restInsert('consultation_leads', {
+      name: v.name.trim(),
+      phone: v.phone.replace(/[^\d+]/g, ''),
+      age: age >= 1 && age <= 120 ? age : null,
+      request_type: labelOf(requestTypes, v.requestType),
+      service: v.service ? labelOf(services, v.service) : null,
+      clinic: labelOf(clinics, v.clinic),
+      message: v.message.trim().slice(0, 3000) || null,
+      locale
+    }).catch((error: unknown) => {
+      // WhatsApp still carries the request; a duplicate submit within a minute is rejected on purpose.
+      console.warn('[contact] lead not saved:', error);
+    });
   }
 
   const field = (name: keyof Values) => ({
@@ -148,6 +181,15 @@ export function ContactForm({labelledBy, labels, requestTypes, services, clinics
         className
       )}
     >
+      <input
+        ref={trapRef}
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden
+        className="absolute -start-[9999px] size-px opacity-0"
+      />
       {/* The last row (message) takes any spare height, so the button lines up with the cards' bottom edge. */}
       <div className="grid flex-1 gap-5 sm:grid-cols-2 lg:grid-rows-[repeat(4,auto)_1fr]">
         <Field label={labels.name} htmlFor={`${formId}-name`} required error={errors.name} errorId={`${formId}-name-error`} className="sm:col-span-2">

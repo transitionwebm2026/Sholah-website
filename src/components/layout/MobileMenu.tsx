@@ -12,7 +12,7 @@ type Props = {
   items: NavItem[];
   brand: ReactNode;
   labels: {open: string; close: string; nav: string; bookNow: string; switchLanguage: string};
-  phone: {href: string; display: string};
+  phone: {href: string; display: string} | null;
   className?: string;
 };
 
@@ -86,10 +86,14 @@ export function MobileMenu({items, brand, labels, phone, className}: Props) {
               {labels.bookNow}
             </Link>
             <div className="flex items-center justify-between gap-3">
-              <a href={phone.href} className="inline-flex min-h-11 items-center gap-2 font-semibold text-white/90">
-                <Phone aria-hidden className="size-4 text-gold-400" />
-                <span dir="ltr">{phone.display}</span>
-              </a>
+              {phone ? (
+                <a href={phone.href} className="inline-flex min-h-11 items-center gap-2 font-semibold text-white/90">
+                  <Phone aria-hidden className="size-4 text-gold-400" />
+                  <span dir="ltr">{phone.display}</span>
+                </a>
+              ) : (
+                <span />
+              )}
               <LanguageSwitcher label={labels.switchLanguage} />
             </div>
           </div>

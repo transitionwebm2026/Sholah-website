@@ -1,23 +1,25 @@
-import Image from 'next/image';
 import {CalendarDays, Clock} from 'lucide-react';
-import {getLocale, getTranslations} from 'next-intl/server';
+import {useLocale, useTranslations} from 'next-intl';
 import {Link} from '@/i18n/navigation';
-import type {Article} from '@/lib/types';
+import {useArticleHref} from '@/lib/cms/article-links';
+import type {ArticleCardView} from '@/lib/cms/views';
 import {cn, formatDate} from '@/lib/utils';
+import {CmsImage} from '../ui/CmsImage';
 import {DirectionalArrow} from '../ui/DirectionalArrow';
 
 type Props = {
-  article: Article;
+  article: ArticleCardView;
   variant?: 'default' | 'featured';
   headingLevel?: 'h2' | 'h3';
   /** Eager-load the image (used for the above-the-fold featured article). */
   preload?: boolean;
 };
 
-export async function ArticleCard({article, variant = 'default', headingLevel = 'h3', preload}: Props) {
-  const locale = await getLocale();
-  const t = await getTranslations('Common');
-  const tArticles = await getTranslations('Articles');
+export function ArticleCard({article, variant = 'default', headingLevel = 'h3', preload}: Props) {
+  const locale = useLocale();
+  const t = useTranslations('Common');
+  const tArticles = useTranslations('Articles');
+  const href = useArticleHref(article.slug);
   const Heading = headingLevel;
   const featured = variant === 'featured';
 
@@ -28,13 +30,12 @@ export async function ArticleCard({article, variant = 'default', headingLevel = 
         featured && 'lg:grid lg:grid-cols-2 [--fx-tilt:4deg]'
       )}
     >
-      <div className={cn('relative overflow-hidden', featured ? 'aspect-[16/10] lg:aspect-auto lg:min-h-[26rem]' : 'aspect-[16/9]')}>
-        <Image
+      <div
+        className={cn('relative overflow-hidden bg-navy-900', featured ? 'aspect-[16/10] lg:aspect-auto lg:min-h-[26rem]' : 'aspect-[16/9]')}
+      >
+        <CmsImage
           src={article.image}
-          alt=""
-          fill
-          placeholder="blur"
-          preload={preload}
+          priority={preload}
           sizes={featured ? '(min-width: 1024px) 640px, 100vw' : '(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw'}
           className="fx-media object-cover"
         />
@@ -42,7 +43,9 @@ export async function ArticleCard({article, variant = 'default', headingLevel = 
           {featured && (
             <span className="rounded-full bg-gold-400 px-3 py-1 text-xs font-bold text-navy-950">{tArticles('featured')}</span>
           )}
-          <span className="rounded-full bg-navy-950/85 px-3 py-1 text-xs font-semibold text-gold-200">{article.category}</span>
+          {article.category && (
+            <span className="rounded-full bg-navy-950/85 px-3 py-1 text-xs font-semibold text-gold-200">{article.category}</span>
+          )}
         </div>
       </div>
 
@@ -60,7 +63,10 @@ export async function ArticleCard({article, variant = 'default', headingLevel = 
 
         <Heading className={cn('mt-3 leading-snug font-bold text-navy-900 text-balance', featured ? 'text-2xl sm:text-3xl' : 'text-xl')}>
           {/* Stretched link: the whole card is clickable while keeping a single, meaningful link. */}
-          <Link href={`/articles/${article.slug}`} className="outline-none after:absolute after:inset-0 after:rounded-3xl focus-visible:after:outline-2 focus-visible:after:outline-gold-600">
+          <Link
+            href={href}
+            className="outline-none after:absolute after:inset-0 after:rounded-3xl focus-visible:after:outline-2 focus-visible:after:outline-gold-600"
+          >
             {article.title}
           </Link>
         </Heading>

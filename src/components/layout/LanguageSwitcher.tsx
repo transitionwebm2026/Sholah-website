@@ -76,6 +76,8 @@ function restoreAnchor(locale: string) {
 type Props = {
   /** Accessible label, e.g. "Switch language to Arabic". */
   label: string;
+  /** Narrower below `sm`, so it fits between the logo and the menu button on phones. */
+  compact?: boolean;
   className?: string;
 };
 
@@ -84,7 +86,7 @@ type Props = {
  * other side as soon as it is tapped, while the page switches. Still a real link (hreflang, works
  * without JS). `dir="ltr"` pins the sides, so they don't swap places when the page direction flips.
  */
-export function LanguageSwitcher({label, className}: Props) {
+export function LanguageSwitcher({label, compact, className}: Props) {
   const locale = useLocale() as Locale;
   const target = routing.locales.find((l) => l !== locale) ?? routing.defaultLocale;
   const pathname = usePathname();
@@ -138,7 +140,8 @@ export function LanguageSwitcher({label, className}: Props) {
           key={l}
           lang={l}
           className={cn(
-            'relative grid h-full min-w-12 place-items-center px-3 transition-colors duration-300',
+            'relative grid h-full place-items-center transition-colors duration-300',
+            compact ? 'min-w-10 px-2 sm:min-w-12 sm:px-3' : 'min-w-12 px-3',
             l === shown ? 'text-navy-950' : 'text-white/70 group-hover:text-white'
           )}
         >

@@ -1,0 +1,3589 @@
+{
+  "site_settings": {
+    "id": 1,
+    "site_name": {
+      "ar": "د. أحمد شولح",
+      "en": "Dr. Ahmed Shoulah"
+    },
+    "logo_header_url": "/media/brand/logo-horizontal.png",
+    "logo_footer_url": "/media/brand/logo-stacked.png",
+    "phones": [
+      {
+        "value": "+201000000000",
+        "display": "+20 100 000 0000"
+      },
+      {
+        "value": "+201200000000",
+        "display": "+20 120 000 0000"
+      }
+    ],
+    "whatsapp_number": "201000000000",
+    "whatsapp_greeting": {
+      "ar": "مرحبًا د. أحمد، أرغب في حجز استشارة.",
+      "en": "Hello Dr. Ahmed, I would like to book a consultation."
+    },
+    "email": "info@example.com",
+    "social_links": [
+      {
+        "network": "Facebook",
+        "url": "https://www.facebook.com/your-page"
+      },
+      {
+        "network": "Instagram",
+        "url": "https://www.instagram.com/your-account"
+      },
+      {
+        "network": "YouTube",
+        "url": "https://www.youtube.com/@your-channel"
+      },
+      {
+        "network": "TikTok",
+        "url": "https://www.tiktok.com/@your-account"
+      }
+    ],
+    "branches": [
+      {
+        "id": "main",
+        "name": {
+          "ar": "العيادة الرئيسية — مدينة نصر",
+          "en": "Main Clinic — Nasr City"
+        },
+        "address": {
+          "ar": "12 شارع عباس العقاد، مدينة نصر، القاهرة، مصر",
+          "en": "12 Abbas El Akkad St., Nasr City, Cairo, Egypt"
+        },
+        "phone": "+201000000000",
+        "map_embed_url": "",
+        "directions_url": "",
+        "lat": 30.0566,
+        "lng": 31.3301
+      },
+      {
+        "id": "heliopolis",
+        "name": {
+          "ar": "فرع مصر الجديدة",
+          "en": "Heliopolis Branch"
+        },
+        "address": {
+          "ar": "45 شارع الميرغني، مصر الجديدة، القاهرة، مصر",
+          "en": "45 El Merghany St., Heliopolis, Cairo, Egypt"
+        },
+        "phone": "+201200000000",
+        "map_embed_url": "",
+        "directions_url": "",
+        "lat": 30.0911,
+        "lng": 31.3402
+      }
+    ],
+    "working_hours": [
+      {
+        "days": {
+          "ar": "السبت – الأربعاء",
+          "en": "Saturday – Wednesday"
+        },
+        "time": {
+          "ar": "5:00 م – 10:00 م",
+          "en": "5:00 PM – 10:00 PM"
+        }
+      },
+      {
+        "days": {
+          "ar": "الخميس",
+          "en": "Thursday"
+        },
+        "time": {
+          "ar": "12:00 م – 4:00 م",
+          "en": "12:00 PM – 4:00 PM"
+        }
+      },
+      {
+        "days": {
+          "ar": "الجمعة",
+          "en": "Friday"
+        },
+        "time": {
+          "ar": "مغلق",
+          "en": "Closed"
+        }
+      }
+    ],
+    "opening_hours_spec": [
+      {
+        "days": [
+          "Saturday",
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday"
+        ],
+        "opens": "17:00",
+        "closes": "22:00"
+      },
+      {
+        "days": [
+          "Thursday"
+        ],
+        "opens": "12:00",
+        "closes": "16:00"
+      }
+    ],
+    "nav_links": [
+      {
+        "label": {
+          "ar": "الرئيسية",
+          "en": "Home"
+        },
+        "href": "/",
+        "visible": true
+      },
+      {
+        "label": {
+          "ar": "عن الدكتور",
+          "en": "About"
+        },
+        "href": "/about",
+        "visible": true
+      },
+      {
+        "label": {
+          "ar": "الخدمات",
+          "en": "Services"
+        },
+        "href": "/services",
+        "visible": true
+      },
+      {
+        "label": {
+          "ar": "آراء المرضى",
+          "en": "Reviews"
+        },
+        "href": "/reviews",
+        "visible": true
+      },
+      {
+        "label": {
+          "ar": "الفيديوهات",
+          "en": "Videos"
+        },
+        "href": "/videos",
+        "visible": true
+      },
+      {
+        "label": {
+          "ar": "المقالات",
+          "en": "Articles"
+        },
+        "href": "/articles",
+        "visible": true
+      },
+      {
+        "label": {
+          "ar": "تواصل معنا",
+          "en": "Contact"
+        },
+        "href": "/contact",
+        "visible": true
+      }
+    ],
+    "footer": {
+      "about": {
+        "ar": "استشاري الجراحة العامة والمناظير، يقدّم رعاية جراحية آمنة وحديثة بأقل تدخل جراحي ممكن، مع متابعة شخصية لكل مريض.",
+        "en": "Consultant of general and laparoscopic surgery offering safe, modern, minimally invasive surgical care with personal follow-up for every patient."
+      },
+      "copyright": {
+        "ar": "© {year} {name}. جميع الحقوق محفوظة.",
+        "en": "© {year} {name}. All rights reserved."
+      },
+      "disclaimer": {
+        "ar": "المعلومات الواردة في هذا الموقع للتوعية العامة ولا تُغني عن الاستشارة الطبية.",
+        "en": "The information on this website is for general awareness and does not replace a medical consultation."
+      },
+      "quick_links": [
+        {
+          "label": {
+            "ar": "الرئيسية",
+            "en": "Home"
+          },
+          "href": "/"
+        },
+        {
+          "label": {
+            "ar": "عن الدكتور",
+            "en": "About"
+          },
+          "href": "/about"
+        },
+        {
+          "label": {
+            "ar": "الخدمات",
+            "en": "Services"
+          },
+          "href": "/services"
+        },
+        {
+          "label": {
+            "ar": "آراء المرضى",
+            "en": "Reviews"
+          },
+          "href": "/reviews"
+        },
+        {
+          "label": {
+            "ar": "الفيديوهات",
+            "en": "Videos"
+          },
+          "href": "/videos"
+        },
+        {
+          "label": {
+            "ar": "المقالات",
+            "en": "Articles"
+          },
+          "href": "/articles"
+        },
+        {
+          "label": {
+            "ar": "تواصل معنا",
+            "en": "Contact"
+          },
+          "href": "/contact"
+        }
+      ]
+    }
+  },
+  "doctors_profile": {
+    "id": 1,
+    "name": {
+      "ar": "د. أحمد شولح",
+      "en": "Dr. Ahmed Shoulah"
+    },
+    "short_name": {
+      "ar": "د. أحمد",
+      "en": "Dr. Ahmed"
+    },
+    "title": {
+      "ar": "استشاري الجراحة العامة والمناظير",
+      "en": "Consultant of General & Laparoscopic Surgery"
+    },
+    "credentials": {
+      "ar": "دكتوراه الجراحة · عضوية الكلية الملكية للجراحين (إنجلترا)",
+      "en": "MD (Surgery) · MRCS (England)"
+    },
+    "image_alt": {
+      "ar": "صورة د. أحمد شولح، استشاري الجراحة العامة والمناظير",
+      "en": "Portrait of Dr. Ahmed Shoulah, consultant of general and laparoscopic surgery"
+    },
+    "photo_url": "/media/doctor/portrait.jpg",
+    "message_photo_url": "/media/doctor/message.jpg",
+    "message": {
+      "eyebrow": {
+        "ar": "رسالة من الطبيب",
+        "en": "A message from the doctor"
+      },
+      "title": {
+        "ar": "الجراحة مسؤولية قبل أن تكون مهنة",
+        "en": "Surgery is a responsibility before it is a profession"
+      },
+      "paragraphs": [
+        {
+          "ar": "حين يدخل المريض عيادتي، فهو يأتمنني على ما هو أكثر من التشخيص؛ يأتمنني على صحته ووقته، وغالبًا على مخاوفه. ولا أستهين بهذه الثقة أبدًا.",
+          "en": "When a patient walks into my clinic, they are trusting me with more than a diagnosis. They are trusting me with their health, their time and often their fears. I never take that trust lightly."
+        },
+        {
+          "ar": "تعلّمت عبر السنين أن أفضل النتائج الجراحية تبدأ قبل غرفة العمليات بوقت طويل: بالإصغاء الجيد، والشرح الصادق، وخطة نبنيها معًا. وأحيانًا تكون أفضل نصيحة هي أنك لا تحتاج إلى جراحة على الإطلاق.",
+          "en": "Over the years I have learned that the best surgical outcomes start long before the operating room: with careful listening, an honest explanation and a plan we build together. Sometimes the best advice is that you do not need surgery at all."
+        },
+        {
+          "ar": "وعندما تكون الجراحة هي الخيار الصحيح، ألتزم بإجرائها بأدق التقنيات وأقلها تدخلًا، وبأن أبقى بجانبك حتى تتعافى تمامًا.",
+          "en": "When surgery is the right choice, I am committed to performing it with the most precise, least invasive technique available, and to staying by your side until you have fully recovered."
+        }
+      ],
+      "signature": {
+        "ar": "د. أحمد شولح",
+        "en": "Dr. Ahmed Shoulah"
+      }
+    },
+    "timeline": [
+      {
+        "year": "2004",
+        "title": {
+          "ar": "بكالوريوس الطب والجراحة",
+          "en": "Bachelor of Medicine & Surgery (MBBCh)"
+        },
+        "place": {
+          "ar": "كلية الطب، جامعة القاهرة، بتقدير امتياز مع مرتبة الشرف",
+          "en": "Faculty of Medicine, Cairo University, with honours"
+        }
+      },
+      {
+        "year": "2009",
+        "title": {
+          "ar": "ماجستير الجراحة العامة",
+          "en": "Master’s Degree in General Surgery (MSc)"
+        },
+        "place": {
+          "ar": "مستشفيات جامعة القاهرة (قصر العيني)",
+          "en": "Cairo University Hospitals (Kasr Al Ainy)"
+        }
+      },
+      {
+        "year": "2011",
+        "title": {
+          "ar": "عضوية الكلية الملكية للجراحين (MRCS)",
+          "en": "Membership of the Royal College of Surgeons (MRCS)"
+        },
+        "place": {
+          "ar": "الكلية الملكية للجراحين بإنجلترا، المملكة المتحدة",
+          "en": "Royal College of Surgeons of England, United Kingdom"
+        }
+      },
+      {
+        "year": "2014",
+        "title": {
+          "ar": "دكتوراه الجراحة العامة",
+          "en": "Doctorate in General Surgery (MD)"
+        },
+        "place": {
+          "ar": "جامعة القاهرة",
+          "en": "Cairo University"
+        }
+      },
+      {
+        "year": "2016",
+        "title": {
+          "ar": "زمالة جراحات المناظير المتقدمة",
+          "en": "Fellowship in Advanced Laparoscopic Surgery"
+        },
+        "place": {
+          "ar": "مركز دولي للتدريب على الجراحة بأقل تدخل، أوروبا",
+          "en": "International minimally invasive surgery training centre, Europe"
+        }
+      },
+      {
+        "year": "2018",
+        "title": {
+          "ar": "استشاري الجراحة العامة والمناظير",
+          "en": "Consultant of General & Laparoscopic Surgery"
+        },
+        "place": {
+          "ar": "كبرى المستشفيات الخاصة والجامعية بالقاهرة",
+          "en": "Leading private and university hospitals in Cairo"
+        }
+      }
+    ],
+    "certificates": [
+      {
+        "title": {
+          "ar": "دكتوراه الجراحة العامة",
+          "en": "MD in General Surgery"
+        },
+        "issuer": {
+          "ar": "جامعة القاهرة",
+          "en": "Cairo University"
+        },
+        "year": "2014",
+        "image_url": "/media/certificates/certificate-1.jpg"
+      },
+      {
+        "title": {
+          "ar": "عضوية الكلية الملكية للجراحين (MRCS)",
+          "en": "Membership of the Royal College of Surgeons (MRCS)"
+        },
+        "issuer": {
+          "ar": "الكلية الملكية للجراحين بإنجلترا",
+          "en": "Royal College of Surgeons of England"
+        },
+        "year": "2011",
+        "image_url": "/media/certificates/certificate-2.jpg"
+      },
+      {
+        "title": {
+          "ar": "زمالة جراحات المناظير المتقدمة",
+          "en": "Advanced Laparoscopic Surgery Fellowship"
+        },
+        "issuer": {
+          "ar": "مركز تدريب دولي",
+          "en": "International training centre"
+        },
+        "year": "2016",
+        "image_url": "/media/certificates/certificate-3.jpg"
+      },
+      {
+        "title": {
+          "ar": "شهادة جراحات الشرج بالليزر",
+          "en": "Laser Proctology Certification"
+        },
+        "issuer": {
+          "ar": "دورة أوروبية متخصصة",
+          "en": "European proctology course"
+        },
+        "year": "2019",
+        "image_url": "/media/certificates/certificate-4.jpg"
+      },
+      {
+        "title": {
+          "ar": "جراحة الغدة الدرقية ومراقبة الأعصاب",
+          "en": "Thyroid Surgery & Nerve Monitoring"
+        },
+        "issuer": {
+          "ar": "ورشة دولية لجراحة الغدد الصماء",
+          "en": "International endocrine surgery workshop"
+        },
+        "year": "2020",
+        "image_url": "/media/certificates/certificate-5.jpg"
+      },
+      {
+        "title": {
+          "ar": "دعم الحياة المتقدم للإصابات (ATLS)",
+          "en": "Advanced Trauma Life Support (ATLS)"
+        },
+        "issuer": {
+          "ar": "الكلية الأمريكية للجراحين",
+          "en": "American College of Surgeons"
+        },
+        "year": "2022",
+        "image_url": "/media/certificates/certificate-6.jpg"
+      }
+    ],
+    "expertise": [
+      {
+        "icon": "scan-line",
+        "title": {
+          "ar": "جراحات المناظير المتقدمة",
+          "en": "Advanced laparoscopic surgery"
+        },
+        "description": {
+          "ar": "المرارة والزائدة الدودية والارتجاع والمنظار التشخيصي من خلال فتحات صغيرة.",
+          "en": "Gallbladder, appendix, reflux and diagnostic laparoscopy performed through keyhole incisions."
+        },
+        "href": "/services#laparoscopic"
+      },
+      {
+        "icon": "shield-plus",
+        "title": {
+          "ar": "الفتق وجدار البطن",
+          "en": "Hernia & abdominal wall"
+        },
+        "description": {
+          "ar": "الفتق الإربي والسُّري والجراحي والمرتجع، وإعادة بناء جدار البطن.",
+          "en": "Inguinal, umbilical, incisional and recurrent hernias, plus abdominal wall reconstruction."
+        },
+        "href": "/services#hernia"
+      },
+      {
+        "icon": "stethoscope",
+        "title": {
+          "ar": "جراحات الشرج والليزر",
+          "en": "Anorectal & laser surgery"
+        },
+        "description": {
+          "ar": "علاج حديث قليل الألم للبواسير والشرخ والناسور والناسور العصعصي.",
+          "en": "Modern, low-pain treatment of hemorrhoids, fissures, fistulas and pilonidal sinus."
+        },
+        "href": "/services#anorectal"
+      },
+      {
+        "icon": "graduation-cap",
+        "title": {
+          "ar": "الغدة الدرقية والغدد الصماء",
+          "en": "Thyroid & endocrine surgery"
+        },
+        "description": {
+          "ar": "جراحات الغدة الدرقية والجار درقية والكظرية مع الحفاظ على الأعصاب.",
+          "en": "Thyroid, parathyroid and adrenal surgery using nerve-sparing techniques."
+        },
+        "href": "/services#endocrine"
+      },
+      {
+        "icon": "ambulance",
+        "title": {
+          "ar": "جراحات الطوارئ",
+          "en": "Emergency surgery"
+        },
+        "description": {
+          "ar": "تعامل سريع واحترافي مع التهاب الزائدة الحاد وانسداد الأمعاء وطوارئ البطن.",
+          "en": "Rapid, expert management of acute appendicitis, bowel obstruction and abdominal emergencies."
+        },
+        "href": "/services#laparoscopic"
+      },
+      {
+        "icon": "clock",
+        "title": {
+          "ar": "جراحات اليوم الواحد",
+          "en": "Day-case surgery"
+        },
+        "description": {
+          "ar": "عمليات مختارة بعناية مع الخروج في اليوم نفسه وتعافٍ مريح في المنزل.",
+          "en": "Carefully selected procedures with same-day discharge and a comfortable recovery at home."
+        },
+        "href": "/services"
+      }
+    ],
+    "intro_video": {
+      "title": {
+        "ar": "فيديو تعريفي عن د. أحمد شولح",
+        "en": "Introduction to Dr. Ahmed Shoulah"
+      },
+      "url": "",
+      "thumbnail_url": "/media/videos/intro.jpg"
+    },
+    "headings": {
+      "career": {
+        "eyebrow": {
+          "ar": "المسيرة المهنية والمؤهلات",
+          "en": "Career & qualifications"
+        },
+        "title": {
+          "ar": "مسيرة قائمة على العلم والتميز",
+          "en": "A journey built on learning and excellence"
+        }
+      },
+      "intro_video": {
+        "eyebrow": {
+          "ar": "فيديو تعريفي",
+          "en": "Introductory video"
+        },
+        "title": {
+          "ar": "تعرّف على الطبيب في دقيقتين",
+          "en": "Get to know the doctor in two minutes"
+        },
+        "description": {
+          "ar": "يتحدث د. أحمد عن فلسفته في الجراحة، وسلامة المرضى، وما يمكنك توقعه في زيارتك الأولى.",
+          "en": "Dr. Ahmed talks about his approach to surgery, patient safety and what you can expect from your first visit."
+        }
+      },
+      "expertise": {
+        "eyebrow": {
+          "ar": "مجالات الخبرة",
+          "en": "Areas of expertise"
+        },
+        "title": {
+          "ar": "خبرات جراحية متخصصة",
+          "en": "Specialised surgical expertise"
+        },
+        "cta": {
+          "ar": "عرض جميع الخدمات",
+          "en": "View all services"
+        }
+      },
+      "certificates": {
+        "eyebrow": {
+          "ar": "الشهادات والاعتمادات",
+          "en": "Certificates & accreditations"
+        },
+        "title": {
+          "ar": "مؤهلات معتمدة دوليًا",
+          "en": "Internationally recognised qualifications"
+        }
+      },
+      "achievements": {
+        "eyebrow": {
+          "ar": "إنجازات",
+          "en": "Achievements"
+        },
+        "title": {
+          "ar": "سجلّ إنجازات يمكنك الوثوق به",
+          "en": "A track record you can trust"
+        }
+      }
+    }
+  },
+  "hero_sections": [
+    {
+      "page": "home",
+      "eyebrow": {
+        "ar": "",
+        "en": ""
+      },
+      "title": {
+        "ar": "جراحة *عامة ومناظير* متقدمة بلمسة رعاية شخصية",
+        "en": "Advanced *general & laparoscopic* surgery with a personal touch"
+      },
+      "description": {
+        "ar": "بخبرة جراحية تتجاوز 18 عامًا، يقدّم د. أحمد شولح حلولًا آمنة بأقل تدخل جراحي لحالات المرارة والفتق والشرج والغدة الدرقية، من أول استشارة وحتى التعافي الكامل.",
+        "en": "With over 18 years of surgical experience, Dr. Ahmed Shoulah offers safe, minimally invasive solutions for gallbladder, hernia, anorectal and thyroid conditions, from the first consultation to full recovery."
+      },
+      "image_url": null,
+      "buttons": [
+        {
+          "label": {
+            "ar": "احجز الآن",
+            "en": "Book Now"
+          },
+          "href": "/contact",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ar": "خدماتنا",
+            "en": "Our Services"
+          },
+          "href": "/services",
+          "style": "outline"
+        }
+      ],
+      "cta_band": {
+        "eyebrow": {
+          "ar": "احجز استشارتك",
+          "en": "Book your consultation"
+        },
+        "title": {
+          "ar": "مستعد لاتخاذ أول خطوة نحو التعافي؟",
+          "en": "Ready to take the first step toward recovery?"
+        },
+        "text": {
+          "ar": "احجز استشارتك اليوم واحصل على خطة واضحة وصادقة مصممة لحالتك.",
+          "en": "Book your consultation today and get a clear, honest plan tailored to your condition."
+        }
+      },
+      "meta_title": {
+        "ar": "د. أحمد شولح | استشاري الجراحة العامة والمناظير",
+        "en": "Dr. Ahmed Shoulah | Consultant General & Laparoscopic Surgeon"
+      },
+      "meta_description": {
+        "ar": "استشاري الجراحة العامة وجراحات المناظير والفتق والشرج والغدد الصماء بخبرة تتجاوز 18 عامًا. احجز استشارتك الآن عبر الموقع أو واتساب.",
+        "en": "Consultant of general, laparoscopic, hernia, anorectal and endocrine surgery with 18+ years of experience. Book your consultation online or via WhatsApp."
+      }
+    },
+    {
+      "page": "about",
+      "eyebrow": {
+        "ar": "عن الدكتور",
+        "en": "About the doctor"
+      },
+      "title": {
+        "ar": "د. أحمد شولح",
+        "en": "Dr. Ahmed Shoulah"
+      },
+      "description": {
+        "ar": "استشاري الجراحة العامة والمناظير، يجمع بين التميز الأكاديمي والتدريب الدولي والاهتمام الشخصي بكل مريض.",
+        "en": "Consultant of general & laparoscopic surgery, combining academic excellence, international training and a deeply personal approach to patient care."
+      },
+      "image_url": null,
+      "buttons": [
+        {
+          "label": {
+            "ar": "احجز الآن",
+            "en": "Book Now"
+          },
+          "href": "/contact",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ar": "واتساب",
+            "en": "WhatsApp"
+          },
+          "href": "whatsapp",
+          "style": "outline"
+        }
+      ],
+      "cta_band": {
+        "eyebrow": {
+          "ar": "احجز استشارتك",
+          "en": "Book your consultation"
+        },
+        "title": {
+          "ar": "لنناقش حالتك معًا",
+          "en": "Let’s discuss your case together"
+        },
+        "text": {
+          "ar": "كل مريض حالة فريدة. احجز استشارة وسيراجع د. أحمد حالتك والخيارات المتاحة بنفسه.",
+          "en": "Every patient is unique. Book a consultation and Dr. Ahmed will personally review your condition and options."
+        }
+      },
+      "meta_title": {
+        "ar": "عن الدكتور",
+        "en": "About the Doctor"
+      },
+      "meta_description": {
+        "ar": "تعرّف على د. أحمد شولح: المؤهلات العلمية، والمسيرة المهنية، والشهادات، ومجالات الخبرة في الجراحة العامة وجراحات المناظير.",
+        "en": "Meet Dr. Ahmed Shoulah: qualifications, career milestones, certificates and areas of expertise in general and laparoscopic surgery."
+      }
+    },
+    {
+      "page": "services",
+      "eyebrow": {
+        "ar": "خدماتنا",
+        "en": "Our services"
+      },
+      "title": {
+        "ar": "رعاية جراحية متخصصة",
+        "en": "Specialised surgical care"
+      },
+      "description": {
+        "ar": "أربعة مجالات متخصصة تغطي أكثر حالات الجراحة العامة شيوعًا، تُعالج بتقنيات حديثة وبأقل تدخل جراحي.",
+        "en": "Four specialised fields covering the most common general surgery conditions, treated with modern, minimally invasive techniques."
+      },
+      "image_url": null,
+      "buttons": [
+        {
+          "label": {
+            "ar": "احجز الآن",
+            "en": "Book Now"
+          },
+          "href": "/contact",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ar": "واتساب",
+            "en": "WhatsApp"
+          },
+          "href": "whatsapp",
+          "style": "outline"
+        }
+      ],
+      "cta_band": {
+        "eyebrow": {
+          "ar": "احجز استشارتك",
+          "en": "Book your consultation"
+        },
+        "title": {
+          "ar": "لست متأكدًا من العملية التي تحتاجها؟",
+          "en": "Not sure which procedure you need?"
+        },
+        "text": {
+          "ar": "أرسل تقاريرك عبر واتساب أو احجز استشارة، وسنرشدك إلى العلاج المناسب.",
+          "en": "Send us your reports on WhatsApp or book a consultation, and we will guide you to the right treatment."
+        }
+      },
+      "meta_title": {
+        "ar": "الخدمات الجراحية",
+        "en": "Surgical Services"
+      },
+      "meta_description": {
+        "ar": "جراحات المناظير والجهاز الهضمي، وإصلاح الفتق وجدار البطن، وجراحات الشرج والمستقيم، وجراحات الغدة الدرقية والغدد الصماء بأحدث التقنيات وبأقل تدخل جراحي.",
+        "en": "Laparoscopic & GI surgery, hernia and abdominal wall repair, anorectal surgery and thyroid & endocrine surgery with modern, minimally invasive techniques."
+      }
+    },
+    {
+      "page": "reviews",
+      "eyebrow": {
+        "ar": "آراء المرضى",
+        "en": "Patient reviews"
+      },
+      "title": {
+        "ar": "قصص حقيقية… وتعافٍ حقيقي",
+        "en": "Real stories, real recoveries"
+      },
+      "description": {
+        "ar": "ما يقوله مرضانا عن تجربتهم، من الاستشارة الأولى حتى التعافي الكامل.",
+        "en": "What our patients say about their experience, from the first consultation to full recovery."
+      },
+      "image_url": null,
+      "buttons": [
+        {
+          "label": {
+            "ar": "احجز الآن",
+            "en": "Book Now"
+          },
+          "href": "/contact",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ar": "واتساب",
+            "en": "WhatsApp"
+          },
+          "href": "whatsapp",
+          "style": "outline"
+        }
+      ],
+      "cta_band": {
+        "eyebrow": {
+          "ar": "احجز استشارتك",
+          "en": "Book your consultation"
+        },
+        "title": {
+          "ar": "كن قصة النجاح التالية",
+          "en": "Become our next success story"
+        },
+        "text": {
+          "ar": "انضم إلى آلاف المرضى الذين وثقوا بالدكتور أحمد في رحلة علاجهم وتعافيهم.",
+          "en": "Join thousands of patients who trusted Dr. Ahmed with their surgery and recovery."
+        }
+      },
+      "meta_title": {
+        "ar": "آراء المرضى",
+        "en": "Patient Reviews"
+      },
+      "meta_description": {
+        "ar": "اقرأ تجارب مرضى أجروا جراحات المرارة والفتق والشرج والغدة الدرقية مع د. أحمد شولح.",
+        "en": "Read the experiences of patients treated by Dr. Ahmed Shoulah for gallbladder, hernia, anorectal and thyroid surgery."
+      }
+    },
+    {
+      "page": "videos",
+      "eyebrow": {
+        "ar": "مكتبة الفيديو",
+        "en": "Video library"
+      },
+      "title": {
+        "ar": "تعرّف على حالتك في دقائق",
+        "en": "Learn about your condition in minutes"
+      },
+      "description": {
+        "ar": "فيديوهات قصيرة يقدمها الطبيب تجيب عن أكثر أسئلة المرضى شيوعًا.",
+        "en": "Short, doctor-led videos that answer the questions patients ask most."
+      },
+      "image_url": null,
+      "buttons": [
+        {
+          "label": {
+            "ar": "احجز الآن",
+            "en": "Book Now"
+          },
+          "href": "/contact",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ar": "واتساب",
+            "en": "WhatsApp"
+          },
+          "href": "whatsapp",
+          "style": "outline"
+        }
+      ],
+      "cta_band": {
+        "eyebrow": {
+          "ar": "احجز استشارتك",
+          "en": "Book your consultation"
+        },
+        "title": {
+          "ar": "لديك سؤال لم نُجب عنه؟",
+          "en": "Have a question we didn’t cover?"
+        },
+        "text": {
+          "ar": "راسلنا عبر واتساب أو احجز استشارة للحصول على نصيحة مخصصة لحالتك.",
+          "en": "Message us on WhatsApp or book a consultation for advice tailored to you."
+        }
+      },
+      "meta_title": {
+        "ar": "فيديوهات طبية",
+        "en": "Medical Videos"
+      },
+      "meta_description": {
+        "ar": "فيديوهات توعوية قصيرة يقدمها الطبيب لشرح الحالات الجراحية الشائعة والعمليات والتحضير لها وفترة التعافي.",
+        "en": "Short, doctor-led educational videos explaining common surgical conditions, procedures, preparation and recovery."
+      }
+    },
+    {
+      "page": "articles",
+      "eyebrow": {
+        "ar": "المدونة الطبية",
+        "en": "Medical blog"
+      },
+      "title": {
+        "ar": "معرفة جراحية موثوقة",
+        "en": "Trusted surgical knowledge"
+      },
+      "description": {
+        "ar": "مقالات واضحة قائمة على الأدلة العلمية بقلم د. أحمد شولح، لتساعدك على فهم حالتك والخيارات المتاحة لك.",
+        "en": "Clear, evidence-based articles written by Dr. Ahmed Shoulah to help you understand your condition and your options."
+      },
+      "image_url": null,
+      "buttons": [
+        {
+          "label": {
+            "ar": "احجز الآن",
+            "en": "Book Now"
+          },
+          "href": "/contact",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ar": "واتساب",
+            "en": "WhatsApp"
+          },
+          "href": "whatsapp",
+          "style": "outline"
+        }
+      ],
+      "cta_band": {
+        "eyebrow": {
+          "ar": "احجز استشارتك",
+          "en": "Book your consultation"
+        },
+        "title": {
+          "ar": "المعلومة هي الخطوة الأولى… والتشخيص هو التالية",
+          "en": "Information is the first step. Diagnosis is the next."
+        },
+        "text": {
+          "ar": "المقالات تساعدك على الفهم، أما الاستشارة فتمنحك إجابات خاصة بحالتك.",
+          "en": "Articles help you understand; a consultation gives you answers specific to you."
+        }
+      },
+      "meta_title": {
+        "ar": "مقالات طبية",
+        "en": "Medical Articles"
+      },
+      "meta_description": {
+        "ar": "مقالات طبية واضحة وقائمة على الأدلة العلمية عن الجراحة العامة والمناظير، والأعراض، وخيارات العلاج، والتعافي.",
+        "en": "Clear, evidence-based articles about general and laparoscopic surgery, symptoms, treatment options and recovery."
+      }
+    },
+    {
+      "page": "contact",
+      "eyebrow": {
+        "ar": "التواصل والحجز",
+        "en": "Contact & booking"
+      },
+      "title": {
+        "ar": "احجز استشارتك",
+        "en": "Book your consultation"
+      },
+      "description": {
+        "ar": "املأ النموذج وسيُرسل طلبك فورًا إلى فريقنا عبر واتساب، أو تواصل معنا مباشرة عبر الهاتف.",
+        "en": "Fill in the form and your request will be sent instantly to our team on WhatsApp, or reach us directly by phone."
+      },
+      "image_url": null,
+      "buttons": [
+        {
+          "label": {
+            "ar": "احجز الآن",
+            "en": "Book Now"
+          },
+          "href": "#booking",
+          "style": "primary"
+        },
+        {
+          "label": {
+            "ar": "واتساب",
+            "en": "WhatsApp"
+          },
+          "href": "whatsapp",
+          "style": "outline"
+        }
+      ],
+      "cta_band": {
+        "eyebrow": {
+          "ar": "احجز استشارتك",
+          "en": "Book your consultation"
+        },
+        "title": {
+          "ar": "تفضّل التحدث مباشرة؟",
+          "en": "Prefer to talk directly?"
+        },
+        "text": {
+          "ar": "فريقنا متاح خلال مواعيد العمل عبر الهاتف وواتساب للإجابة عن استفساراتك.",
+          "en": "Our team is available during working hours by phone and on WhatsApp to answer your questions."
+        }
+      },
+      "meta_title": {
+        "ar": "تواصل واحجز",
+        "en": "Contact & Booking"
+      },
+      "meta_description": {
+        "ar": "احجز استشارتك مع د. أحمد شولح. عناوين العيادات وأرقام الهاتف ومواعيد العمل والحجز الفوري عبر واتساب.",
+        "en": "Book a consultation with Dr. Ahmed Shoulah. Clinic addresses, phone numbers, working hours and instant booking via WhatsApp."
+      }
+    }
+  ],
+  "page_sections": [
+    {
+      "key": "home.about",
+      "content": {
+        "eyebrow": {
+          "ar": "عن الدكتور",
+          "en": "About the doctor"
+        },
+        "title": {
+          "ar": "جرّاح يُصغي قبل أن يُجري الجراحة",
+          "en": "A surgeon who listens before he operates"
+        },
+        "paragraphs": [
+          {
+            "ar": "د. أحمد شولح استشاري الجراحة العامة والمناظير، حاصل على درجة الدكتوراه في الجراحة العامة وعضوية الكلية الملكية للجراحين بإنجلترا (MRCS).",
+            "en": "Dr. Ahmed Shoulah is a consultant of general and laparoscopic surgery, holding a doctorate (MD) in general surgery and membership of the Royal College of Surgeons of England (MRCS)."
+          },
+          {
+            "ar": "أجرى آلاف العمليات الجراحية، بدءًا من استئصال المرارة بالمنظار وإصلاح الفتق المعقّد، وصولًا إلى علاج أمراض الشرج بالليزر وجراحات الغدة الدرقية، ملتزمًا دائمًا بمبدأ واحد: العملية المناسبة، للمريض المناسب، في الوقت المناسب.",
+            "en": "He has performed thousands of procedures, from laparoscopic gallbladder removal and complex hernia repair to laser treatment of anorectal conditions and thyroid surgery, always guided by one principle: the right operation, for the right patient, at the right time."
+          }
+        ],
+        "points": [
+          {
+            "ar": "دكتوراه الجراحة العامة",
+            "en": "MD in General Surgery"
+          },
+          {
+            "ar": "عضوية الكلية الملكية للجراحين بإنجلترا",
+            "en": "MRCS, Royal College of Surgeons of England"
+          },
+          {
+            "ar": "زمالة جراحات المناظير المتقدمة",
+            "en": "Fellowship in Advanced Laparoscopic Surgery"
+          }
+        ],
+        "cta": {
+          "ar": "المزيد عن الدكتور",
+          "en": "More about the doctor"
+        },
+        "video": {
+          "title": {
+            "ar": "تعرّف على د. أحمد شولح",
+            "en": "Meet Dr. Ahmed Shoulah"
+          },
+          "url": "",
+          "thumbnail_url": "/media/videos/about.jpg"
+        }
+      }
+    },
+    {
+      "key": "home.surgeries",
+      "content": {
+        "eyebrow": {
+          "ar": "أبرز العمليات",
+          "en": "Major surgeries"
+        },
+        "title": {
+          "ar": "عمليات متقدمة تُجرى بدقة عالية",
+          "en": "Advanced procedures performed with precision"
+        },
+        "description": {
+          "ar": "تُجرى معظم العمليات بالمنظار الجراحي: جروح أصغر، وألم أقل، وعودة أسرع إلى الحياة اليومية.",
+          "en": "Most procedures are performed laparoscopically: smaller incisions, less pain and a faster return to daily life."
+        },
+        "cta": {
+          "ar": "استكشف جميع الخدمات",
+          "en": "Explore all services"
+        },
+        "items": [
+          {
+            "title": {
+              "ar": "استئصال المرارة بالمنظار",
+              "en": "Laparoscopic Gallbladder Removal"
+            },
+            "description": {
+              "ar": "العلاج الجذري لحصوات المرارة ونوبات المغص المتكررة عبر أربع فتحات صغيرة، مع الخروج غالبًا في اليوم نفسه أو اليوم التالي.",
+              "en": "Definitive treatment for gallstones and recurrent biliary colic through four tiny incisions, usually with same-day or next-day discharge."
+            },
+            "image_url": "/media/services/laparoscopic.jpg",
+            "href": "/services#laparoscopic"
+          },
+          {
+            "title": {
+              "ar": "إصلاح الفتق بالشبكة",
+              "en": "Hernia Repair with Mesh"
+            },
+            "description": {
+              "ar": "إصلاح الفتق الإربي والسُّري والجراحي بالمنظار أو بالجراحة المفتوحة باستخدام شبكات خفيفة لتقليل فرص الارتداد.",
+              "en": "Laparoscopic and open repair of inguinal, umbilical and incisional hernias using lightweight mesh to minimise recurrence."
+            },
+            "image_url": "/media/services/hernia.jpg",
+            "href": "/services#hernia"
+          },
+          {
+            "title": {
+              "ar": "جراحة الغدة الدرقية",
+              "en": "Thyroid Surgery"
+            },
+            "description": {
+              "ar": "استئصال آمن لعُقيدات الغدة الدرقية وتضخمها مع مراقبة الأعصاب وتقنية دقيقة للحفاظ على الصوت.",
+              "en": "Safe removal of thyroid nodules and goitres with nerve monitoring and meticulous technique to protect your voice."
+            },
+            "image_url": "/media/services/endocrine.jpg",
+            "href": "/services#endocrine"
+          }
+        ]
+      }
+    },
+    {
+      "key": "home.why",
+      "content": {
+        "eyebrow": {
+          "ar": "لماذا د. أحمد؟",
+          "en": "Why choose Dr. Ahmed?"
+        },
+        "title": {
+          "ar": "أربعة أسباب تجعل المرضى يثقون بنا",
+          "en": "Four reasons patients trust us with their surgery"
+        },
+        "items": [
+          {
+            "icon": "award",
+            "title": {
+              "ar": "خبرة مُثبتة",
+              "en": "Proven experience"
+            },
+            "description": {
+              "ar": "أكثر من 18 عامًا و8,500 عملية في الجراحة العامة والمناظير والغدد الصماء.",
+              "en": "More than 18 years and 8,500 operations across general, laparoscopic and endocrine surgery."
+            }
+          },
+          {
+            "icon": "scan-line",
+            "title": {
+              "ar": "الأولوية للتدخل المحدود",
+              "en": "Minimally invasive first"
+            },
+            "description": {
+              "ar": "نختار تقنيات المناظير والليزر كلما كان ذلك آمنًا، لألم أقل وتعافٍ أسرع.",
+              "en": "Whenever it is safe, we choose laparoscopic and laser techniques for less pain and a faster recovery."
+            }
+          },
+          {
+            "icon": "shield-check",
+            "title": {
+              "ar": "أمان بلا تهاون",
+              "en": "Safety without compromise"
+            },
+            "description": {
+              "ar": "بروتوكولات سلامة دولية، ومستشفيات معتمدة، وفريق تخدير متخصص لكل حالة.",
+              "en": "International safety protocols, accredited hospitals and a dedicated anaesthesia team for every case."
+            }
+          },
+          {
+            "icon": "hand-heart",
+            "title": {
+              "ar": "متابعة شخصية",
+              "en": "Personal follow-up"
+            },
+            "description": {
+              "ar": "تواصل مباشر مع الطبيب قبل العملية وبعدها، مع تعليمات واضحة في كل خطوة.",
+              "en": "Direct contact with the doctor before and after surgery, with clear instructions at every step."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "home.journey",
+      "content": {
+        "eyebrow": {
+          "ar": "رحلتك العلاجية",
+          "en": "Your patient journey"
+        },
+        "title": {
+          "ar": "من الزيارة الأولى حتى التعافي الكامل",
+          "en": "From the first visit to full recovery"
+        },
+        "description": {
+          "ar": "مسار واضح خطوة بخطوة، لتعرف دائمًا ما الخطوة التالية.",
+          "en": "A clear, step-by-step path so you always know what comes next."
+        },
+        "steps": [
+          {
+            "title": {
+              "ar": "احجز استشارتك",
+              "en": "Book your consultation"
+            },
+            "description": {
+              "ar": "احجز عبر الموقع أو الهاتف أو واتساب، واختر العيادة والموعد المناسبين لك. يؤكد فريقنا موعدك ويخبرك بالتقارير أو الأشعة التي يجب إحضارها.",
+              "en": "Book online, by phone or via WhatsApp and choose the clinic and time that suit you. Our team confirms your appointment and tells you which reports or scans to bring."
+            }
+          },
+          {
+            "title": {
+              "ar": "التقييم والتشخيص",
+              "en": "Assessment & diagnosis"
+            },
+            "description": {
+              "ar": "فحص شامل ومراجعة دقيقة لتاريخك المرضي، مع طلب الفحوصات اللازمة فقط عندما تضيف قيمة حقيقية للتشخيص.",
+              "en": "A thorough examination and review of your medical history, with targeted tests requested only when they add real value to your diagnosis."
+            }
+          },
+          {
+            "title": {
+              "ar": "خطة علاج مخصصة",
+              "en": "Personalised treatment plan"
+            },
+            "description": {
+              "ar": "نناقش بلغة واضحة الخيارات الجراحية وغير الجراحية والنتائج المتوقعة والمخاطر المحتملة، ونتخذ القرار الأنسب معًا.",
+              "en": "We discuss surgical and non-surgical options, expected results and possible risks in plain language, and decide on the best plan together."
+            }
+          },
+          {
+            "title": {
+              "ar": "يوم العملية",
+              "en": "Surgery day"
+            },
+            "description": {
+              "ar": "يُجري الطبيب عمليتك بنفسه في مستشفى معتمد، بدعم من فريق تخدير وتمريض متخصص.",
+              "en": "Your procedure is performed personally by the doctor in an accredited hospital, supported by a dedicated anaesthesia and nursing team."
+            }
+          },
+          {
+            "title": {
+              "ar": "التعافي والمتابعة",
+              "en": "Recovery & follow-up"
+            },
+            "description": {
+              "ar": "تعليمات خروج واضحة، وزيارات متابعة مجدولة، وتواصل مباشر متى احتجت إلينا حتى تتعافى تمامًا.",
+              "en": "Clear discharge instructions, scheduled follow-up visits and direct contact whenever you need us until you have fully recovered."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "home.blocks",
+      "content": {
+        "reviews": {
+          "eyebrow": {
+            "ar": "آراء المرضى",
+            "en": "Patient reviews"
+          },
+          "title": {
+            "ar": "قصص تعافٍ يرويها مرضانا",
+            "en": "Stories of recovery from our patients"
+          },
+          "cta": {
+            "ar": "اقرأ جميع الآراء",
+            "en": "Read all reviews"
+          }
+        },
+        "videos": {
+          "eyebrow": {
+            "ar": "مكتبة الفيديو",
+            "en": "Video library"
+          },
+          "title": {
+            "ar": "فيديوهات قصيرة… وإجابات واضحة",
+            "en": "Short videos, clear answers"
+          },
+          "cta": {
+            "ar": "شاهد جميع الفيديوهات",
+            "en": "Watch all videos"
+          }
+        },
+        "articles": {
+          "eyebrow": {
+            "ar": "مقالات طبية",
+            "en": "Medical articles"
+          },
+          "title": {
+            "ar": "معرفة تساعدك على اتخاذ القرار",
+            "en": "Knowledge that helps you decide"
+          },
+          "cta": {
+            "ar": "تصفّح جميع المقالات",
+            "en": "Browse all articles"
+          }
+        },
+        "faq": {
+          "eyebrow": {
+            "ar": "الأسئلة الشائعة",
+            "en": "FAQ"
+          },
+          "title": {
+            "ar": "إجابات عن أكثر أسئلتكم شيوعًا",
+            "en": "Answers to your most common questions"
+          },
+          "description": {
+            "ar": "لم تجد ما تبحث عنه؟ يسعد فريقنا بمساعدتك.",
+            "en": "Can’t find what you are looking for? Our team is happy to help."
+          }
+        }
+      }
+    },
+    {
+      "key": "stats",
+      "content": {
+        "home_title": {
+          "ar": "ثقة آلاف المرضى",
+          "en": "Trusted by thousands of patients"
+        },
+        "items": [
+          {
+            "value": 12000,
+            "suffix": "+",
+            "label": {
+              "ar": "مريض تماثل للشفاء",
+              "en": "Recovered patients"
+            },
+            "icon": "users",
+            "show_on_home": true
+          },
+          {
+            "value": 8500,
+            "suffix": "+",
+            "label": {
+              "ar": "عملية جراحية ناجحة",
+              "en": "Successful surgeries"
+            },
+            "icon": "activity",
+            "show_on_home": true
+          },
+          {
+            "value": 18,
+            "suffix": "+",
+            "label": {
+              "ar": "عامًا من الخبرة",
+              "en": "Years of experience"
+            },
+            "icon": "award",
+            "show_on_home": true
+          },
+          {
+            "value": 35,
+            "suffix": "+",
+            "label": {
+              "ar": "بحث علمي ومحاضرة",
+              "en": "Publications & lectures"
+            },
+            "icon": "book-open",
+            "show_on_home": false
+          }
+        ]
+      }
+    },
+    {
+      "key": "services.blocks",
+      "content": {
+        "fields": {
+          "eyebrow": {
+            "ar": "التخصصات الجراحية",
+            "en": "Surgical fields"
+          },
+          "title": {
+            "ar": "اختر التخصص لاستعراض العمليات",
+            "en": "Choose a specialty to explore its procedures"
+          }
+        },
+        "process": {
+          "eyebrow": {
+            "ar": "كيف نحدد العلاج",
+            "en": "How we decide on treatment"
+          },
+          "title": {
+            "ar": "منهجية تشخيص دقيقة قائمة على الدليل العلمي",
+            "en": "A careful, evidence-based diagnostic process"
+          },
+          "description": {
+            "ar": "لا نوصي بالجراحة إلا عندما تكون الخيار الأفضل لك فعلًا.",
+            "en": "Surgery is recommended only when it is truly the best option for you."
+          },
+          "steps": [
+            {
+              "title": {
+                "ar": "استشارة مفصلة",
+                "en": "Detailed consultation"
+              },
+              "description": {
+                "ar": "نستمع إلى أعراضك ونراجع تاريخك المرضي والأدوية والتقارير السابقة.",
+                "en": "We listen to your symptoms and review your medical history, medications and previous reports."
+              }
+            },
+            {
+              "title": {
+                "ar": "الفحص السريري",
+                "en": "Clinical examination"
+              },
+              "description": {
+                "ar": "فحص سريري دقيق يراعي خصوصيتك لتحديد المشكلة وطبيعتها.",
+                "en": "A focused, respectful physical examination to locate and characterise the problem."
+              }
+            },
+            {
+              "title": {
+                "ar": "فحوصات موجّهة",
+                "en": "Targeted investigations"
+              },
+              "description": {
+                "ar": "نطلب الفحوصات اللازمة فقط، مثل تحاليل الدم أو السونار أو الأشعة المقطعية أو المناظير، لتأكيد التشخيص.",
+                "en": "Only the tests you need, such as blood work, ultrasound, CT or endoscopy, to confirm the diagnosis."
+              }
+            },
+            {
+              "title": {
+                "ar": "مناقشة جميع الخيارات",
+                "en": "Discussing every option"
+              },
+              "description": {
+                "ar": "نقارن بلغة واضحة بين الخيارات الجراحية وغير الجراحية والفوائد والمخاطر المتوقعة.",
+                "en": "We compare surgical and non-surgical options, expected benefits and risks in plain language."
+              }
+            },
+            {
+              "title": {
+                "ar": "خطتك المخصصة",
+                "en": "Your personalised plan"
+              },
+              "description": {
+                "ar": "خطة مكتوبة تشمل التحضير والعملية ومدة الإقامة والتعافي، نتفق عليها معًا.",
+                "en": "A written plan covering preparation, the procedure, hospital stay and recovery, agreed together."
+              }
+            }
+          ]
+        },
+        "faq": {
+          "eyebrow": {
+            "ar": "أسئلة تفصيلية",
+            "en": "Detailed FAQ"
+          },
+          "title": {
+            "ar": "كل ما تريد معرفته عن عمليتك",
+            "en": "Everything you want to know about your surgery"
+          }
+        }
+      }
+    },
+    {
+      "key": "reviews.blocks",
+      "content": {
+        "grid": {
+          "eyebrow": {
+            "ar": "شهادات",
+            "en": "Testimonials"
+          },
+          "title": {
+            "ar": "ثقة مرضى من مصر والمنطقة العربية",
+            "en": "Trusted by patients across Egypt and the region"
+          }
+        }
+      }
+    },
+    {
+      "key": "videos.blocks",
+      "content": {
+        "grid": {
+          "eyebrow": {
+            "ar": "أحدث الفيديوهات",
+            "en": "Latest videos"
+          },
+          "title": {
+            "ar": "شاهد وتعلّم واستعد بثقة",
+            "en": "Watch, learn and feel prepared"
+          }
+        }
+      }
+    },
+    {
+      "key": "articles.blocks",
+      "content": {
+        "grid": {
+          "eyebrow": {
+            "ar": "أحدث المقالات",
+            "en": "Latest articles"
+          },
+          "title": {
+            "ar": "المزيد من المقالات",
+            "en": "More to read"
+          }
+        }
+      }
+    }
+  ],
+  "surgeries_services": [
+    {
+      "id": "eb0ae402-2d58-4f7b-a35e-391529c404b0",
+      "slug": "laparoscopic",
+      "title": {
+        "ar": "جراحات المناظير والجهاز الهضمي",
+        "en": "Laparoscopic & GI Surgery"
+      },
+      "summary": {
+        "ar": "جراحات بالمنظار للمرارة والزائدة الدودية والمعدة والأمعاء.",
+        "en": "Keyhole surgery for the gallbladder, appendix, stomach and intestines."
+      },
+      "description": {
+        "ar": "تعتمد جراحة المناظير على كاميرا عالية الدقة وأدوات دقيقة تُدخَل عبر فتحات صغيرة. ومقارنةً بالجراحة المفتوحة، تعني ألمًا أقل، وإقامة أقصر في المستشفى، وندوبًا أصغر، وعودة أسرع إلى الحياة الطبيعية.",
+        "en": "Laparoscopic (keyhole) surgery uses a high-definition camera and fine instruments inserted through small incisions. Compared with open surgery, it means less pain, a shorter hospital stay, smaller scars and a faster return to normal life."
+      },
+      "image_url": "/media/services/laparoscopic.jpg",
+      "sort_order": 0,
+      "is_published": true
+    },
+    {
+      "id": "f4827ee4-927b-4289-af1e-e09326e9a795",
+      "slug": "hernia",
+      "title": {
+        "ar": "جراحات جدار البطن والفتق",
+        "en": "Abdominal Wall & Hernia Surgery"
+      },
+      "summary": {
+        "ar": "إصلاح متين لجميع أنواع الفتق باستخدام تقنيات الشبكات الحديثة.",
+        "en": "Durable repair of all hernia types using modern mesh techniques."
+      },
+      "description": {
+        "ar": "الفتق لا يُشفى من تلقاء نفسه ويميل إلى الزيادة مع الوقت. ويوفر الإصلاح الحديث، بالمنظار أو بالجراحة المفتوحة مع شبكة خفيفة، نتائج متينة بنسب ارتداد منخفضة وعودة سريعة إلى النشاط.",
+        "en": "A hernia will not heal on its own and tends to enlarge over time. Modern repair, laparoscopic or open with lightweight mesh, offers durable results with low recurrence rates and a quick return to activity."
+      },
+      "image_url": "/media/services/hernia.jpg",
+      "sort_order": 1,
+      "is_published": true
+    },
+    {
+      "id": "ba402078-7fb1-478c-abbc-e71a9f35fe11",
+      "slug": "anorectal",
+      "title": {
+        "ar": "جراحات الشرج والمستقيم",
+        "en": "Anorectal Surgery"
+      },
+      "summary": {
+        "ar": "علاج حديث قليل الألم للبواسير والشرخ والناسور.",
+        "en": "Modern, low-pain treatment of hemorrhoids, fissures and fistulas."
+      },
+      "description": {
+        "ar": "أمراض الشرج شائعة وقابلة للعلاج بدرجة كبيرة. وباستخدام الليزر والتقنيات الحديثة، تُجرى معظم العمليات في اليوم نفسه بألم أقل بكثير وعودة أسرع إلى العمل مقارنةً بالجراحة التقليدية.",
+        "en": "Anorectal conditions are common and highly treatable. Using laser and other modern techniques, most procedures are day cases with markedly less pain and a quicker return to work than traditional surgery."
+      },
+      "image_url": "/media/services/anorectal.jpg",
+      "sort_order": 2,
+      "is_published": true
+    },
+    {
+      "id": "97cf3c55-0717-46f0-a540-0ba8933cb8bc",
+      "slug": "endocrine",
+      "title": {
+        "ar": "جراحات الغدد الصماء",
+        "en": "Endocrine Surgery"
+      },
+      "summary": {
+        "ar": "جراحات الغدة الدرقية والجار درقية والكظرية بدقة تحافظ على الأعصاب.",
+        "en": "Thyroid, parathyroid and adrenal surgery with nerve-sparing precision."
+      },
+      "description": {
+        "ar": "تتطلب جراحة الغدد الصماء دقة متناهية. وتساعد مراقبة الأعصاب أثناء العملية والحفاظ الدقيق على الغدد الجار درقية في حماية صوتك وتوازن الكالسيوم في جسمك.",
+        "en": "Endocrine surgery demands meticulous technique. Intra-operative nerve monitoring and careful preservation of the parathyroid glands help protect your voice and calcium balance."
+      },
+      "image_url": "/media/services/endocrine.jpg",
+      "sort_order": 3,
+      "is_published": true
+    }
+  ],
+  "surgery_procedures": [
+    {
+      "id": "bcc12b74-d164-4b5c-a6cb-13cb67ab54c6",
+      "service_id": "eb0ae402-2d58-4f7b-a35e-391529c404b0",
+      "slug": "cholecystectomy",
+      "title": {
+        "ar": "استئصال المرارة بالمنظار",
+        "en": "Laparoscopic cholecystectomy"
+      },
+      "description": {
+        "ar": "استئصال المرارة في حالات الحصوات المسببة للأعراض أو التهاب المرارة أو الزوائد اللحمية، وتستغرق العملية عادةً من 45 إلى 60 دقيقة مع الخروج خلال 24 ساعة.",
+        "en": "Removal of the gallbladder for symptomatic gallstones, cholecystitis or polyps. Usually a 45–60 minute procedure with discharge within 24 hours."
+      },
+      "image_url": "/media/procedures/cholecystectomy.jpg",
+      "sort_order": 0,
+      "is_published": true
+    },
+    {
+      "id": "f1c0d512-fbd5-461a-a4c8-0a4f15216ebe",
+      "service_id": "eb0ae402-2d58-4f7b-a35e-391529c404b0",
+      "slug": "appendectomy",
+      "title": {
+        "ar": "استئصال الزائدة الدودية بالمنظار",
+        "en": "Laparoscopic appendectomy"
+      },
+      "description": {
+        "ar": "استئصال سريع وآمن للزائدة الملتهبة عبر ثلاث فتحات صغيرة، مما يقلل خطر التهاب الجرح ومدة التعافي.",
+        "en": "Rapid, safe removal of an inflamed appendix through three small incisions, reducing wound infection and recovery time."
+      },
+      "image_url": "/media/procedures/appendectomy.jpg",
+      "sort_order": 1,
+      "is_published": true
+    },
+    {
+      "id": "123fd1a4-7074-4ee8-a760-01ef09379176",
+      "service_id": "eb0ae402-2d58-4f7b-a35e-391529c404b0",
+      "slug": "anti-reflux",
+      "title": {
+        "ar": "جراحة الارتجاع وإصلاح فتق الحجاب الحاجز",
+        "en": "Anti-reflux surgery & hiatal hernia repair"
+      },
+      "description": {
+        "ar": "عملية تثنية قاع المعدة بالمنظار لإصلاح فتق الحجاب الحاجز وعلاج الارتجاع المزمن عندما لا تكفي الأدوية.",
+        "en": "Laparoscopic fundoplication to repair a hiatal hernia and control chronic reflux when medication is no longer enough."
+      },
+      "image_url": "/media/procedures/anti-reflux.jpg",
+      "sort_order": 2,
+      "is_published": true
+    },
+    {
+      "id": "8a63c7e6-c3d0-4deb-a5fc-e40483af89f0",
+      "service_id": "eb0ae402-2d58-4f7b-a35e-391529c404b0",
+      "slug": "diagnostic-laparoscopy",
+      "title": {
+        "ar": "المنظار التشخيصي",
+        "en": "Diagnostic laparoscopy"
+      },
+      "description": {
+        "ar": "فحص داخل البطن بأقل تدخل جراحي لتشخيص الآلام غير المبررة، مع إمكانية العلاج في الجلسة نفسها عند الحاجة.",
+        "en": "A minimally invasive look inside the abdomen to diagnose unexplained pain, with treatment in the same session when needed."
+      },
+      "image_url": "/media/procedures/diagnostic-laparoscopy.jpg",
+      "sort_order": 3,
+      "is_published": true
+    },
+    {
+      "id": "b615c925-a37e-4be6-ab90-bcee00cf3c7c",
+      "service_id": "f4827ee4-927b-4289-af1e-e09326e9a795",
+      "slug": "inguinal-hernia",
+      "title": {
+        "ar": "إصلاح الفتق الإربي بالمنظار (TAPP / TEP)",
+        "en": "Inguinal hernia repair (TAPP / TEP)"
+      },
+      "description": {
+        "ar": "إصلاح فتق المنطقة الإربية بالمنظار، بما في ذلك الحالات المزدوجة والمرتجعة، مع ألم أقل بعد العملية.",
+        "en": "Laparoscopic repair of groin hernias, including bilateral and recurrent cases, with less post-operative pain."
+      },
+      "image_url": "/media/procedures/inguinal-hernia.jpg",
+      "sort_order": 0,
+      "is_published": true
+    },
+    {
+      "id": "430ddcc9-b8e9-45f3-a77a-a37e677eea8d",
+      "service_id": "f4827ee4-927b-4289-af1e-e09326e9a795",
+      "slug": "umbilical-hernia",
+      "title": {
+        "ar": "إصلاح الفتق السُّري وحول السُّرة",
+        "en": "Umbilical & paraumbilical hernia repair"
+      },
+      "description": {
+        "ar": "إصلاح الفتق حول السُّرة مع اهتمام خاص بالنتيجة التجميلية.",
+        "en": "Repair of hernias around the navel with careful attention to the cosmetic result."
+      },
+      "image_url": "/media/procedures/umbilical-hernia.jpg",
+      "sort_order": 1,
+      "is_published": true
+    },
+    {
+      "id": "5dcb2298-699f-4bef-a82e-ab0017bd3cfa",
+      "service_id": "f4827ee4-927b-4289-af1e-e09326e9a795",
+      "slug": "incisional-hernia",
+      "title": {
+        "ar": "إصلاح الفتق الجراحي",
+        "en": "Incisional hernia repair"
+      },
+      "description": {
+        "ar": "إصلاح الفتق الذي يظهر في مكان جرح عملية سابقة باستخدام الشبكة بالمنظار أو بالجراحة المفتوحة.",
+        "en": "Repair of hernias that develop through previous surgical scars, using laparoscopic or open mesh techniques."
+      },
+      "image_url": "/media/procedures/incisional-hernia.jpg",
+      "sort_order": 2,
+      "is_published": true
+    },
+    {
+      "id": "71c95f26-081a-4f1f-aae7-f1f6af408756",
+      "service_id": "f4827ee4-927b-4289-af1e-e09326e9a795",
+      "slug": "diastasis-recti",
+      "title": {
+        "ar": "علاج انفصال عضلات البطن وإعادة بناء جدار البطن",
+        "en": "Diastasis recti & abdominal wall reconstruction"
+      },
+      "description": {
+        "ar": "استعادة قوة جدار البطن وشكله بعد الحمل أو العمليات السابقة.",
+        "en": "Restoring the strength and shape of the abdominal wall after pregnancy or previous surgery."
+      },
+      "image_url": "/media/procedures/diastasis-recti.jpg",
+      "sort_order": 3,
+      "is_published": true
+    },
+    {
+      "id": "bbdeefd4-b710-4f95-a20c-e2d227cebfe9",
+      "service_id": "ba402078-7fb1-478c-abbc-e71a9f35fe11",
+      "slug": "hemorrhoids-laser",
+      "title": {
+        "ar": "علاج البواسير بالليزر",
+        "en": "Laser hemorrhoidoplasty"
+      },
+      "description": {
+        "ar": "تقليص البواسير من الداخل باستخدام طاقة الليزر: ألم محدود، ودون جروح مفتوحة، وتعافٍ سريع.",
+        "en": "Shrinks hemorrhoids from within using laser energy: minimal pain, no open wounds and a fast recovery."
+      },
+      "image_url": "/media/procedures/hemorrhoids-laser.jpg",
+      "sort_order": 0,
+      "is_published": true
+    },
+    {
+      "id": "9929a605-3159-489b-a6a5-e2db9b25dccb",
+      "service_id": "ba402078-7fb1-478c-abbc-e71a9f35fe11",
+      "slug": "anal-fissure",
+      "title": {
+        "ar": "علاج الشرخ الشرجي",
+        "en": "Anal fissure treatment"
+      },
+      "description": {
+        "ar": "بدءًا من العلاج الدوائي وحقن البوتوكس، وصولًا إلى قطع العضلة العاصرة الداخلية الجانبي في الحالات المزمنة.",
+        "en": "From medical therapy and botulinum toxin to lateral internal sphincterotomy for chronic fissures."
+      },
+      "image_url": "/media/procedures/anal-fissure.jpg",
+      "sort_order": 1,
+      "is_published": true
+    },
+    {
+      "id": "36fcae4f-3900-41ef-a025-f567901374e5",
+      "service_id": "ba402078-7fb1-478c-abbc-e71a9f35fe11",
+      "slug": "anal-fistula",
+      "title": {
+        "ar": "جراحة الناسور الشرجي",
+        "en": "Anal fistula surgery"
+      },
+      "description": {
+        "ar": "تقنيات تحافظ على العضلة العاصرة، منها الليزر (FiLaC) وخيط السيتون، لحماية القدرة على التحكم.",
+        "en": "Sphincter-preserving techniques, including laser (FiLaC) and seton placement, to protect continence."
+      },
+      "image_url": "/media/procedures/anal-fistula.jpg",
+      "sort_order": 2,
+      "is_published": true
+    },
+    {
+      "id": "d23402a3-d453-4bba-ac3c-149397f357a3",
+      "service_id": "ba402078-7fb1-478c-abbc-e71a9f35fe11",
+      "slug": "pilonidal-sinus",
+      "title": {
+        "ar": "علاج الناسور العصعصي (الشعرة)",
+        "en": "Pilonidal sinus treatment"
+      },
+      "description": {
+        "ar": "تقنيات بأقل تدخل جراحي وتقنيات الشريحة الجلدية لتقليل الارتداد وتسريع الالتئام.",
+        "en": "Minimally invasive and flap techniques that reduce recurrence and shorten healing time."
+      },
+      "image_url": "/media/procedures/pilonidal-sinus.jpg",
+      "sort_order": 3,
+      "is_published": true
+    },
+    {
+      "id": "f9445c58-5f44-488e-acfe-66a2d9a12fbd",
+      "service_id": "97cf3c55-0717-46f0-a540-0ba8933cb8bc",
+      "slug": "total-thyroidectomy",
+      "title": {
+        "ar": "الاستئصال الكلي للغدة الدرقية",
+        "en": "Total thyroidectomy"
+      },
+      "description": {
+        "ar": "استئصال الغدة الدرقية بالكامل في حالات التضخم متعدد العُقيدات أو مرض جريفز أو الأورام المؤكدة.",
+        "en": "Complete removal of the thyroid for multinodular goitre, Graves’ disease or confirmed cancer."
+      },
+      "image_url": "/media/procedures/total-thyroidectomy.jpg",
+      "sort_order": 0,
+      "is_published": true
+    },
+    {
+      "id": "5df5fa32-f6a8-481e-a0d8-16600e7eb982",
+      "service_id": "97cf3c55-0717-46f0-a540-0ba8933cb8bc",
+      "slug": "hemithyroidectomy",
+      "title": {
+        "ar": "استئصال فص من الغدة الدرقية",
+        "en": "Hemithyroidectomy (lobectomy)"
+      },
+      "description": {
+        "ar": "استئصال أحد فصي الغدة في حالة وجود عُقيدة واحدة مشتبه بها أو متزايدة الحجم، مع الحفاظ غالبًا على وظيفة الغدة الطبيعية.",
+        "en": "Removal of one thyroid lobe for a single suspicious or enlarging nodule, often preserving natural thyroid function."
+      },
+      "image_url": "/media/procedures/hemithyroidectomy.jpg",
+      "sort_order": 1,
+      "is_published": true
+    },
+    {
+      "id": "36d9217a-5510-48cf-aca8-20f31f8b0a1c",
+      "service_id": "97cf3c55-0717-46f0-a540-0ba8933cb8bc",
+      "slug": "parathyroidectomy",
+      "title": {
+        "ar": "استئصال الغدة الجار درقية",
+        "en": "Parathyroidectomy"
+      },
+      "description": {
+        "ar": "استئصال موجّه للغدة الجار درقية مفرطة النشاط لتصحيح ارتفاع الكالسيوم وحماية العظام والكلى.",
+        "en": "Targeted removal of an overactive parathyroid gland to correct high calcium levels and protect bones and kidneys."
+      },
+      "image_url": "/media/procedures/parathyroidectomy.jpg",
+      "sort_order": 2,
+      "is_published": true
+    },
+    {
+      "id": "570830be-7305-482d-a4f9-784e7989b19a",
+      "service_id": "97cf3c55-0717-46f0-a540-0ba8933cb8bc",
+      "slug": "adrenalectomy",
+      "title": {
+        "ar": "استئصال الغدة الكظرية بالمنظار",
+        "en": "Laparoscopic adrenalectomy"
+      },
+      "description": {
+        "ar": "استئصال أورام الغدة الكظرية بالمنظار بألم أقل وتعافٍ أسرع من الجراحة المفتوحة.",
+        "en": "Keyhole removal of adrenal tumours with less pain and a faster recovery than open surgery."
+      },
+      "image_url": "/media/procedures/adrenalectomy.jpg",
+      "sort_order": 3,
+      "is_published": true
+    }
+  ],
+  "articles": [
+    {
+      "id": "08d42e23-0833-4d52-a04f-a0d74db5e2a5",
+      "slug": "laparoscopic-gallbladder-removal-guide",
+      "category": {
+        "ar": "جراحة المناظير",
+        "en": "Laparoscopic surgery"
+      },
+      "title": {
+        "ar": "استئصال المرارة بالمنظار: دليل شامل للمريض",
+        "en": "Laparoscopic Gallbladder Removal: A Complete Patient Guide"
+      },
+      "excerpt": {
+        "ar": "كل ما تحتاج معرفته عن حصوات المرارة، ومتى يُنصح بالجراحة، وماذا يحدث يوم العملية، ومتى يمكنك أن تتوقع التعافي.",
+        "en": "Everything you need to know about gallstones, when surgery is recommended, what happens on the day and how quickly you can expect to recover."
+      },
+      "content": {
+        "ar": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "تُعد حصوات المرارة من أكثر مشكلات الجهاز الهضمي شيوعًا. لا تظهر الأعراض لدى كثيرين، لكن عندما تسبب الحصوات ألمًا أو التهابًا أو مضاعفات، يصبح استئصال المرارة بالمنظار العلاج الجذري والأكثر أمانًا."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "متى يُنصح بالجراحة؟"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "يُنصح بالجراحة عادةً عند تكرار نوبات الألم في الجزء العلوي الأيمن من البطن (المغص المراري)، أو التهاب المرارة، أو التهاب البنكرياس الناتج عن الحصوات، أو انتقال الحصوات إلى القناة المرارية. أما الحصوات الصامتة المكتشفة بالصدفة فغالبًا ما تكفي متابعتها."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "ماذا يحدث أثناء العملية؟"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "تحت التخدير الكلي، تُعمل أربع فتحات صغيرة يتراوح طولها بين 5 و10 ملم، وتوجّه كاميرا عالية الدقة الجرّاح لفصل المرارة واستئصالها بأمان. وتستغرق العملية عادةً من 45 إلى 60 دقيقة."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "التعافي والحياة بعد استئصال المرارة"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "يمشي معظم المرضى بعد ساعات من العملية، ويغادرون المستشفى خلال 24 ساعة، ويعودون إلى الأعمال المكتبية خلال أسبوع."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "يستمر الكبد في إفراز العصارة الصفراوية، لذا يتكيف الهضم سريعًا، وقد يُفضّل البعض فقط الاعتدال في الوجبات الدسمة خلال الأسابيع الأولى."
+                }
+              ]
+            }
+          ]
+        },
+        "en": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Gallstones are one of the most common digestive problems. Many people never develop symptoms, but when stones cause pain, inflammation or complications, removing the gallbladder laparoscopically is the definitive and safest treatment."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "When is surgery recommended?"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Surgery is usually advised if you have recurrent episodes of upper-right abdominal pain (biliary colic), an inflamed gallbladder (cholecystitis), gallstone pancreatitis or stones that have passed into the bile duct. Silent stones discovered incidentally often only need monitoring."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "What happens during the operation?"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Under general anaesthesia, four small incisions of 5–10 mm are made. A high-definition camera guides the surgeon to separate and remove the gallbladder safely. The operation typically takes 45–60 minutes."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Recovery and life without a gallbladder"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Most patients walk within hours, go home within 24 hours and return to office work within a week."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "The liver continues to produce bile, so digestion adapts quickly. Some people simply find that very fatty meals are best enjoyed in moderation during the first few weeks."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cover_url": "/media/articles/article-1.jpg",
+      "is_featured": true,
+      "status": "published",
+      "published_at": "2026-09-28T08:00:00+00:00",
+      "read_minutes": 6,
+      "seo": {}
+    },
+    {
+      "id": "1f2883b6-c857-4a15-a702-b9ac3d4b1909",
+      "slug": "inguinal-hernia-when-to-operate",
+      "category": {
+        "ar": "جراحة الفتق",
+        "en": "Hernia surgery"
+      },
+      "title": {
+        "ar": "الفتق الإربي: الأعراض والمخاطر ومتى تجب الجراحة",
+        "en": "Inguinal Hernia: Symptoms, Risks and When to Have Surgery"
+      },
+      "excerpt": {
+        "ar": "التورم في المنطقة الإربية ليس مشكلة شكلية فحسب. تعرّف على كيفية حدوث الفتق، والأعراض التي تستدعي رعاية عاجلة، ولماذا يكون الإصلاح المبكر هو الخيار الأحكم غالبًا.",
+        "en": "A bulge in the groin is more than a cosmetic issue. Learn how hernias develop, which symptoms need urgent care and why early repair is often wiser."
+      },
+      "content": {
+        "ar": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "يحدث الفتق الإربي عندما يندفع جزء من الأمعاء أو الأنسجة الدهنية عبر نقطة ضعف في أسفل جدار البطن، فيظهر تورم في المنطقة الإربية. وهو أكثر شيوعًا لدى الرجال، ويمكن أن يظهر في أي عمر."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "الأعراض الشائعة"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "تورم يزداد مع السعال أو الإجهاد أو الوقوف ويختفي عند الاستلقاء، مع شعور بالثقل أو الألم في المنطقة الإربية، خاصة في نهاية اليوم."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "متى تكون الحالة طارئة؟"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "توجّه إلى الطوارئ فورًا إذا أصبح التورم صلبًا ومؤلمًا ولا يمكن إرجاعه، أو صاحبه قيء أو عدم القدرة على إخراج الغازات، فقد تكون هذه علامات اختناق الفتق التي تتطلب جراحة فورية."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "لماذا الإصلاح بالمنظار؟"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "يعتمد الإصلاح بالمنظار (TAPP أو TEP) على وضع شبكة خلف جدار البطن من خلال فتحات صغيرة، ويتيح إصلاح الجانبين في جلسة واحدة، مع ألم أقل وعودة أسرع إلى النشاط."
+                }
+              ]
+            }
+          ]
+        },
+        "en": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "An inguinal hernia occurs when part of the intestine or fatty tissue pushes through a weak spot in the lower abdominal wall, creating a bulge in the groin. It is far more common in men and can appear at any age."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Common symptoms"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "A swelling that increases with coughing, straining or standing and disappears when lying down, together with a dragging or aching sensation in the groin, especially by the end of the day."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "When is it an emergency?"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Seek urgent care if the bulge becomes firm and painful and cannot be pushed back, or if it is accompanied by vomiting or an inability to pass gas. These may be signs of a strangulated hernia, which requires immediate surgery."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Why choose laparoscopic repair?"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Laparoscopic repair (TAPP or TEP) places a mesh behind the abdominal wall through small incisions. It allows both sides to be repaired in one session and is associated with less pain and a faster return to activity."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cover_url": "/media/articles/article-2.jpg",
+      "is_featured": false,
+      "status": "published",
+      "published_at": "2026-09-14T08:00:00+00:00",
+      "read_minutes": 5,
+      "seo": {}
+    },
+    {
+      "id": "baf13901-de06-40f9-a039-b8b0fbb5f4ee",
+      "slug": "hemorrhoids-modern-treatment",
+      "category": {
+        "ar": "جراحات الشرج",
+        "en": "Anorectal surgery"
+      },
+      "title": {
+        "ar": "البواسير: خيارات علاج حديثة تتجاوز الجراحة التقليدية",
+        "en": "Hemorrhoids: Modern Treatment Options Beyond Traditional Surgery"
+      },
+      "excerpt": {
+        "ar": "البواسير شائعة وقابلة للعلاج بدرجة كبيرة. تعرّف على الخيارات المتاحة اليوم، بدءًا من تغيير نمط الحياة وصولًا إلى العلاج بالليزر قليل الألم.",
+        "en": "Hemorrhoids are common and very treatable. Discover the options available today, from lifestyle changes to low-pain laser procedures."
+      },
+      "content": {
+        "ar": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "البواسير أوعية دموية متورمة في القناة الشرجية قد تسبب نزيفًا أو حكة أو انزعاجًا أو بروزًا. وكثيرًا ما يؤخر الحرجُ العلاجَ، رغم أن معظم الحالات يمكن علاجها ببساطة وفعالية."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "البداية بالأساسيات"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "تساعد زيادة الألياف في الطعام وشرب كميات كافية من الماء وتجنب الحزق أو الجلوس الطويل في المرحاض على علاج كثير من الحالات المبكرة، كما تخفف العلاجات الموضعية الأعراض أثناء النوبات."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "إجراءات في العيادة"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "في حالات البواسير الداخلية المستمرة، يُعد ربط البواسير بالحلقات المطاطية إجراءً سريعًا في العيادة يقطع التروية الدموية عنها فتنكمش وتسقط خلال أيام."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "علاج البواسير بالليزر"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "يمكن علاج البواسير المتقدمة أو المرتجعة بطاقة الليزر من الداخل، دون جروح مفتوحة وبألم محدود، ويعود معظم المرضى إلى عملهم خلال أيام قليلة."
+                }
+              ]
+            }
+          ]
+        },
+        "en": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Hemorrhoids are swollen blood vessels in the anal canal that can cause bleeding, itching, discomfort or prolapse. Embarrassment often delays treatment, yet most cases can be managed simply and effectively."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Start with the basics"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Increasing dietary fibre, drinking enough water and avoiding prolonged straining or sitting on the toilet resolve many early cases. Topical treatments can relieve symptoms during flare-ups."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Clinic procedures"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "For persistent internal hemorrhoids, rubber band ligation is a quick clinic procedure that cuts off the blood supply to the hemorrhoid so that it shrinks and falls off within days."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Laser hemorrhoidoplasty"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Advanced or recurrent hemorrhoids can be treated with laser energy delivered from within. There are no open wounds, pain is minimal and most patients return to work within a few days."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cover_url": "/media/articles/article-3.jpg",
+      "is_featured": false,
+      "status": "published",
+      "published_at": "2026-08-31T08:00:00+00:00",
+      "read_minutes": 5,
+      "seo": {}
+    },
+    {
+      "id": "9f081813-54c7-4735-a943-e83b6325269a",
+      "slug": "thyroid-nodules-explained",
+      "category": {
+        "ar": "جراحة الغدد الصماء",
+        "en": "Endocrine surgery"
+      },
+      "title": {
+        "ar": "عُقيدات الغدة الدرقية: افهم تشخيصك",
+        "en": "Thyroid Nodules: Understanding Your Diagnosis"
+      },
+      "excerpt": {
+        "ar": "معظم عُقيدات الغدة الدرقية حميدة. إليك كيف يقيّمها الأطباء، والحالات المحددة التي تصبح فيها الجراحة الخيار الصحيح.",
+        "en": "Most thyroid nodules are benign. Here is how doctors evaluate them and the specific situations in which surgery becomes the right choice."
+      },
+      "content": {
+        "ar": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "عُقيدات الغدة الدرقية كتل داخل الغدة، وهي شائعة جدًا وغالبًا ما تُكتشف في فحص السونار الروتيني، وأكثر من 90% منها حميدة. والأهم هو التقييم الدقيق والمنهجي."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "كيف تُقيَّم العُقيدات؟"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "يجمع التقييم بين تحاليل وظائف الغدة، وفحص بالسونار عالي الدقة يصنّف خصائص العُقيدة، وعند الحاجة، أخذ عينة بالإبرة الدقيقة (FNA)."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "متى يُنصح بالجراحة؟"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "تُدرس الجراحة في حالة العُقيدات المشتبه بها أو الخبيثة في نتيجة العينة، أو العُقيدات الكبيرة التي تسبب ضغطًا مثل صعوبة البلع أو التنفس، أو العُقيدات مفرطة النشاط، أو لأسباب تجميلية."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "ماذا تتضمن الجراحة؟"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "بحسب النتائج، يُستأصل فص واحد من الغدة أو الغدة بالكامل عبر شق صغير في ثنية طبيعية بالرقبة، مع مراقبة الأعصاب لحماية الصوت."
+                }
+              ]
+            }
+          ]
+        },
+        "en": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Thyroid nodules are lumps within the thyroid gland. They are extremely common, often found on a routine ultrasound, and more than 90% are benign. The key is a careful, structured evaluation."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "How nodules are evaluated"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Assessment combines thyroid function tests, a high-resolution ultrasound that grades the nodule’s features and, when indicated, a fine-needle aspiration (FNA) biopsy."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "When is surgery recommended?"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Surgery is considered for nodules that are suspicious or malignant on biopsy, large nodules causing pressure symptoms such as difficulty swallowing or breathing, overactive (toxic) nodules, or for cosmetic concerns."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "What surgery involves"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Depending on the findings, one lobe (hemithyroidectomy) or the entire gland (total thyroidectomy) is removed through a small incision placed in a natural skin crease of the neck, with nerve monitoring to protect the voice."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cover_url": "/media/articles/article-4.jpg",
+      "is_featured": false,
+      "status": "published",
+      "published_at": "2026-08-17T08:00:00+00:00",
+      "read_minutes": 5,
+      "seo": {}
+    },
+    {
+      "id": "aa769165-d9da-437d-acf4-60d4403abee2",
+      "slug": "preparing-for-surgery-checklist",
+      "category": {
+        "ar": "دليل المريض",
+        "en": "Patient guide"
+      },
+      "title": {
+        "ar": "الاستعداد للجراحة: قائمة تحقق عملية",
+        "en": "Preparing for Surgery: A Practical Checklist"
+      },
+      "excerpt": {
+        "ar": "الاستعداد الجيد يعني عملية أكثر سلاسة وتعافيًا أسرع. استخدم هذه القائمة في الأيام والساعات التي تسبق عمليتك.",
+        "en": "Good preparation means a smoother operation and a faster recovery. Use this checklist in the days and hours before your procedure."
+      },
+      "content": {
+        "ar": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "الشعور بالاستعداد يقلل القلق ويساعد جسمك على التعافي. تنطبق هذه الخطوات العملية على معظم عمليات الجراحة العامة المخطط لها، وسيزودك الفريق الجراحي بتعليمات خاصة بحالتك."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "قبل العملية بأسبوع إلى أسبوعين"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "أجرِ التحاليل والأشعة المطلوبة، وراجع أدويتك المعتادة مع الطبيب، خاصة مسيلات الدم وأدوية السكري، وتوقف عن التدخين لتقليل خطر المضاعفات."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "في اليوم السابق"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "جهّز ملابس واسعة ومريحة، ورتّب لوجود مرافق يعود معك إلى المنزل، والتزم بتعليمات الصيام بدقة، وعادةً ما يكون ذلك بالامتناع عن الطعام لست ساعات قبل العملية."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "في يوم العملية"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "استحم، وانزع المجوهرات وطلاء الأظافر، وأحضر تقاريرك وبطاقة الهوية، وأخبر الفريق بأي أعراض جديدة مثل الحرارة أو السعال."
+                }
+              ]
+            }
+          ]
+        },
+        "en": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Feeling prepared reduces anxiety and helps your body recover. These practical steps apply to most planned general surgery procedures; your surgical team will give you instructions specific to your case."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "One to two weeks before"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Complete the requested blood tests and scans, review your regular medications with the doctor (especially blood thinners and diabetes medication) and stop smoking to lower the risk of complications."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "The day before"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Prepare loose, comfortable clothing, arrange for someone to accompany you home and follow the fasting instructions carefully, usually no food for six hours before surgery."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "On the day of surgery"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Shower, remove jewellery and nail polish, bring your reports and ID, and tell the team about any new symptoms such as a fever or a cough."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cover_url": "/media/articles/article-5.jpg",
+      "is_featured": false,
+      "status": "published",
+      "published_at": "2026-08-03T08:00:00+00:00",
+      "read_minutes": 4,
+      "seo": {}
+    },
+    {
+      "id": "5df57106-cad7-42bc-a3c9-6e0fe9a2ec91",
+      "slug": "appendicitis-warning-signs",
+      "category": {
+        "ar": "جراحة الطوارئ",
+        "en": "Emergency surgery"
+      },
+      "title": {
+        "ar": "التهاب الزائدة الدودية: علامات تحذيرية لا تتجاهلها",
+        "en": "Appendicitis: Warning Signs You Shouldn’t Ignore"
+      },
+      "excerpt": {
+        "ar": "قد يتطور التهاب الزائدة بسرعة، والتعرّف على الأعراض المبكرة وطلب المساعدة سريعًا يمكن أن يمنع مضاعفات خطيرة.",
+        "en": "Appendicitis can progress quickly. Recognising the early symptoms and seeking help promptly can prevent serious complications."
+      },
+      "content": {
+        "ar": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "التهاب الزائدة الدودية من أكثر الطوارئ الجراحية شيوعًا، ويمكن أن يصيب أي شخص، لكنه أكثر حدوثًا بين سن العاشرة والثلاثين."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "الأعراض المعتادة"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "ألم يبدأ حول السُّرة ثم ينتقل إلى أسفل يمين البطن خلال عدة ساعات، مع فقدان الشهية والغثيان أو القيء وارتفاع طفيف في الحرارة، وغالبًا ما يزداد الألم مع المشي أو السعال."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "لماذا التوقيت مهم؟"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "إذا تأخر العلاج، فقد تنفجر الزائدة الملتهبة وتسبب التهابًا في الغشاء البريتوني أو خُرّاجًا، مما يطيل مدة الإقامة في المستشفى. وتجنّب المسكنات والملينات قبل الفحص لأنها قد تخفي الأعراض."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "العلاج"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "يُعد استئصال الزائدة بالمنظار العلاج القياسي، ويغادر معظم المرضى المستشفى خلال 24 إلى 48 ساعة، ويعودون إلى أنشطتهم الطبيعية خلال أسبوع إلى أسبوعين."
+                }
+              ]
+            }
+          ]
+        },
+        "en": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Appendicitis is inflammation of the appendix and one of the most common surgical emergencies. It can affect anyone, but it is most frequent between the ages of 10 and 30."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Classic symptoms"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Pain that starts around the navel and moves to the lower right abdomen over several hours, loss of appetite, nausea or vomiting, and a low-grade fever. The pain often worsens with walking or coughing."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Why timing matters"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "If treatment is delayed, the inflamed appendix can perforate and cause peritonitis or an abscess, leading to a longer hospital stay. Avoid painkillers and laxatives until you have been assessed, as they may mask symptoms."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Treatment"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Laparoscopic appendectomy is the standard treatment. Most patients go home within 24–48 hours and return to normal activities within one to two weeks."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cover_url": "/media/articles/article-6.jpg",
+      "is_featured": false,
+      "status": "published",
+      "published_at": "2026-07-20T08:00:00+00:00",
+      "read_minutes": 4,
+      "seo": {}
+    },
+    {
+      "id": "2f8e8738-0294-4b45-a564-7f3b8f8846ea",
+      "slug": "recovery-after-abdominal-surgery",
+      "category": {
+        "ar": "التعافي",
+        "en": "Recovery"
+      },
+      "title": {
+        "ar": "التعافي بعد جراحات البطن: نصائح للتغذية والنشاط",
+        "en": "Recovery After Abdominal Surgery: Nutrition and Activity Tips"
+      },
+      "excerpt": {
+        "ar": "ما تأكله وطريقة حركتك بعد الجراحة يؤثران مباشرة في الالتئام. اتبع هذه النصائح العملية لتعافٍ أكثر سلاسة وسرعة.",
+        "en": "What you eat and how you move after surgery directly affect healing. Follow these practical tips for a smoother, faster recovery."
+      },
+      "content": {
+        "ar": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "لا ينتهي التعافي بمغادرة المستشفى؛ فالخيارات التي تتخذها في الأسابيع التالية، مثل ما تأكله وكيف تتحرك وكيف تعتني بجروحك، تُحدث فرقًا حقيقيًا في سرعة شفائك."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "تغذَّ لتتعافى"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "ابدأ بوجبات خفيفة وزِد الكمية تدريجيًا، وركّز على البروتين (البيض والسمك والدجاج والبقوليات) والفواكه والخضروات للحصول على الفيتامينات، مع الإكثار من السوائل. وتساعد الألياف على تجنب الإمساك، خاصة أثناء تناول المسكنات."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "تحرّك مبكرًا… ولكن بحكمة"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "يحسّن المشي القصير المتكرر منذ اليوم الأول الدورة الدموية ويقلل خطر الجلطات والتهابات الصدر. وتجنّب حمل ما يزيد على 5 كجم لمدة أربعة أسابيع تقريبًا، أو حسب التعليمات."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "متى تتصل بالجرّاح؟"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "تواصل معنا إذا ظهرت حرارة، أو زاد احمرار الجرح أو خرجت منه إفرازات، أو اشتد ألم البطن، أو استمر القيء، أو شعرت بضيق في التنفس."
+                }
+              ]
+            }
+          ]
+        },
+        "en": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Recovery does not end when you leave the hospital. The choices you make in the following weeks, such as what you eat, how you move and how you care for your wounds, make a real difference to how quickly you heal."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Eat to heal"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Start with light meals and increase gradually. Prioritise protein (eggs, fish, chicken, legumes), fruit and vegetables for vitamins, and plenty of fluids. Fibre helps prevent constipation, especially while you are taking pain medication."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Move early, but wisely"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Short, frequent walks from the first day improve circulation and reduce the risk of clots and chest infections. Avoid lifting anything heavier than 5 kg for about four weeks, or as advised."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "When to call your surgeon"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Contact us if you develop a fever, increasing redness or discharge from a wound, worsening abdominal pain, persistent vomiting or shortness of breath."
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cover_url": "/media/articles/article-7.jpg",
+      "is_featured": false,
+      "status": "published",
+      "published_at": "2026-07-06T08:00:00+00:00",
+      "read_minutes": 5,
+      "seo": {}
+    }
+  ],
+  "videos_gallery": [
+    {
+      "id": "c38fd643-84ad-4bad-a293-de7a99859a3c",
+      "title": {
+        "ar": "حصوات المرارة: متى تكون الجراحة ضرورية؟",
+        "en": "Gallstones: when is surgery necessary?"
+      },
+      "description": {
+        "ar": "",
+        "en": ""
+      },
+      "source": "youtube",
+      "video_url": "",
+      "thumbnail_url": "/media/videos/short-1.jpg",
+      "orientation": "portrait",
+      "duration": "1:24",
+      "is_featured": true,
+      "is_published": true,
+      "sort_order": 0
+    },
+    {
+      "id": "0247be91-7e84-49e0-a3b5-45a22fc413e3",
+      "title": {
+        "ar": "ماذا يحدث أثناء جراحة المناظير؟",
+        "en": "What happens during laparoscopic surgery?"
+      },
+      "description": {
+        "ar": "",
+        "en": ""
+      },
+      "source": "youtube",
+      "video_url": "",
+      "thumbnail_url": "/media/videos/short-2.jpg",
+      "orientation": "portrait",
+      "duration": "2:05",
+      "is_featured": true,
+      "is_published": true,
+      "sort_order": 1
+    },
+    {
+      "id": "3bd7074d-bf01-48eb-af80-2bebb05917a5",
+      "title": {
+        "ar": "الفتق: علامات تحذيرية لا تتجاهلها",
+        "en": "Hernia: warning signs you shouldn’t ignore"
+      },
+      "description": {
+        "ar": "",
+        "en": ""
+      },
+      "source": "youtube",
+      "video_url": "",
+      "thumbnail_url": "/media/videos/short-3.jpg",
+      "orientation": "portrait",
+      "duration": "1:12",
+      "is_featured": true,
+      "is_published": true,
+      "sort_order": 2
+    },
+    {
+      "id": "b8042486-6a0b-45e7-a889-a6a50d414d04",
+      "title": {
+        "ar": "علاج البواسير بالليزر ببساطة",
+        "en": "Laser treatment for hemorrhoids, explained"
+      },
+      "description": {
+        "ar": "",
+        "en": ""
+      },
+      "source": "youtube",
+      "video_url": "",
+      "thumbnail_url": "/media/videos/short-4.jpg",
+      "orientation": "portrait",
+      "duration": "1:48",
+      "is_featured": false,
+      "is_published": true,
+      "sort_order": 3
+    },
+    {
+      "id": "f3439ffd-d79b-480a-a270-64818201830f",
+      "title": {
+        "ar": "عُقيدات الغدة الدرقية: هل أحتاج إلى جراحة؟",
+        "en": "Thyroid nodules: do I need surgery?"
+      },
+      "description": {
+        "ar": "",
+        "en": ""
+      },
+      "source": "youtube",
+      "video_url": "",
+      "thumbnail_url": "/media/videos/short-5.jpg",
+      "orientation": "portrait",
+      "duration": "1:36",
+      "is_featured": false,
+      "is_published": true,
+      "sort_order": 4
+    },
+    {
+      "id": "af15e28f-d3ff-4cbc-a59d-9e25d03d7fc1",
+      "title": {
+        "ar": "كيف تستعد ليوم العملية؟",
+        "en": "How to prepare for your surgery day"
+      },
+      "description": {
+        "ar": "",
+        "en": ""
+      },
+      "source": "youtube",
+      "video_url": "",
+      "thumbnail_url": "/media/videos/short-6.jpg",
+      "orientation": "portrait",
+      "duration": "2:10",
+      "is_featured": false,
+      "is_published": true,
+      "sort_order": 5
+    },
+    {
+      "id": "a7ae9d7a-12d7-47fc-a53a-0ae21a4040dc",
+      "title": {
+        "ar": "التهاب الزائدة: الأعراض عند الكبار والأطفال",
+        "en": "Appendicitis: symptoms in adults and children"
+      },
+      "description": {
+        "ar": "",
+        "en": ""
+      },
+      "source": "youtube",
+      "video_url": "",
+      "thumbnail_url": "/media/videos/short-7.jpg",
+      "orientation": "portrait",
+      "duration": "1:20",
+      "is_featured": false,
+      "is_published": true,
+      "sort_order": 6
+    },
+    {
+      "id": "120c1c3f-338f-4b5b-a7d7-067593ff33c4",
+      "title": {
+        "ar": "هل الجراحة آمنة لمرضى السكري؟",
+        "en": "Is surgery safe for patients with diabetes?"
+      },
+      "description": {
+        "ar": "",
+        "en": ""
+      },
+      "source": "youtube",
+      "video_url": "",
+      "thumbnail_url": "/media/videos/short-8.jpg",
+      "orientation": "portrait",
+      "duration": "1:55",
+      "is_featured": false,
+      "is_published": true,
+      "sort_order": 7
+    },
+    {
+      "id": "f9ce28da-5f53-4ed5-ac96-b74c39bee94a",
+      "title": {
+        "ar": "التغذية السليمة بعد جراحات البطن",
+        "en": "Eating well after abdominal surgery"
+      },
+      "description": {
+        "ar": "",
+        "en": ""
+      },
+      "source": "youtube",
+      "video_url": "",
+      "thumbnail_url": "/media/videos/short-9.jpg",
+      "orientation": "portrait",
+      "duration": "1:42",
+      "is_featured": false,
+      "is_published": true,
+      "sort_order": 8
+    }
+  ],
+  "patient_reviews": [
+    {
+      "id": "79d7d4db-5ec1-4efc-a513-c9a5cd30951c",
+      "patient_name": {
+        "ar": "محمد ع.",
+        "en": "Mohamed A."
+      },
+      "procedure": {
+        "ar": "استئصال المرارة بالمنظار",
+        "en": "Laparoscopic gallbladder removal"
+      },
+      "review_text": {
+        "ar": "عانيت من نوبات حصوات المرارة لمدة عامين. شرح لي د. أحمد كل شيء بوضوح، ومرّت العملية بسلاسة، وعدت إلى المنزل صباح اليوم التالي، ثم إلى عملي خلال أسبوع.",
+        "en": "I had suffered from gallstone attacks for two years. Dr. Ahmed explained everything clearly, the operation went smoothly and I was home the next morning. I was back at work within a week."
+      },
+      "rating": 5,
+      "is_visible": true,
+      "show_on_home": true,
+      "sort_order": 0
+    },
+    {
+      "id": "a4b4d60a-d545-405e-afdb-2ae58be8e149",
+      "patient_name": {
+        "ar": "سارة م.",
+        "en": "Sara M."
+      },
+      "procedure": {
+        "ar": "علاج البواسير بالليزر",
+        "en": "Laser hemorrhoid treatment"
+      },
+      "review_text": {
+        "ar": "أجّلت العلاج لسنوات خوفًا من الألم، لكن العلاج بالليزر كان أسهل بكثير مما تخيلت، والمتابعة عبر واتساب منحتني شعورًا بالأمان طوال الوقت.",
+        "en": "I delayed treatment for years out of fear of pain. The laser procedure was far easier than I imagined, and the follow-up on WhatsApp made me feel safe the whole time."
+      },
+      "rating": 5,
+      "is_visible": true,
+      "show_on_home": true,
+      "sort_order": 1
+    },
+    {
+      "id": "1244c542-9986-4443-a074-86942904ee0f",
+      "patient_name": {
+        "ar": "خالد ي.",
+        "en": "Khaled Y."
+      },
+      "procedure": {
+        "ar": "إصلاح فتق إربي مزدوج",
+        "en": "Bilateral inguinal hernia repair"
+      },
+      "review_text": {
+        "ar": "تم إصلاح الفتقين بالمنظار في عملية واحدة. ألم بسيط، وندوب صغيرة جدًا، ورعاية ممتازة من الفريق بأكمله.",
+        "en": "Both hernias were repaired laparoscopically in one operation. Minimal pain, tiny scars and excellent care from the whole team."
+      },
+      "rating": 5,
+      "is_visible": true,
+      "show_on_home": true,
+      "sort_order": 2
+    },
+    {
+      "id": "2acad27d-99b0-4701-a0c8-b0339403f13a",
+      "patient_name": {
+        "ar": "منى س.",
+        "en": "Mona S."
+      },
+      "procedure": {
+        "ar": "استئصال كلي للغدة الدرقية",
+        "en": "Total thyroidectomy"
+      },
+      "review_text": {
+        "ar": "كنت قلقة على صوتي لأنني معلمة، لكن د. أحمد طمأنني وشرح لي تقنية مراقبة الأعصاب. صوتي طبيعي تمامًا والندبة بالكاد تُرى.",
+        "en": "As a teacher, I was worried about my voice. Dr. Ahmed reassured me and explained the nerve-monitoring technique. My voice is perfectly normal and my scar is barely visible."
+      },
+      "rating": 5,
+      "is_visible": true,
+      "show_on_home": true,
+      "sort_order": 3
+    },
+    {
+      "id": "74c1757d-5d7e-4ec5-a7dd-26f64de230e7",
+      "patient_name": {
+        "ar": "أحمد ر.",
+        "en": "Ahmed R."
+      },
+      "procedure": {
+        "ar": "استئصال الزائدة بالمنظار (طوارئ)",
+        "en": "Emergency laparoscopic appendectomy"
+      },
+      "review_text": {
+        "ar": "وصلت إلى الطوارئ في منتصف الليل، وخلال ساعات تأكد التشخيص وأُجريت العملية. احترافية وسرعة وتعامل إنساني راقٍ.",
+        "en": "I arrived at the emergency room at midnight. Within hours the diagnosis was confirmed and the surgery was done. Professional, fast and very humane."
+      },
+      "rating": 5,
+      "is_visible": true,
+      "show_on_home": true,
+      "sort_order": 4
+    },
+    {
+      "id": "797f5320-4fcf-4e0a-aaba-79db141efdd4",
+      "patient_name": {
+        "ar": "ريم ح.",
+        "en": "Reem H."
+      },
+      "procedure": {
+        "ar": "إصلاح فتق سُري وانفصال عضلات البطن",
+        "en": "Umbilical hernia & diastasis repair"
+      },
+      "review_text": {
+        "ar": "بعد ولادتين عانيت من فتق سُري وانفصال في عضلات البطن، وجاءت النتيجة فوق توقعاتي طبيًا وجماليًا.",
+        "en": "After two pregnancies I had both an umbilical hernia and separated abdominal muscles. The result exceeded my expectations, both medically and cosmetically."
+      },
+      "rating": 5,
+      "is_visible": true,
+      "show_on_home": true,
+      "sort_order": 5
+    },
+    {
+      "id": "fd28bed1-a470-47fa-afc5-a9a02eedc2d0",
+      "patient_name": {
+        "ar": "يوسف ك.",
+        "en": "Youssef K."
+      },
+      "procedure": {
+        "ar": "علاج الناسور العصعصي",
+        "en": "Pilonidal sinus surgery"
+      },
+      "review_text": {
+        "ar": "خضعت لعمليتين لم تنجحا في مكان آخر، فاستخدم د. أحمد تقنية مختلفة، ومرّ عام كامل دون أي ارتداد. أنصح به بشدة.",
+        "en": "I had two unsuccessful operations elsewhere. Dr. Ahmed used a different technique, and a year later there has been no recurrence. Highly recommended."
+      },
+      "rating": 5,
+      "is_visible": true,
+      "show_on_home": true,
+      "sort_order": 6
+    },
+    {
+      "id": "b4fd7731-fc2f-4d7d-a26b-757ac781b0c2",
+      "patient_name": {
+        "ar": "هالة ن.",
+        "en": "Hala N."
+      },
+      "procedure": {
+        "ar": "علاج الشرخ الشرجي",
+        "en": "Anal fissure treatment"
+      },
+      "review_text": {
+        "ar": "بدأ بالعلاج الدوائي أولًا، ولم يوصِ بالجراحة إلا عندما أصبحت ضرورية فعلًا. أقدّر صدقه كثيرًا، وكانت النتيجة ممتازة.",
+        "en": "He tried medical treatment first and only recommended surgery when it was truly needed. I really appreciated his honesty, and the result was excellent."
+      },
+      "rating": 5,
+      "is_visible": true,
+      "show_on_home": true,
+      "sort_order": 7
+    },
+    {
+      "id": "f01d152a-2f8b-463d-ad0d-6d250eb774fc",
+      "patient_name": {
+        "ar": "عمر ف.",
+        "en": "Omar F."
+      },
+      "procedure": {
+        "ar": "جراحة الارتجاع المريئي",
+        "en": "Anti-reflux surgery"
+      },
+      "review_text": {
+        "ar": "أصبحت سنوات الحموضة والأدوية اليومية من الماضي. أُجريت العملية بالمنظار، وعدت إلى تناول الطعام بشكل طبيعي خلال أسبوعين.",
+        "en": "Years of heartburn and daily medication are behind me. The surgery was laparoscopic and I was eating normally within two weeks."
+      },
+      "rating": 5,
+      "is_visible": true,
+      "show_on_home": true,
+      "sort_order": 8
+    }
+  ],
+  "faqs": [
+    {
+      "id": "6cea2567-87b9-4af7-a08f-0edcaa2d3779",
+      "page": "home",
+      "question": {
+        "ar": "كيف أحجز موعدًا؟",
+        "en": "How do I book an appointment?"
+      },
+      "answer": {
+        "ar": "يمكنك الحجز من خلال نموذج التواصل في الموقع، أو الاتصال بالعيادة مباشرة، أو مراسلتنا عبر واتساب. سنؤكد موعدك ونرسل لك موقع العيادة.",
+        "en": "You can book through the contact form on this website, call the clinic directly or send us a message on WhatsApp. We will confirm your appointment and send you the clinic location."
+      },
+      "is_visible": true,
+      "sort_order": 0
+    },
+    {
+      "id": "7be72c97-a49e-4845-aab6-1de78df0ad49",
+      "page": "home",
+      "question": {
+        "ar": "ماذا أُحضر معي في الاستشارة الأولى؟",
+        "en": "What should I bring to my first consultation?"
+      },
+      "answer": {
+        "ar": "يُرجى إحضار التقارير الطبية السابقة، ونتائج التحاليل الحديثة، وأشعة السونار أو الأشعة المقطعية، وقائمة بالأدوية التي تتناولها بانتظام.",
+        "en": "Please bring any previous medical reports, recent lab results, ultrasound or CT scans, and a list of the medications you take regularly."
+      },
+      "is_visible": true,
+      "sort_order": 1
+    },
+    {
+      "id": "4157bf1b-4294-4395-a5f8-821dac1c30b0",
+      "page": "home",
+      "question": {
+        "ar": "كم تستغرق فترة التعافي بعد عمليات المناظير؟",
+        "en": "How long is recovery after laparoscopic surgery?"
+      },
+      "answer": {
+        "ar": "يمشي معظم المرضى في يوم العملية نفسه، ويغادرون المستشفى خلال 24 ساعة، ويعودون إلى أنشطتهم اليومية الخفيفة خلال أسبوع. وتختلف المدة حسب نوع العملية والحالة الصحية العامة.",
+        "en": "Most patients walk on the same day, go home within 24 hours and return to light daily activities within one week. Recovery time varies with the procedure and your general health."
+      },
+      "is_visible": true,
+      "sort_order": 2
+    },
+    {
+      "id": "f2f67131-fc91-4c61-ab2b-af9ac76328c8",
+      "page": "home",
+      "question": {
+        "ar": "هل تترك العملية ندوبًا واضحة؟",
+        "en": "Will the surgery leave visible scars?"
+      },
+      "answer": {
+        "ar": "تعتمد جراحات المناظير على فتحات صغيرة بين 5 و10 ملم تتلاشى عادةً لتصبح بالكاد مرئية خلال أشهر، ونحرص على وضعها في الثنيات الطبيعية للجلد كلما أمكن.",
+        "en": "Laparoscopic surgery uses incisions of 5–10 mm that usually fade to barely visible marks within months. Where possible, incisions are placed in natural skin creases."
+      },
+      "is_visible": true,
+      "sort_order": 3
+    },
+    {
+      "id": "0194403f-935d-430a-a96b-01d728959f7f",
+      "page": "services",
+      "question": {
+        "ar": "هل جراحة المناظير أكثر أمانًا من الجراحة المفتوحة؟",
+        "en": "Is laparoscopic surgery safer than open surgery?"
+      },
+      "answer": {
+        "ar": "بالنسبة لمعظم المرضى المناسبين لها، تقل مع جراحة المناظير مخاطر التهاب الجرح والفتق الجراحي، ويكون الألم أقل والتعافي أسرع. ويعتمد الأسلوب الأنسب لك على حالتك وتاريخك المرضي، وهو ما نقيّمه خلال الاستشارة.",
+        "en": "For most suitable patients, laparoscopic surgery carries a lower risk of wound infection and incisional hernia, causes less pain and allows a faster recovery. The best approach for you depends on your condition and medical history, which we assess at consultation."
+      },
+      "is_visible": true,
+      "sort_order": 0
+    },
+    {
+      "id": "52129899-f6c8-43f3-a538-391662516666",
+      "page": "services",
+      "question": {
+        "ar": "كم يومًا سأبقى في المستشفى؟",
+        "en": "How long will I stay in hospital?"
+      },
+      "answer": {
+        "ar": "كثير من العمليات، مثل علاج البواسير بالليزر ومعظم عمليات الفتق، تُجرى في اليوم نفسه. ويحتاج استئصال المرارة بالمنظار عادةً إلى ليلة واحدة، بينما تتطلب جراحة الغدة الدرقية ليلة إلى ليلتين.",
+        "en": "Many procedures, such as laser hemorrhoid treatment and most hernia repairs, are day cases. Laparoscopic gallbladder removal usually needs one night, while thyroid surgery typically requires one to two nights."
+      },
+      "is_visible": true,
+      "sort_order": 1
+    },
+    {
+      "id": "3091537c-7c4d-4d82-ab58-85fd5b97f35c",
+      "page": "services",
+      "question": {
+        "ar": "متى يمكنني العودة إلى العمل؟",
+        "en": "When can I return to work?"
+      },
+      "answer": {
+        "ar": "يمكن عادةً العودة إلى الأعمال المكتبية خلال 5 إلى 10 أيام بعد معظم عمليات المناظير، بينما قد تتطلب الأعمال التي تشمل حمل أوزان ثقيلة من 3 إلى 4 أسابيع. وستحصل على خطة مخصصة قبل الخروج.",
+        "en": "Office work is usually possible within 5–10 days after most laparoscopic procedures. Jobs that involve heavy lifting may require 3–4 weeks. You will receive a personalised plan before discharge."
+      },
+      "is_visible": true,
+      "sort_order": 2
+    },
+    {
+      "id": "a7c0fd15-db57-4808-a3a1-7247c6e9c835",
+      "page": "services",
+      "question": {
+        "ar": "هل يمكن أن يُشفى الفتق دون جراحة؟",
+        "en": "Can a hernia heal without surgery?"
+      },
+      "answer": {
+        "ar": "لا. الفتق ضعف أو فتحة في جدار البطن ولا يُغلق من تلقاء نفسه. قد تخفف الأحزمة الطبية الأعراض لكنها لا تعالج السبب، كما أن تأخير الإصلاح يزيد خطر المضاعفات مثل اختناق الفتق.",
+        "en": "No. A hernia is a defect in the abdominal wall and does not close on its own. Support belts may ease symptoms but do not treat the cause, and delaying repair raises the risk of complications such as strangulation."
+      },
+      "is_visible": true,
+      "sort_order": 3
+    },
+    {
+      "id": "e5ab75b5-6ec5-4a59-ad08-6e81246f2ee0",
+      "page": "services",
+      "question": {
+        "ar": "هل علاج البواسير بالليزر مؤلم؟",
+        "en": "Is laser hemorrhoid treatment painful?"
+      },
+      "answer": {
+        "ar": "يسبب العلاج بالليزر ألمًا أقل بكثير من الجراحة التقليدية لعدم وجود جروح مفتوحة. ويحتاج معظم المرضى إلى مسكنات بسيطة فقط ويعودون إلى أنشطتهم خلال أيام قليلة.",
+        "en": "Laser treatment causes significantly less pain than traditional surgery because there are no open wounds. Most patients need only simple pain relief and return to daily activities within a few days."
+      },
+      "is_visible": true,
+      "sort_order": 4
+    },
+    {
+      "id": "2c6c08d6-3e24-4ac6-a45b-58337b1f99a0",
+      "page": "services",
+      "question": {
+        "ar": "هل تؤثر جراحة الغدة الدرقية على الصوت؟",
+        "en": "Can thyroid surgery affect my voice?"
+      },
+      "answer": {
+        "ar": "قد تحدث بحة مؤقتة في الصوت، لكن التغير الدائم نادر مع الجرّاح المتمرّس. ونستخدم جهاز مراقبة الأعصاب أثناء العملية وتقنية دقيقة لحماية أعصاب الحنجرة.",
+        "en": "Temporary hoarseness can occur, but permanent voice change is rare in experienced hands. We use intra-operative nerve monitoring and meticulous technique to protect the laryngeal nerves."
+      },
+      "is_visible": true,
+      "sort_order": 5
+    },
+    {
+      "id": "7d48e7c9-fa7a-4647-a3c2-cec7eed08e16",
+      "page": "services",
+      "question": {
+        "ar": "ما الفحوصات المطلوبة قبل العملية؟",
+        "en": "What tests will I need before surgery?"
+      },
+      "answer": {
+        "ar": "عادةً تحاليل الدم ورسم القلب والأشعة المتعلقة بحالتك. وقد يُطلب أيضًا تقييم من طبيب التخدير أو استشارة تخصصية بحسب العمر والحالة الصحية.",
+        "en": "Typically blood tests, an ECG and imaging relevant to your condition. Depending on your age and health, an anaesthesia assessment or specialist review may also be requested."
+      },
+      "is_visible": true,
+      "sort_order": 6
+    },
+    {
+      "id": "5ea12f52-aace-4b68-a118-d005656c48da",
+      "page": "services",
+      "question": {
+        "ar": "هل يمكنني إرسال تقاريري قبل الحجز؟",
+        "en": "Can I send my reports before booking?"
+      },
+      "answer": {
+        "ar": "نعم، يمكنك إرسال التقارير والأشعة عبر واتساب لمراجعة مبدئية، وسنرشدك إلى الخطوة التالية الأنسب.",
+        "en": "Yes. You can send your reports and scans via WhatsApp for an initial review, and we will advise you on the most appropriate next step."
+      },
+      "is_visible": true,
+      "sort_order": 7
+    }
+  ]
+}

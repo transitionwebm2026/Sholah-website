@@ -5,8 +5,8 @@
  *   - "logo-01.png"              Transition mark (white on transparent), used in the footer credit
  *
  * Outputs
- *   src/assets/images/brand/logo-stacked.png     on-dark logo, original layout (footer)
- *   src/assets/images/brand/logo-horizontal.png  on-dark logo, figure + one-line name/tagline (header)
+ *   public/media/brand/logo-stacked.png          on-dark logo, original layout (footer; CMS default)
+ *   public/media/brand/logo-horizontal.png       on-dark logo, figure + one-line name/tagline (header; CMS default)
  *   src/assets/images/brand/mark.png             on-dark figure only (article byline)
  *   src/assets/images/brand/transition.png       trimmed Transition mark
  *   src/app/icon.png, src/app/apple-icon.png     favicons (original colours on white)
@@ -25,6 +25,8 @@ import path from 'node:path';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const PUBLIC = path.join(ROOT, 'public/images');
 const BRAND = path.join(ROOT, 'src/assets/images/brand');
+// The two logos are the dashboard's default header/footer logos, so they live at stable public URLs.
+const MEDIA_BRAND = path.join(ROOT, 'public/media/brand');
 const APP = path.join(ROOT, 'src/app');
 
 const LOGO_SRC = path.join(PUBLIC, 'Ahmed Sholah logo 3.png');
@@ -243,10 +245,11 @@ async function transitionMark() {
 /* ---------- Output ---------- */
 
 await mkdir(BRAND, {recursive: true});
+await mkdir(MEDIA_BRAND, {recursive: true});
 
 const outputs = [
-  [path.join(BRAND, 'logo-stacked.png'), stackedLogo()],
-  [path.join(BRAND, 'logo-horizontal.png'), horizontalLogo()],
+  [path.join(MEDIA_BRAND, 'logo-stacked.png'), stackedLogo()],
+  [path.join(MEDIA_BRAND, 'logo-horizontal.png'), horizontalLogo()],
   [path.join(BRAND, 'mark.png'), markOnDark()],
   [path.join(BRAND, 'transition.png'), transitionMark()],
   [path.join(APP, 'icon.png'), iconTile(192, {radius: 40, fill: 0.86})],

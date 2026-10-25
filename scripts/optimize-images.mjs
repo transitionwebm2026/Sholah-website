@@ -12,14 +12,18 @@ import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 
-/** Maximum rendered width per folder (×2 for high-density screens where it matters). */
+/**
+ * Maximum rendered width per folder (×2 for high-density screens where it matters).
+ * `public/media` holds the default content images referenced by the CMS seed; images uploaded
+ * from the dashboard are resized in the browser before upload instead (see MediaUpload).
+ */
 const TARGETS = [
-  {dir: 'src/assets/images/doctor', maxWidth: 1000},
-  {dir: 'src/assets/images/services', maxWidth: 1200},
-  {dir: 'src/assets/images/procedures', maxWidth: 900},
-  {dir: 'src/assets/images/articles', maxWidth: 1400},
-  {dir: 'src/assets/images/videos', maxWidth: 1600},
-  {dir: 'src/assets/images/certificates', maxWidth: 1200},
+  {dir: 'public/media/doctor', maxWidth: 1000},
+  {dir: 'public/media/services', maxWidth: 1200},
+  {dir: 'public/media/procedures', maxWidth: 900},
+  {dir: 'public/media/articles', maxWidth: 1400},
+  {dir: 'public/media/videos', maxWidth: 1600},
+  {dir: 'public/media/certificates', maxWidth: 1200},
   {dir: 'public/images', maxWidth: 1200}
 ];
 

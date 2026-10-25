@@ -1,9 +1,8 @@
 /**
  * Generates branded placeholder artwork (navy gradient + gold line motifs).
  *
- * Every file is written as a JPG so it can be replaced 1:1 with real
- * photography later (same path, same aspect ratio) without touching code.
- * Static imports of these files give next/image automatic blur placeholders.
+ * Every file is written as a JPG under `public/media`, where the CMS seed content points to them.
+ * Real photos are normally uploaded from the dashboard instead of replacing these files.
  *
  * Usage: npm run images:placeholders
  */
@@ -12,7 +11,7 @@ import {mkdir} from 'node:fs/promises';
 import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const ASSETS = path.join(ROOT, 'src/assets/images');
+const ASSETS = path.join(ROOT, 'public/media');
 
 const GOLD = '#dfa581';
 const NAVY_LIGHT = '#0d47a1';

@@ -14,7 +14,7 @@ export function ReviewCard({review, ratingLabel, className}: {review: Review; ra
       <div className="flex items-center justify-between">
         <div role="img" aria-label={ratingLabel} className="flex gap-1 text-gold-600">
           {Array.from({length: 5}, (_, i) => (
-            <Star key={i} aria-hidden className="size-4 fill-current" />
+            <Star key={i} aria-hidden className={cn('size-4', i < review.rating ? 'fill-current' : 'opacity-30')} />
           ))}
         </div>
         <Quote aria-hidden className="size-9 text-gold-400/50 rtl:-scale-x-100" />
@@ -33,7 +33,7 @@ export function ReviewCard({review, ratingLabel, className}: {review: Review; ra
         </span>
         <span>
           <span className="block font-bold text-navy-900">{review.name}</span>
-          <span className="block text-sm text-gold-700">{review.procedure}</span>
+          {review.procedure && <span className="block text-sm text-gold-700">{review.procedure}</span>}
         </span>
       </figcaption>
     </figure>

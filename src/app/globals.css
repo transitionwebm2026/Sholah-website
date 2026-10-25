@@ -659,3 +659,108 @@
     opacity: 0;
   }
 }
+
+/* ---------- Article body (CMS rich text, see components/ui/RichText.tsx) ---------- */
+/* Also applied inside the dashboard editor, so authors see the published typography. */
+@layer components {
+  .rich-text > * + * {
+    margin-top: 1rem;
+  }
+  /* The opening paragraph reads as the article's lead. */
+  .rich-text > p:first-child {
+    font-size: 1.25rem;
+    line-height: 1.625;
+    font-weight: 500;
+    color: var(--color-navy-900);
+  }
+  .rich-text h2,
+  .rich-text h3,
+  .rich-text h4 {
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--color-navy-900);
+    text-wrap: balance;
+  }
+  .rich-text h2 {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+  }
+  .rich-text h3 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+  }
+  .rich-text h4 {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
+  @media (min-width: 40rem) {
+    .rich-text h2 {
+      font-size: 1.7rem;
+    }
+  }
+  .rich-text ul,
+  .rich-text ol {
+    padding-inline-start: 1.5rem;
+  }
+  .rich-text ul {
+    list-style: disc;
+  }
+  .rich-text ol {
+    list-style: decimal;
+  }
+  .rich-text li + li {
+    margin-top: 0.4rem;
+  }
+  .rich-text li > p {
+    margin: 0;
+  }
+  .rich-text li::marker {
+    color: var(--color-gold-600);
+  }
+  .rich-text a {
+    color: var(--color-gold-700);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .rich-text a:hover {
+    color: var(--color-navy-900);
+  }
+  .rich-text strong {
+    font-weight: 700;
+    color: var(--color-navy-900);
+  }
+  .rich-text blockquote {
+    border-inline-start: 3px solid var(--color-gold-400);
+    padding-inline-start: 1.25rem;
+    color: var(--color-navy-900);
+    font-style: italic;
+  }
+  .rich-text img {
+    width: 100%;
+    height: auto;
+    margin-block: 2rem;
+    border-radius: 1.5rem;
+  }
+  .rich-text hr {
+    margin-block: 2.5rem;
+    border-color: rgb(6 37 83 / 0.12);
+  }
+  .rich-text code {
+    border-radius: 0.375rem;
+    background: rgb(6 37 83 / 0.08);
+    padding: 0.1em 0.35em;
+    font-size: 0.9em;
+  }
+  .rich-text pre {
+    overflow-x: auto;
+    border-radius: 1rem;
+    background: var(--color-navy-950);
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #fff;
+  }
+  .rich-text pre code {
+    background: none;
+    padding: 0;
+  }
+}

@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {routing} from '@/i18n/routing';
-import {languageAlternates, localizedUrl} from '@/lib/seo';
+import {languageAlternates, localizedUrl} from '@/lib/urls';
 
 /*
  * Static replacement for the i18n middleware at "/" (middleware cannot run on static hosting).

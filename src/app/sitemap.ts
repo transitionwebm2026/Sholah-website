@@ -1,7 +1,7 @@
 import type {MetadataRoute} from 'next';
 import {routing} from '@/i18n/routing';
-import {ARTICLE_SLUGS, getArticlePublished} from '@/lib/content';
-import {languageAlternates, localizedUrl} from '@/lib/seo';
+import {getDataset} from '@/lib/cms/server';
+import {languageAlternates, localizedUrl} from '@/lib/urls';
 
 export const dynamic = 'force-static';
 
@@ -13,8 +13,9 @@ type Entry = {
 };
 
 /** Multilingual sitemap: every URL lists its Arabic, English and x-default alternates. */
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const buildDate = new Date();
+  const articles = await getDataset('articles');
 
   const entries: Entry[] = [
     {path: '', priority: 1, changeFrequency: 'weekly'},
@@ -24,11 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {path: '/videos', priority: 0.6, changeFrequency: 'monthly'},
     {path: '/articles', priority: 0.8, changeFrequency: 'weekly'},
     {path: '/contact', priority: 0.8, changeFrequency: 'yearly'},
-    ...ARTICLE_SLUGS.map<Entry>((slug) => ({
-      path: `/articles/${slug}`,
+    ...articles.map<Entry>((article) => ({
+      path: `/articles/${article.slug}`,
       priority: 0.6,
       changeFrequency: 'yearly',
-      lastModified: new Date(getArticlePublished(slug))
+      lastModified: new Date(article.updated_at ?? article.published_at)
     }))
   ];
 

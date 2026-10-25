@@ -9,6 +9,8 @@ function isActive(pathname: string, href: string) {
   return href === '/' ? path === '/' : path === href || path.startsWith(`${href}/`);
 }
 
+const isExternal = (href: string) => /^(https?:|mailto:|tel:)/i.test(href);
+
 type Props = {
   items: NavItem[];
   variant: 'desktop' | 'mobile';
@@ -20,26 +22,30 @@ export function NavLinks({items, variant}: Props) {
   return (
     <ul className={variant === 'desktop' ? 'flex items-center gap-1' : 'flex flex-col gap-1'}>
       {items.map((item) => {
-        const active = isActive(pathname, item.href);
+        const external = isExternal(item.href);
+        const active = !external && isActive(pathname, item.href);
+        const className = cn(
+          'transition-colors',
+          variant === 'desktop'
+            ? 'relative rounded-full px-3.5 py-2 text-[0.95rem] font-medium after:absolute after:inset-x-3.5 after:-bottom-0.5 after:h-0.5 after:origin-center after:scale-x-0 after:rounded-full after:bg-gold-400 after:transition-transform hover:text-gold-300'
+            : 'flex min-h-12 items-center rounded-2xl px-4 text-lg font-semibold hover:bg-white/5',
+          active
+            ? variant === 'desktop'
+              ? 'text-gold-300 after:scale-x-100'
+              : 'bg-white/5 text-gold-300'
+            : 'text-white/85'
+        );
         return (
-          <li key={item.href}>
-            <Link
-              href={item.href}
-              aria-current={active ? 'page' : undefined}
-              className={cn(
-                'transition-colors',
-                variant === 'desktop'
-                  ? 'relative rounded-full px-3.5 py-2 text-[0.95rem] font-medium after:absolute after:inset-x-3.5 after:-bottom-0.5 after:h-0.5 after:origin-center after:scale-x-0 after:rounded-full after:bg-gold-400 after:transition-transform hover:text-gold-300'
-                  : 'flex min-h-12 items-center rounded-2xl px-4 text-lg font-semibold hover:bg-white/5',
-                active
-                  ? variant === 'desktop'
-                    ? 'text-gold-300 after:scale-x-100'
-                    : 'bg-white/5 text-gold-300'
-                  : 'text-white/85'
-              )}
-            >
-              {item.label}
-            </Link>
+          <li key={`${item.href}-${item.label}`}>
+            {external ? (
+              <a href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+                {item.label}
+              </a>
+            ) : (
+              <Link href={item.href} aria-current={active ? 'page' : undefined} className={className}>
+                {item.label}
+              </Link>
+            )}
           </li>
         );
       })}

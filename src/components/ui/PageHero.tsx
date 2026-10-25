@@ -1,14 +1,17 @@
 import {CalendarCheck, ChevronRight, Phone} from 'lucide-react';
-import Image, {type StaticImageData} from 'next/image';
+import {useLocale, useTranslations} from 'next-intl';
 import type {ReactNode} from 'react';
-import {getLocale, getTranslations} from 'next-intl/server';
-import type {Locale} from '@/i18n/routing';
 import {Link} from '@/i18n/navigation';
-import {media} from '@/lib/content';
+import type {Locale} from '@/i18n/routing';
+import {useSite} from '@/lib/cms/site-context';
+import type {ButtonView} from '@/lib/cms/views';
 import {breadcrumbSchema} from '@/lib/schema';
-import {siteConfig, telHref, whatsappHref} from '@/lib/site';
+import {telHref, whatsappHref} from '@/lib/site';
 import {ButtonLink} from './ButtonLink';
+import {CmsButton} from './CmsButton';
+import {CmsImage} from './CmsImage';
 import {Container} from './Container';
+import {GoldText} from './GoldText';
 import {WhatsAppIcon} from './Icons';
 import {JsonLd} from './JsonLd';
 import {Eyebrow} from './SectionHeading';
@@ -16,19 +19,23 @@ import {SocialLinks} from './SocialLinks';
 
 type Crumb = {name: string; path: string};
 
-type Props = {
+export type HeroContent = {
   eyebrow?: string;
-  title: ReactNode;
-  description?: ReactNode;
+  /** Words between *asterisks* render in gold. */
+  title: string;
+  description?: string;
+  /** Centre image; empty → the doctor's photo from the profile. */
+  image?: string | null;
+  /** Empty → "Book now" + WhatsApp. */
+  buttons?: ButtonView[];
+};
+
+type Props = {
+  hero: HeroContent;
   /** Trail after "Home" (+ BreadcrumbList JSON-LD). Omitted on the home page. The last item is the current page. */
   crumbs?: Crumb[];
   /** Extra content under the description (e.g. article meta). */
   children?: ReactNode;
-  /** Replaces the default "Book now" + WhatsApp buttons. */
-  actions?: ReactNode;
-  /** Centre image; defaults to the doctor's portrait. */
-  image?: StaticImageData;
-  imageAlt?: string;
 };
 
 /**
@@ -36,12 +43,13 @@ type Props = {
  * the copy in the start-side column (it stops short of the centre on desktop so it never covers
  * the portrait), call-to-action buttons and a phone + social strip along the bottom.
  */
-export async function PageHero({eyebrow, title, description, crumbs, children, actions, image, imageAlt}: Props) {
-  const locale = (await getLocale()) as Locale;
-  const t = await getTranslations('Common');
-  const tDoctor = await getTranslations('Doctor');
-  const phone = siteConfig.phones[0];
+export function PageHero({hero, crumbs, children}: Props) {
+  const locale = useLocale() as Locale;
+  const t = useTranslations('Common');
+  const site = useSite();
+  const phone = site.phones[0];
   const items: Crumb[] | undefined = crumbs && [{name: t('home'), path: '/'}, ...crumbs];
+  const buttons = hero.buttons ?? [];
 
   return (
     <section id="hero" aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-brand">
@@ -54,14 +62,11 @@ export async function PageHero({eyebrow, title, description, crumbs, children, a
       {/* Portrait: full height, centred, edges faded into the brand gradient. Fixed width on desktop so
           it keeps clear of the copy column however tall the hero grows. */}
       <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 aspect-[4/5] h-full -translate-x-1/2 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)] lg:aspect-auto lg:w-[32rem]">
-        {/* LCP element: preloaded, high fetch priority, blur placeholder from the static import. */}
-        <Image
-          src={image ?? media.doctorPortrait}
-          alt={imageAlt ?? tDoctor('imageAlt')}
-          fill
-          preload
-          fetchPriority="high"
-          placeholder="blur"
+        {/* LCP element: preloaded with high fetch priority. */}
+        <CmsImage
+          src={hero.image || site.doctor.photo}
+          alt={site.doctor.imageAlt}
+          priority
           sizes="(min-width: 1024px) 512px, 720px"
           className="fx-portrait object-cover object-top"
         />
@@ -99,33 +104,37 @@ export async function PageHero({eyebrow, title, description, crumbs, children, a
             </nav>
           )}
 
-          {eyebrow && <Eyebrow className="fx-enter [--enter-delay:40ms]">{eyebrow}</Eyebrow>}
+          {hero.eyebrow && <Eyebrow className="fx-enter [--enter-delay:40ms]">{hero.eyebrow}</Eyebrow>}
           <h1
             id="hero-title"
             className="fx-enter text-4xl leading-[1.18] font-bold text-balance [--enter-delay:80ms] sm:text-5xl lg:text-[2.3rem] xl:text-[3.25rem]"
           >
-            {title}
+            <GoldText text={hero.title} />
           </h1>
 
-          {description && (
+          {hero.description && (
             <p className="fx-enter mt-6 text-lg leading-relaxed text-pretty text-white/80 [--enter-delay:240ms] sm:text-xl lg:text-lg xl:text-xl">
-              {description}
+              {hero.description}
             </p>
           )}
 
           {children && <div className="fx-enter [--enter-delay:320ms]">{children}</div>}
 
           <div className="fx-enter mt-10 flex flex-col gap-4 [--enter-delay:400ms] sm:flex-row sm:flex-wrap">
-            {actions ?? (
+            {buttons.length > 0 ? (
+              buttons.map((button) => <CmsButton key={`${button.href}-${button.label}`} button={button} />)
+            ) : (
               <>
                 <ButtonLink href="/contact">
                   <CalendarCheck aria-hidden className="size-5" />
                   {t('bookNow')}
                 </ButtonLink>
-                <ButtonLink href={whatsappHref(t('whatsappGreeting'))} external variant="outline">
-                  <WhatsAppIcon className="size-5" />
-                  {t('whatsapp')}
-                </ButtonLink>
+                {site.whatsapp && (
+                  <ButtonLink href={whatsappHref(site.whatsapp, site.greeting)} external variant="outline">
+                    <WhatsAppIcon className="size-5" />
+                    {t('whatsapp')}
+                  </ButtonLink>
+                )}
               </>
             )}
           </div>
@@ -135,18 +144,22 @@ export async function PageHero({eyebrow, title, description, crumbs, children, a
       {/* Contact strip: phone + social links, aligned to the start edge (right in Arabic). */}
       <Container className="pb-12">
         <div className="fx-enter flex flex-col gap-5 border-t border-white/10 pt-6 [--enter-delay:560ms] sm:flex-row sm:items-center sm:gap-8">
-          <a href={telHref(phone.value)} className="group flex items-center gap-3">
-            <span className="grid size-11 place-items-center rounded-full bg-gold-400/15 text-gold-300 transition group-hover:bg-gold-400 group-hover:text-navy-950">
-              <Phone aria-hidden className="size-5" />
-            </span>
-            <span>
-              <span className="block text-xs text-white/65">{t('reachUs')}</span>
-              <span dir="ltr" className="block font-semibold tracking-wide">
-                {phone.display}
-              </span>
-            </span>
-          </a>
-          <span aria-hidden className="hidden h-8 w-px bg-white/15 sm:block" />
+          {phone && (
+            <>
+              <a href={telHref(phone.value)} className="group flex items-center gap-3">
+                <span className="grid size-11 place-items-center rounded-full bg-gold-400/15 text-gold-300 transition group-hover:bg-gold-400 group-hover:text-navy-950">
+                  <Phone aria-hidden className="size-5" />
+                </span>
+                <span>
+                  <span className="block text-xs text-white/65">{t('reachUs')}</span>
+                  <span dir="ltr" className="block font-semibold tracking-wide">
+                    {phone.display}
+                  </span>
+                </span>
+              </a>
+              <span aria-hidden className="hidden h-8 w-px bg-white/15 sm:block" />
+            </>
+          )}
           <SocialLinks />
         </div>
       </Container>

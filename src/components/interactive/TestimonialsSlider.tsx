@@ -14,7 +14,8 @@ type Props = {
     next: string;
     pause: string;
     play: string;
-    rating: string;
+    /** "Rated 5 out of 5", … one per slide. */
+    ratings: string[];
     /** "1 of 9", … one per slide. */
     slides: string[];
     /** "Go to slide 1", … one per possible page. */
@@ -151,13 +152,13 @@ export function TestimonialsSlider({reviews, labels, intervalMs = 5500}: Props) 
       >
         {reviews.map((review, i) => (
           <div
-            key={review.name}
+            key={review.id}
             role="group"
             aria-roledescription="slide"
             aria-label={labels.slides[i]}
             className="shrink-0 basis-full snap-start md:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-3rem)/3)]"
           >
-            <ReviewCard review={review} ratingLabel={labels.rating} />
+            <ReviewCard review={review} ratingLabel={labels.ratings[i]} />
           </div>
         ))}
       </div>
