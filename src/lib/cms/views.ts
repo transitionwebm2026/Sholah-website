@@ -229,6 +229,10 @@ function buildHome(ds: Partial<Datasets>, l: Locale) {
   const blocks = section(ds.sections, 'home.blocks');
   const videos = list(ds.videos);
   const featuredVideos = videos.filter((v) => v.is_featured);
+  // Specialties picked in the dashboard (in their Services-page order); none picked → the first three.
+  const services = list(ds.services);
+  const picked = services.filter((s) => list(surgeries.services).includes(s.slug));
+  const homeServices = picked.length ? picked : services.slice(0, 3);
 
   return {
     hero: hero(ds.heroes, 'home', l),
@@ -241,11 +245,13 @@ function buildHome(ds: Partial<Datasets>, l: Locale) {
     stats: stats(ds.sections, l),
     surgeries: {
       ...heading(surgeries, l),
-      items: list(surgeries.items).map((item) => ({
-        title: tr(item.title, l),
-        description: tr(item.description, l),
-        image: item.image_url || null,
-        href: item.href || '/services'
+      // Specialties of the Services page, each linking to its own section there.
+      items: homeServices.map((s) => ({
+        slug: s.slug,
+        title: tr(s.title, l),
+        description: tr(s.summary, l),
+        image: s.image_url || null,
+        href: `/services#${s.slug}`
       }))
     },
     why: {
@@ -447,7 +453,7 @@ export type ContactViewData = Views['contact'];
 /** Which datasets each view reads. */
 export const VIEW_DATASETS: {[K in ViewKey]: readonly DatasetName[]} = {
   layout: ['settings', 'doctor', 'services'],
-  home: ['heroes', 'sections', 'reviews', 'videos', 'articles', 'faqs'],
+  home: ['heroes', 'sections', 'services', 'reviews', 'videos', 'articles', 'faqs'],
   about: ['heroes', 'doctor', 'sections'],
   services: ['heroes', 'sections', 'services', 'procedures', 'faqs'],
   reviews: ['heroes', 'sections', 'reviews'],

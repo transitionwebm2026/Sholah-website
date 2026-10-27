@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  // One build worker: the default (one per CPU core) runs out of memory on an 8 GB machine and
+  // fails with "Jest worker encountered … child process exceptions". 52 pages still take ~2 s.
+  experimental: {cpus: 1},
   images: {
     // There is no image-optimization server on static hosting. Source images are resized and
     // compressed at build time instead (see `scripts/optimize-images.mjs`, run on `prebuild`).

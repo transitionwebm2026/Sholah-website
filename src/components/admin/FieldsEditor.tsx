@@ -4,6 +4,7 @@ import {ArrowDown, ArrowUp, ChevronDown, Copy, Plus, Trash2} from 'lucide-react'
 import {useEffect, useId, useRef, useState} from 'react';
 import {CMS_ICONS, CmsIcon} from '@/components/ui/CmsIcon';
 import {arOf, emptyL10n, LINK_SUGGESTIONS, WEEKDAYS, type Field} from '@/lib/admin/fields';
+import {describeError, getAdminClient} from '@/lib/admin/supabase';
 import type {L10n} from '@/lib/cms/types';
 import {cn} from '@/lib/utils';
 import {MediaInput} from './MediaInput';
@@ -258,6 +259,9 @@ function FieldControl({field, value, onSet}: {field: Exclude<Field, {type: 'head
       );
     }
 
+    case 'services':
+      return <ServicesPicker label={field.label} hint={field.hint} value={asArray<string>(value)} onChange={set} />;
+
     case 'l10nList': {
       const items = asArray<L10n>(value);
       return (
@@ -340,6 +344,65 @@ function FieldControl({field, value, onSet}: {field: Exclude<Field, {type: 'head
     default:
       return null;
   }
+}
+
+type ServiceOption = {slug: string; title: L10n; is_published: boolean};
+
+/** Toggles specialties from `surgeries_services` on and off; the value keeps their Services-page order. */
+function ServicesPicker({label, hint, value, onChange}: {label: string; hint?: string; value: string[]; onChange: (slugs: string[]) => void}) {
+  const [options, setOptions] = useState<ServiceOption[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+    getAdminClient()
+      .from('surgeries_services')
+      .select('slug,title,is_published')
+      .order('sort_order', {ascending: true})
+      .order('created_at', {ascending: true})
+      .then(({data, error: loadError}) => {
+        if (!active) return;
+        if (loadError) setError(describeError(loadError));
+        else setOptions((data ?? []) as ServiceOption[]);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  return (
+    <div>
+      <Label hint={hint}>{label}</Label>
+      {error ? (
+        <p className="text-sm text-red-300">{error}</p>
+      ) : !options ? (
+        <p className="text-sm text-white/50">جارٍ تحميل التخصصات…</p>
+      ) : !options.length ? (
+        <p className="text-sm text-white/50">لا توجد تخصصات بعد — أضفها من قسم «الخدمات والعمليات».</p>
+      ) : (
+        <div className="flex flex-wrap gap-1.5">
+          {options.map((o) => {
+            const on = value.includes(o.slug);
+            return (
+              <button
+                key={o.slug}
+                type="button"
+                aria-pressed={on}
+                onClick={() => onChange(options.map((x) => x.slug).filter((s) => (s === o.slug ? !on : value.includes(s))))}
+                className={cn(
+                  'min-h-9 rounded-lg border px-3 text-sm transition',
+                  on ? 'border-gold-400 bg-gold-400 font-semibold text-navy-950' : 'border-white/15 text-white/70 hover:border-gold-400/50'
+                )}
+              >
+                {arOf(o.title) || o.slug}
+                {!o.is_published && ' (غير منشور)'}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
 }
 
 function move<T>(items: T[], from: number, to: number): T[] {

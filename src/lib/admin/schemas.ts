@@ -283,27 +283,21 @@ export const homeSections: Array<{id: string; label: string; key: string; fields
   },
   {
     id: 'surgeries',
-    label: 'العمليات المميزة',
+    label: 'الخدمات',
     key: 'home.surgeries',
     fields: [
+      heading('البطاقات', 'كل بطاقة تُؤخذ من قسم «الخدمات والعمليات»: نفس اسم التخصص وصورته وملخصه، وتفتح تخصصها في صفحة الخدمات.'),
+      {
+        type: 'services',
+        key: 'services',
+        label: 'التخصصات المعروضة في الرئيسية',
+        hint: 'اختر 3 لتظهر في صف واحد. تظهر بنفس ترتيب صفحة الخدمات. بدون اختيار = أول 3 تخصصات.'
+      },
+      heading('عنوان القسم'),
       {type: 'l10n', key: 'eyebrow', label: 'العنوان الصغير'},
       {type: 'l10n', key: 'title', label: 'العنوان'},
       {type: 'l10n', key: 'description', label: 'الوصف', multiline: true},
-      {type: 'l10n', key: 'cta', label: 'نص زر «كل الخدمات»'},
-      {
-        type: 'list',
-        key: 'items',
-        label: 'البطاقات',
-        addLabel: 'إضافة عملية',
-        newItem: () => ({title: L(), description: L(), image_url: '', href: '/services'}),
-        itemTitle: (item) => arOf(item.title),
-        fields: [
-          {type: 'l10n', key: 'title', label: 'العنوان', required: true},
-          {type: 'l10n', key: 'description', label: 'الوصف', multiline: true},
-          {type: 'image', key: 'image_url', label: 'الصورة', folder: 'home', maxWidth: 1200, aspect: 'aspect-[3/2]'},
-          {type: 'link', key: 'href', label: 'الرابط', hint: 'مثل /services#hernia للانتقال لتخصص معيّن.'}
-        ]
-      }
+      {type: 'l10n', key: 'cta', label: 'نص زر «كل الخدمات»'}
     ]
   },
   {

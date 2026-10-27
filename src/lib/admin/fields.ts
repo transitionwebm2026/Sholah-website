@@ -22,6 +22,8 @@ export type Field =
   /** Uploaded video file or a pasted YouTube / .mp4 link. Can fill sibling duration/orientation fields. */
   | (Base & {type: 'video'; folder: string; durationKey?: string; orientationKey?: string; required?: boolean})
   | (Base & {type: 'weekdays'})
+  /** Slugs of specialties from `surgeries_services`, kept in their Services-page order. */
+  | (Base & {type: 'services'})
   /** A list of translatable strings (paragraphs, bullet points). */
   | (Base & {type: 'l10nList'; multiline?: boolean; addLabel?: string})
   /** A list of objects (steps, links, cards…), each edited with `fields`. */

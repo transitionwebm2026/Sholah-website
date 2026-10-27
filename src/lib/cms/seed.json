@@ -1051,43 +1051,10 @@
           "ar": "استكشف جميع الخدمات",
           "en": "Explore all services"
         },
-        "items": [
-          {
-            "title": {
-              "ar": "استئصال المرارة بالمنظار",
-              "en": "Laparoscopic Gallbladder Removal"
-            },
-            "description": {
-              "ar": "العلاج الجذري لحصوات المرارة ونوبات المغص المتكررة عبر أربع فتحات صغيرة، مع الخروج غالبًا في اليوم نفسه أو اليوم التالي.",
-              "en": "Definitive treatment for gallstones and recurrent biliary colic through four tiny incisions, usually with same-day or next-day discharge."
-            },
-            "image_url": "/media/services/laparoscopic.jpg",
-            "href": "/services#laparoscopic"
-          },
-          {
-            "title": {
-              "ar": "إصلاح الفتق بالشبكة",
-              "en": "Hernia Repair with Mesh"
-            },
-            "description": {
-              "ar": "إصلاح الفتق الإربي والسُّري والجراحي بالمنظار أو بالجراحة المفتوحة باستخدام شبكات خفيفة لتقليل فرص الارتداد.",
-              "en": "Laparoscopic and open repair of inguinal, umbilical and incisional hernias using lightweight mesh to minimise recurrence."
-            },
-            "image_url": "/media/services/hernia.jpg",
-            "href": "/services#hernia"
-          },
-          {
-            "title": {
-              "ar": "جراحة الغدة الدرقية",
-              "en": "Thyroid Surgery"
-            },
-            "description": {
-              "ar": "استئصال آمن لعُقيدات الغدة الدرقية وتضخمها مع مراقبة الأعصاب وتقنية دقيقة للحفاظ على الصوت.",
-              "en": "Safe removal of thyroid nodules and goitres with nerve monitoring and meticulous technique to protect your voice."
-            },
-            "image_url": "/media/services/endocrine.jpg",
-            "href": "/services#endocrine"
-          }
+        "services": [
+          "laparoscopic",
+          "hernia",
+          "endocrine"
         ]
       }
     },

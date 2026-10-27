@@ -70,7 +70,8 @@ export type StepRow = {title: L10n; description: L10n};
 
 export type SectionContents = {
   'home.about': Heading & {paragraphs?: L10n[]; points?: L10n[]; video?: VideoEmbedRow};
-  'home.surgeries': Heading & {items?: Array<{title: L10n; description: L10n; image_url?: string; href?: string}>};
+  /** The cards are specialties from `surgeries_services`, picked by slug (none → the first three). */
+  'home.surgeries': Heading & {services?: string[]};
   'home.why': Heading & {items?: IconItemRow[]};
   'home.journey': Heading & {steps?: StepRow[]};
   'home.blocks': {reviews?: Heading; videos?: Heading; articles?: Heading; faq?: Heading};
