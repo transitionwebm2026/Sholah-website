@@ -39,7 +39,7 @@ type Props = {
 };
 
 /**
- * The one hero used by every page: the doctor's portrait centred as a full-height background,
+ * The one hero used by every page: the doctor's photo as a full-bleed background,
  * the copy in the start-side column (it stops short of the centre on desktop so it never covers
  * the portrait), call-to-action buttons and a phone + social strip along the bottom.
  */
@@ -53,22 +53,17 @@ export function PageHero({hero, crumbs, children}: Props) {
 
   return (
     <section id="hero" aria-labelledby="hero-title" className="relative isolate overflow-hidden bg-brand">
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_25%,transparent_75%)]" />
-        <div className="fx-float absolute -top-40 -end-32 size-[44rem] rounded-full bg-[radial-gradient(circle,rgb(223_165_129/0.22),transparent_62%)]" />
-        <div className="fx-float-alt absolute -bottom-64 -start-48 size-[40rem] rounded-full bg-[radial-gradient(circle,rgb(3_22_51/0.7),transparent_70%)]" />
-      </div>
-
-      {/* Portrait: full height, centred, edges faded into the brand gradient. Fixed width on desktop so
-          it keeps clear of the copy column however tall the hero grows. */}
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 aspect-[4/5] h-full -translate-x-1/2 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)] lg:aspect-auto lg:w-[32rem]">
+      {/* Photo: covers the whole hero (bg-brand only shows while it loads). The uploaded photos are
+          landscape with the doctor in the middle, so the crop keeps him centred and biased to the top
+          so his head stays in frame on wide screens. */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
         {/* LCP element: preloaded with high fetch priority. */}
         <CmsImage
           src={hero.image || site.doctor.photo}
           alt={site.doctor.imageAlt}
           priority
-          sizes="(min-width: 1024px) 512px, 720px"
-          className="fx-portrait object-cover object-top"
+          sizes="100vw"
+          className="fx-portrait object-cover object-[50%_25%]"
         />
       </div>
       {/* Scrim: the copy sits on the portrait on phones/tablets; on desktop it only deepens the start side. */}
@@ -78,7 +73,7 @@ export function PageHero({hero, crumbs, children}: Props) {
       />
 
       <Container className="pt-8 pb-12 sm:pt-10 lg:flex lg:min-h-[34rem] lg:flex-col lg:justify-center lg:pt-12 lg:pb-16">
-        {/* Desktop: the column ends 10rem before the centre line, i.e. just outside the portrait. */}
+        {/* Desktop: the column ends 10rem before the centre line, so it stays clear of the doctor's face. */}
         <div className="max-w-3xl lg:max-w-[calc(50%-10rem)]">
           {items && (
             <nav aria-label={t('breadcrumb')} className="fx-enter mb-8">
