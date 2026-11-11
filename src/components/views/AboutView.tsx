@@ -2,8 +2,8 @@
 
 import {GraduationCap} from 'lucide-react';
 import {useTranslations} from 'next-intl';
+import {ExpertiseHub} from '@/components/about/ExpertiseHub';
 import {ButtonLink} from '@/components/ui/ButtonLink';
-import {CmsIcon} from '@/components/ui/CmsIcon';
 import {CmsImage} from '@/components/ui/CmsImage';
 import {Container} from '@/components/ui/Container';
 import {CtaSection} from '@/components/ui/CtaSection';
@@ -13,7 +13,6 @@ import {Section} from '@/components/ui/Section';
 import {SectionHeading} from '@/components/ui/SectionHeading';
 import {StatsGrid} from '@/components/ui/StatsGrid';
 import {VideoFacade} from '@/components/ui/VideoFacade';
-import {Link} from '@/i18n/navigation';
 import {useLiveView} from '@/lib/cms/live';
 import {useNavLabel} from '@/lib/cms/site-context';
 import type {AboutViewData} from '@/lib/cms/views';
@@ -21,7 +20,6 @@ import type {AboutViewData} from '@/lib/cms/views';
 export function AboutView({initial}: {initial: AboutViewData}) {
   const v = useLiveView('about', initial).data ?? initial;
   const t = useTranslations('About');
-  const tCommon = useTranslations('Common');
   const navLabel = useNavLabel('about');
 
   return (
@@ -128,31 +126,7 @@ export function AboutView({initial}: {initial: AboutViewData}) {
         <Section id="expertise" labelledBy="expertise-title" tone="light">
           <Container>
             <SectionHeading id="expertise-title" eyebrow={v.expertise.eyebrow} title={v.expertise.title} onLight />
-            <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {v.expertise.items.map((item, i) => (
-                <li key={i} data-reveal>
-                  <article className="fx-card group relative h-full overflow-hidden rounded-3xl bg-white p-8 shadow-card ring-1 ring-navy-900/5 hover:shadow-luxe">
-                    <span
-                      aria-hidden
-                      className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-linear-to-r from-gold-500 to-gold-300 transition-transform duration-500 group-hover:scale-x-100 rtl:origin-right"
-                    />
-                    <span className="fx-depth grid size-14 place-items-center rounded-2xl bg-brand text-gold-300 transition duration-500 ease-out group-hover:rotate-6">
-                      <CmsIcon name={item.icon} className="size-7" strokeWidth={1.6} />
-                    </span>
-                    <h3 className="mt-6 text-xl font-bold text-navy-900">
-                      <Link href={item.href} className="after:absolute after:inset-0 after:rounded-3xl">
-                        {item.title}
-                      </Link>
-                    </h3>
-                    <p className="mt-3 leading-relaxed text-slate-600">{item.description}</p>
-                    <span aria-hidden className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold-700 opacity-0 transition group-hover:opacity-100">
-                      {tCommon('learnMore')}
-                      <DirectionalArrow />
-                    </span>
-                  </article>
-                </li>
-              ))}
-            </ul>
+            <ExpertiseHub items={v.expertise.items} photo={v.message.photo} caption={v.doctor.name} />
             {v.expertise.cta && (
               <div data-reveal="up" className="mt-14 text-center">
                 <ButtonLink href="/services" variant="navy">

@@ -100,11 +100,11 @@ export type DoctorRow = {
   message: {eyebrow?: L10n; title?: L10n; paragraphs?: L10n[]; signature?: L10n};
   timeline: Array<{year: string; title: L10n; place: L10n}>;
   certificates: Array<{title: L10n; issuer: L10n; year: string; image_url?: string}>;
-  expertise: Array<IconItemRow & {href?: string}>;
   intro_video: VideoEmbedRow;
   headings: {
     career?: Heading;
     intro_video?: Heading;
+    /** Heading of "areas of expertise"; its cards are the specialties from `surgeries_services`. */
     expertise?: Heading;
     certificates?: Heading;
     achievements?: Heading;

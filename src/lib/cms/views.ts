@@ -312,13 +312,15 @@ function buildAbout(ds: Partial<Datasets>, l: Locale) {
       items: list(d?.timeline).map((t) => ({year: t.year ?? '', title: tr(t.title, l), place: tr(t.place, l)}))
     },
     introVideo: {...heading(h.intro_video, l), video: videoEmbed(d?.intro_video, l)},
+    // The specialties of the Services page, each linking to its own section there.
     expertise: {
       ...heading(h.expertise, l),
-      items: list(d?.expertise).map((e) => ({
-        icon: e.icon ?? '',
-        title: tr(e.title, l),
-        description: tr(e.description, l),
-        href: e.href || '/services'
+      items: list(ds.services).map((s) => ({
+        slug: s.slug,
+        title: tr(s.title, l),
+        summary: tr(s.summary, l),
+        image: s.image_url || null,
+        href: `/services#${s.slug}`
       }))
     },
     certificates: {
@@ -454,7 +456,7 @@ export type ContactViewData = Views['contact'];
 export const VIEW_DATASETS: {[K in ViewKey]: readonly DatasetName[]} = {
   layout: ['settings', 'doctor', 'services'],
   home: ['heroes', 'sections', 'services', 'reviews', 'videos', 'articles', 'faqs'],
-  about: ['heroes', 'doctor', 'sections'],
+  about: ['heroes', 'doctor', 'sections', 'services'],
   services: ['heroes', 'sections', 'services', 'procedures', 'faqs'],
   reviews: ['heroes', 'sections', 'reviews'],
   videos: ['heroes', 'sections', 'videos'],

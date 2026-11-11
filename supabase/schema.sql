@@ -126,7 +126,7 @@ create table if not exists public.doctors_profile (
   timeline          jsonb not null default '[]',
   -- [{"title":{ar,en},"issuer":{ar,en},"year":"2014","image_url"}]
   certificates      jsonb not null default '[]',
-  -- [{"icon","title":{ar,en},"description":{ar,en},"href":"/services#hernia"}]
+  -- No longer read: the About page's "areas of expertise" cards are the rows of surgeries_services.
   expertise         jsonb not null default '[]',
   -- {"title":{ar,en},"url":"<YouTube link or uploaded file>","thumbnail_url"}
   intro_video       jsonb not null default '{}',

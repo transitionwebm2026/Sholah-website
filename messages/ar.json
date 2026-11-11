@@ -75,6 +75,9 @@
   "About": {
     "certificates": {
       "imageAlt": "شهادة: {title}"
+    },
+    "expertise": {
+      "explore": "استكشف التخصص"
     }
   },
   "Services": {

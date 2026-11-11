@@ -11,10 +11,11 @@ const SEO_HINT = 'يظهر في نتائج جوجل وتبويب المتصفح 
 const heading = (label: string, hint?: string): Field => ({type: 'heading', label, hint});
 
 /** eyebrow + title (+ description / button text) of a section. */
-const sectionHeading = (key: string, label: string, opts: {description?: boolean; cta?: boolean} = {}): Field => ({
+const sectionHeading = (key: string, label: string, opts: {description?: boolean; cta?: boolean; hint?: string} = {}): Field => ({
   type: 'group',
   key,
   label,
+  hint: opts.hint,
   fields: [
     {type: 'l10n', key: 'eyebrow', label: 'العنوان الصغير (فوق العنوان)'},
     {type: 'l10n', key: 'title', label: 'العنوان'},
@@ -422,26 +423,6 @@ export const doctorTabs: Array<{id: string; label: string; fields: Field[]}> = [
     ]
   },
   {
-    id: 'expertise',
-    label: 'مجالات الخبرة',
-    fields: [
-      {
-        type: 'list',
-        key: 'expertise',
-        label: 'مجالات الخبرة',
-        addLabel: 'إضافة مجال',
-        newItem: () => ({icon: 'stethoscope', title: L(), description: L(), href: '/services'}),
-        itemTitle: (item) => arOf(item.title),
-        fields: [
-          {type: 'icon', key: 'icon', label: 'الأيقونة'},
-          {type: 'l10n', key: 'title', label: 'العنوان', required: true},
-          {type: 'l10n', key: 'description', label: 'الوصف', multiline: true},
-          {type: 'link', key: 'href', label: 'الرابط عند الضغط'}
-        ]
-      }
-    ]
-  },
-  {
     id: 'video',
     label: 'الفيديو التعريفي',
     fields: [videoEmbed('intro_video', 'الفيديو التعريفي (صفحة عن الدكتور)', 'videos/about')]
@@ -457,7 +438,10 @@ export const doctorTabs: Array<{id: string; label: string; fields: Field[]}> = [
         fields: [
           sectionHeading('career', 'المسيرة المهنية'),
           sectionHeading('intro_video', 'الفيديو التعريفي', {description: true}),
-          sectionHeading('expertise', 'مجالات الخبرة', {cta: true}),
+          sectionHeading('expertise', 'مجالات الخبرة', {
+            cta: true,
+            hint: 'البطاقات تُؤخذ تلقائيًا من قسم «الخدمات والعمليات» (نفس الاسم والصورة والملخص والترتيب)، وكل بطاقة تفتح تخصصها في صفحة الخدمات.'
+          }),
           sectionHeading('certificates', 'الشهادات'),
           sectionHeading('achievements', 'الإنجازات (العدّادات)')
         ]
