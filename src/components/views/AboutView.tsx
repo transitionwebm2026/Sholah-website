@@ -144,26 +144,37 @@ export function AboutView({initial}: {initial: AboutViewData}) {
         <Section id="certificates" labelledBy="certificates-title" tone="deep">
           <Container>
             <SectionHeading id="certificates-title" eyebrow={v.certificates.eyebrow} title={v.certificates.title} />
-            <ul className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Up to four per row (two on tablets); a short last row is centred, never left hanging.
+                From tablets up the cards are staggered: every second one sits lower (padding, not a
+                transform, so it doesn't fight the reveal animation and all cards keep the same height). */}
+            <ul className="mx-auto mt-14 flex max-w-6xl flex-wrap justify-center gap-6">
               {v.certificates.items.map((certificate, i) => (
-                <li key={i} data-reveal>
-                  <figure className="fx-card group h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] hover:border-gold-400/40">
-                    <div className="relative aspect-[24/17] overflow-hidden bg-navy-900">
-                      <CmsImage
-                        src={certificate.image}
-                        alt={t('certificates.imageAlt', {title: certificate.title})}
-                        sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
-                        className="fx-media object-cover"
-                      />
+                <li
+                  key={i}
+                  data-reveal
+                  className={`w-full max-w-sm sm:w-[calc((100%-1.5rem)/2)] sm:max-w-none lg:w-[calc((100%-4.5rem)/4)] ${
+                    i % 2 === 1 ? 'sm:pt-14' : 'sm:pb-14'
+                  }`}
+                >
+                  <figure className="fx-card group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] hover:border-gold-400/40">
+                    {/* The scans are portrait documents: a portrait mat shows the whole page, header first. */}
+                    <div className="p-3 pb-0">
+                      <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-white/90 ring-1 ring-white/10">
+                        <CmsImage
+                          src={certificate.image}
+                          alt={t('certificates.imageAlt', {title: certificate.title})}
+                          sizes="(min-width: 1024px) 280px, (min-width: 640px) 50vw, 384px"
+                          className="fx-media object-cover object-top"
+                        />
+                      </div>
                     </div>
-                    <figcaption className="flex items-start justify-between gap-4 p-6">
-                      <span>
-                        <span className="block font-bold">{certificate.title}</span>
-                        <span className="mt-1 block text-sm text-white/70">{certificate.issuer}</span>
-                      </span>
-                      {certificate.year && (
-                        <span className="shrink-0 rounded-full border border-gold-400/40 px-3 py-1 text-sm font-semibold text-gold-300">
-                          {certificate.year}
+                    <figcaption className="flex flex-1 flex-col items-center px-5 pt-5 pb-6 text-center">
+                      {certificate.year && <span className="text-gold-gradient text-lg font-bold">{certificate.year}</span>}
+                      <span className="mt-1 block leading-snug font-bold text-balance">{certificate.title}</span>
+                      {certificate.issuer && (
+                        <span className="mt-auto block pt-4">
+                          <span aria-hidden className="mx-auto mb-3 block h-px w-10 bg-gold-400/50" />
+                          <span className="block text-sm text-white/70">{certificate.issuer}</span>
                         </span>
                       )}
                     </figcaption>
