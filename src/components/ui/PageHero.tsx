@@ -7,6 +7,7 @@ import {useSite} from '@/lib/cms/site-context';
 import type {ButtonView} from '@/lib/cms/views';
 import {breadcrumbSchema} from '@/lib/schema';
 import {telHref, whatsappHref} from '@/lib/site';
+import {cn} from '@/lib/utils';
 import {ButtonLink} from './ButtonLink';
 import {CmsButton} from './CmsButton';
 import {CmsImage} from './CmsImage';
@@ -100,15 +101,27 @@ export function PageHero({hero, crumbs, children}: Props) {
           )}
 
           {hero.eyebrow && <Eyebrow className="fx-enter [--enter-delay:40ms]">{hero.eyebrow}</Eyebrow>}
+          {/* English titles run longer and Montserrat is wider than Cairo, so they get a smaller scale
+              to keep the copy compact instead of filling the whole hero. */}
           <h1
             id="hero-title"
-            className="fx-enter text-4xl leading-[1.18] font-bold text-balance [--enter-delay:80ms] sm:text-5xl lg:text-[2.3rem] xl:text-[3.25rem]"
+            className={cn(
+              'fx-enter font-bold text-balance [--enter-delay:80ms]',
+              locale === 'ar'
+                ? 'text-4xl leading-[1.18] sm:text-5xl lg:text-[2.3rem] xl:text-[3.25rem]'
+                : 'text-[1.75rem] leading-[1.2] sm:text-4xl lg:text-[1.75rem] xl:text-[2.25rem]'
+            )}
           >
             <GoldText text={hero.title} />
           </h1>
 
           {hero.description && (
-            <p className="fx-enter mt-6 text-lg leading-relaxed text-pretty text-white/80 [--enter-delay:240ms] sm:text-xl lg:text-lg xl:text-xl">
+            <p
+              className={cn(
+                'fx-enter mt-6 leading-relaxed text-pretty text-white/80 [--enter-delay:240ms]',
+                locale === 'ar' ? 'text-lg sm:text-xl lg:text-lg xl:text-xl' : 'text-base sm:text-lg lg:text-base xl:text-lg'
+              )}
+            >
               {hero.description}
             </p>
           )}
