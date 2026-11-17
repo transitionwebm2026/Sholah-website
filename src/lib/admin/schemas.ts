@@ -2,7 +2,7 @@
 import {SOCIAL_NETWORKS} from '@/components/ui/Icons';
 import {youtubeId} from '@/lib/cms/media';
 import {supabaseUrl} from '@/lib/cms/rest';
-import {arOf, emptyL10n, SLUG_PATTERN, slugify, type Field} from './fields';
+import {arOf, emptyL10n, SLUG_PATTERN, slugify, WEEKDAYS, type Field} from './fields';
 
 const L = emptyL10n;
 const GOLD_HINT = 'ضع الكلمات المميزة بين نجمتين *هكذا* لتظهر باللون الذهبي.';
@@ -103,16 +103,46 @@ export const settingsTabs: Array<{id: string; label: string; fields: Field[]}> =
         type: 'list',
         key: 'branches',
         label: 'العيادات / الفروع',
-        hint: 'الفرع الأول هو العيادة الرئيسية (يظهر عنوانه في الفوتر).',
+        hint: 'الفرع الأول هو العيادة الرئيسية: عنوانه ومواعيده في الفوتر، وكارته عريض بجوار خريطته في صفحة التواصل. رتّب الفروع بالأسهم.',
         addLabel: 'إضافة فرع',
-        newItem: () => ({id: `branch-${Date.now().toString(36)}`, name: L(), address: L(), phone: '', map_embed_url: '', directions_url: '', lat: null, lng: null}),
+        newItem: () => ({
+          id: `branch-${Date.now().toString(36)}`,
+          name: L(),
+          note: L(),
+          address: L(),
+          schedule: [],
+          phone: '',
+          map_embed_url: '',
+          directions_url: '',
+          lat: null,
+          lng: null
+        }),
         itemTitle: (item) => arOf(item.name),
         fields: [
-          {type: 'l10n', key: 'name', label: 'اسم الفرع', required: true},
+          {type: 'l10n', key: 'name', label: 'اسم الفرع', required: true, hint: 'اكتب المنطقة مع الاسم، مثل «مستشفى نسايم – التجمع الخامس»؛ هكذا يظهر في جدول الأسبوع.'},
+          {type: 'l10n', key: 'note', label: 'وصف قصير (اختياري)', hint: 'شارة تحت الاسم، مثل «العيادة الخاصة» أو «طوارئ جراحة التجميل».'},
           {type: 'l10n', key: 'address', label: 'العنوان', multiline: true},
+          {
+            type: 'list',
+            key: 'schedule',
+            label: 'مواعيد الكشف في هذا الفرع',
+            hint: 'كل سطر = أيام + ساعة البدء (وساعة الانتهاء لو معروفة) بتوقيت 24 ساعة. تظهر في جدول الأسبوع بصفحة التواصل. بدون مواعيد (مثل الطوارئ) = يظهر «اتصل بنا للتنسيق قبل الحضور» وزر اتصال.',
+            addLabel: 'إضافة موعد',
+            newItem: () => ({days: [], opens: '18:00', closes: ''}),
+            itemTitle: (item) => {
+              const days = (item.days as string[] | undefined) ?? [];
+              const names = WEEKDAYS.filter((d) => days.includes(d.value)).map((d) => d.label);
+              return `${names.join('، ') || 'بدون أيام محددة'} · ${item.opens ?? ''}${item.closes ? `–${item.closes}` : ''}`;
+            },
+            fields: [
+              {type: 'weekdays', key: 'days', label: 'الأيام', hint: 'اتركها فارغة لو الأيام غير ثابتة (يظهر الوقت فقط).'},
+              {type: 'text', key: 'opens', label: 'يبدأ', dir: 'ltr', placeholder: '18:00', pattern: /^\d{1,2}:\d{2}$/, patternMessage: 'وقت البدء بصيغة 18:00'},
+              {type: 'text', key: 'closes', label: 'ينتهي (اختياري)', dir: 'ltr', placeholder: '21:00', pattern: /^\d{1,2}:\d{2}$/, patternMessage: 'وقت الانتهاء بصيغة 21:00'}
+            ]
+          },
           {type: 'text', key: 'phone', label: 'هاتف الفرع', dir: 'ltr', placeholder: '+201000000000'},
           {type: 'textarea', key: 'map_embed_url', label: 'خريطة جوجل (تضمين)', dir: 'ltr', rows: 3, hint: 'في خرائط جوجل: مشاركة ← تضمين خريطة ← نسخ HTML، ثم الصقه هنا كما هو.'},
-          {type: 'text', key: 'directions_url', label: 'رابط الاتجاهات (اختياري)', dir: 'ltr', hint: 'رابط الموقع من خرائط جوجل. فارغ = يُحسب من الإحداثيات أو العنوان.'},
+          {type: 'text', key: 'directions_url', label: 'رابط الاتجاهات (اختياري)', dir: 'ltr', hint: 'رابط الموقع من خرائط جوجل. فارغ = من الإحداثيات لو موجودة، وإلا لا يظهر زر الاتجاهات لهذا الفرع.'},
           {type: 'number', key: 'lat', label: 'خط العرض (اختياري)', hint: 'لخرائط جوجل ونتائج البحث المحلية، مثل 30.0566'},
           {type: 'number', key: 'lng', label: 'خط الطول (اختياري)'},
           {type: 'text', key: 'id', label: 'معرّف داخلي', dir: 'ltr', hint: 'لا تغيّره بعد الإنشاء.'}
@@ -121,7 +151,8 @@ export const settingsTabs: Array<{id: string; label: string; fields: Field[]}> =
       {
         type: 'list',
         key: 'working_hours',
-        label: 'مواعيد العمل (كما تظهر للزوار)',
+        label: 'مواعيد العمل العامة (احتياطي)',
+        hint: 'لا تظهر إلا إذا لم تُضف مواعيد كشف لأي فرع؛ مواعيد الفروع تحل محلها في صفحة التواصل والفوتر.',
         addLabel: 'إضافة سطر',
         newItem: () => ({days: L(), time: L()}),
         itemTitle: (item) => `${arOf(item.days)} — ${arOf(item.time)}`,
@@ -349,6 +380,14 @@ export const homeSections: Array<{id: string; label: string; key: string; fields
 
 /** Section headings shown on the simple list pages. */
 export const gridBlockFields: Field[] = [sectionHeading('grid', 'عنوان قسم القائمة')];
+
+/** Contact page: heading of the weekly schedule + locations section (its content is the branches). */
+export const contactBlockFields: Field[] = [
+  sectionHeading('schedule', 'قسم أماكن ومواعيد الكشف', {
+    description: true,
+    hint: 'فارغ = النص الافتراضي. الأماكن والمواعيد نفسها من «الإعدادات العامة ← الفروع والمواعيد».'
+  })
+];
 
 /* ---------- Doctor profile (doctors_profile) ---------- */
 

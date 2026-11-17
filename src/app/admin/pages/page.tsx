@@ -3,16 +3,21 @@
 import {SingletonEditor} from '@/components/admin/SingletonEditor';
 import {TabPanels} from '@/components/admin/TabPanels';
 import {Alert, PageHeader} from '@/components/admin/ui';
-import {gridBlockFields, heroFields} from '@/lib/admin/schemas';
+import {contactBlockFields, gridBlockFields, heroFields} from '@/lib/admin/schemas';
+import type {Field} from '@/lib/admin/fields';
 import type {PageKey} from '@/lib/cms/types';
 
-const PAGES: Array<{page: Exclude<PageKey, 'home'>; label: string; blocks?: string}> = [
+type PageTab = {page: Exclude<PageKey, 'home'>; label: string; blocks?: {key: string; fields: Field[]; title: string}};
+
+const listBlock = (key: string) => ({key, fields: gridBlockFields, title: 'عنوان القائمة في الصفحة'});
+
+const PAGES: PageTab[] = [
   {page: 'about', label: 'عن الدكتور'},
   {page: 'services', label: 'الخدمات'},
-  {page: 'reviews', label: 'آراء المرضى', blocks: 'reviews.blocks'},
-  {page: 'videos', label: 'الفيديوهات', blocks: 'videos.blocks'},
-  {page: 'articles', label: 'المقالات', blocks: 'articles.blocks'},
-  {page: 'contact', label: 'تواصل معنا'}
+  {page: 'reviews', label: 'آراء المرضى', blocks: listBlock('reviews.blocks')},
+  {page: 'videos', label: 'الفيديوهات', blocks: listBlock('videos.blocks')},
+  {page: 'articles', label: 'المقالات', blocks: listBlock('articles.blocks')},
+  {page: 'contact', label: 'تواصل معنا', blocks: {key: 'contact.blocks', fields: contactBlockFields, title: 'قسم أماكن ومواعيد الكشف'}}
 ];
 
 export default function PagesManagerPage() {
@@ -35,7 +40,7 @@ export default function PagesManagerPage() {
             <div className="space-y-6">
               <SingletonEditor source={{table: 'hero_sections', match: {page}}} fields={heroFields} title={`صفحة «${label}»`} />
               {blocks && (
-                <SingletonEditor source={{table: 'page_sections', match: {key: blocks}, column: 'content'}} fields={gridBlockFields} title="عنوان القائمة في الصفحة" />
+                <SingletonEditor source={{table: 'page_sections', match: {key: blocks.key}, column: 'content'}} fields={blocks.fields} title={blocks.title} />
               )}
             </div>
           )

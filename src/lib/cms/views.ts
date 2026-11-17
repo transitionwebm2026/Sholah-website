@@ -6,6 +6,7 @@
 import type {Locale} from '@/i18n/routing';
 import type {DatasetLoader, DatasetName, Datasets} from './data';
 import {directionsHref, mapEmbedSrc} from './media';
+import {slots, type SlotView} from './schedule';
 import type {
   ArticleCardRow,
   ButtonStyle,
@@ -150,6 +151,8 @@ export type BranchView = {
   id: string;
   name: string;
   address: string;
+  note: string;
+  schedule: SlotView[];
   phone: string;
   mapEmbedUrl: string;
   directionsUrl: string;
@@ -196,17 +199,16 @@ function buildSite(ds: Partial<Datasets>, l: Locale): SiteView {
     greeting: tr(s?.whatsapp_greeting, l),
     email: s?.email ?? '',
     social: list(s?.social_links).filter((x) => x.url),
-    branches: list(s?.branches).map((b) => {
-      const address = tr(b.address, l);
-      return {
-        id: b.id,
-        name: tr(b.name, l),
-        address,
-        phone: b.phone ?? '',
-        mapEmbedUrl: mapEmbedSrc(b, l),
-        directionsUrl: directionsHref({...b, address})
-      };
-    }),
+    branches: list(s?.branches).map((b) => ({
+      id: b.id,
+      name: tr(b.name, l),
+      address: tr(b.address, l),
+      note: tr(b.note, l),
+      schedule: slots(b.schedule, l),
+      phone: (b.phone ?? '').trim(),
+      mapEmbedUrl: mapEmbedSrc(b, l),
+      directionsUrl: directionsHref(b)
+    })),
     hours: list(s?.working_hours).map((h) => ({days: tr(h.days, l), time: tr(h.time, l)})),
     nav: links(s?.nav_links),
     footer: {
@@ -423,7 +425,7 @@ function buildArticle(ds: Partial<Datasets>, l: Locale) {
 }
 
 function buildContact(ds: Partial<Datasets>, l: Locale) {
-  return {hero: hero(ds.heroes, 'contact', l)};
+  return {hero: hero(ds.heroes, 'contact', l), schedule: heading(section(ds.sections, 'contact.blocks').schedule, l)};
 }
 
 /* ---------- Registry ---------- */
@@ -462,7 +464,7 @@ export const VIEW_DATASETS: {[K in ViewKey]: readonly DatasetName[]} = {
   videos: ['heroes', 'sections', 'videos'],
   articles: ['heroes', 'sections', 'articles'],
   article: ['heroes', 'articles', 'article'],
-  contact: ['heroes']
+  contact: ['heroes', 'sections']
 };
 
 export function buildView<K extends ViewKey>(key: K, datasets: Partial<Datasets>, locale: Locale): Views[K] {

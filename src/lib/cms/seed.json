@@ -45,88 +45,193 @@
       {
         "id": "main",
         "name": {
-          "ar": "العيادة الرئيسية — مدينة نصر",
-          "en": "Main Clinic — Nasr City"
+          "ar": "عيادة مصر الجديدة",
+          "en": "Heliopolis Clinic"
+        },
+        "note": {
+          "ar": "العيادة الخاصة",
+          "en": "Private clinic"
         },
         "address": {
-          "ar": "12 شارع عباس العقاد، مدينة نصر، القاهرة، مصر",
-          "en": "12 Abbas El Akkad St., Nasr City, Cairo, Egypt"
+          "ar": "158 شارع النزهة، أمام بنك مصر، مصر الجديدة، القاهرة",
+          "en": "158 El Nozha St., opposite Banque Misr, Heliopolis, Cairo"
         },
-        "phone": "+201000000000",
-        "map_embed_url": "",
-        "directions_url": "",
-        "lat": 30.0566,
-        "lng": 31.3301
+        "schedule": [
+          {
+            "days": [
+              "Saturday",
+              "Monday",
+              "Wednesday"
+            ],
+            "opens": "18:00",
+            "closes": ""
+          }
+        ],
+        "phone": "",
+        "map_embed_url": "https://maps.google.com/maps?cid=18292072633551991028&z=16&output=embed",
+        "directions_url": "https://maps.app.goo.gl/WeB1zZmkWecV8hT58",
+        "lat": 30.1043821,
+        "lng": 31.3430925
       },
       {
-        "id": "heliopolis",
+        "id": "nasayem",
         "name": {
-          "ar": "فرع مصر الجديدة",
-          "en": "Heliopolis Branch"
+          "ar": "مستشفى نسايم – التجمع الخامس",
+          "en": "Nasayem Hospital – Fifth Settlement"
+        },
+        "note": {
+          "ar": "",
+          "en": ""
         },
         "address": {
-          "ar": "45 شارع الميرغني، مصر الجديدة، القاهرة، مصر",
-          "en": "45 El Merghany St., Heliopolis, Cairo, Egypt"
+          "ar": "",
+          "en": ""
         },
-        "phone": "+201200000000",
+        "schedule": [
+          {
+            "days": [
+              "Saturday"
+            ],
+            "opens": "20:00",
+            "closes": ""
+          },
+          {
+            "days": [
+              "Monday"
+            ],
+            "opens": "14:00",
+            "closes": ""
+          }
+        ],
+        "phone": "",
         "map_embed_url": "",
         "directions_url": "",
-        "lat": 30.0911,
-        "lng": 31.3402
-      }
-    ],
-    "working_hours": [
-      {
-        "days": {
-          "ar": "السبت – الأربعاء",
-          "en": "Saturday – Wednesday"
-        },
-        "time": {
-          "ar": "5:00 م – 10:00 م",
-          "en": "5:00 PM – 10:00 PM"
-        }
+        "lat": null,
+        "lng": null
       },
       {
-        "days": {
-          "ar": "الخميس",
-          "en": "Thursday"
+        "id": "nasr-city",
+        "name": {
+          "ar": "مستشفى مدينة نصر التخصصي",
+          "en": "Nasr City Specialized Hospital"
         },
-        "time": {
-          "ar": "12:00 م – 4:00 م",
-          "en": "12:00 PM – 4:00 PM"
-        }
-      },
-      {
-        "days": {
-          "ar": "الجمعة",
-          "en": "Friday"
+        "note": {
+          "ar": "",
+          "en": ""
         },
-        "time": {
-          "ar": "مغلق",
-          "en": "Closed"
-        }
-      }
-    ],
-    "opening_hours_spec": [
-      {
-        "days": [
-          "Saturday",
-          "Sunday",
-          "Monday",
-          "Tuesday",
-          "Wednesday"
+        "address": {
+          "ar": "",
+          "en": ""
+        },
+        "schedule": [
+          {
+            "days": [
+              "Saturday"
+            ],
+            "opens": "16:00",
+            "closes": ""
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "opens": "20:00",
+            "closes": ""
+          }
         ],
-        "opens": "17:00",
-        "closes": "22:00"
+        "phone": "",
+        "map_embed_url": "",
+        "directions_url": "",
+        "lat": null,
+        "lng": null
       },
       {
-        "days": [
-          "Thursday"
+        "id": "benha",
+        "name": {
+          "ar": "مركز تيوليب – بنها",
+          "en": "Tulip Center – Benha"
+        },
+        "note": {
+          "ar": "",
+          "en": ""
+        },
+        "address": {
+          "ar": "",
+          "en": ""
+        },
+        "schedule": [
+          {
+            "days": [
+              "Sunday"
+            ],
+            "opens": "18:00",
+            "closes": ""
+          },
+          {
+            "days": [
+              "Thursday"
+            ],
+            "opens": "16:00",
+            "closes": ""
+          }
         ],
-        "opens": "12:00",
-        "closes": "16:00"
+        "phone": "",
+        "map_embed_url": "",
+        "directions_url": "",
+        "lat": null,
+        "lng": null
+      },
+      {
+        "id": "police",
+        "name": {
+          "ar": "أكاديمية الشرطة بالتجمع الخامس ومستشفى الشرطة التخصصي",
+          "en": "Police Academy (Fifth Settlement) & Police Specialized Hospital"
+        },
+        "note": {
+          "ar": "استشاري جراحة التجميل",
+          "en": "Consultant plastic surgeon"
+        },
+        "address": {
+          "ar": "",
+          "en": ""
+        },
+        "schedule": [
+          {
+            "days": [],
+            "opens": "12:00",
+            "closes": "14:00"
+          }
+        ],
+        "phone": "",
+        "map_embed_url": "",
+        "directions_url": "",
+        "lat": null,
+        "lng": null
+      },
+      {
+        "id": "cleopatra",
+        "name": {
+          "ar": "مستشفى كليوباترا الكاتب – الدقي",
+          "en": "Cleopatra El Katib Hospital – Dokki"
+        },
+        "note": {
+          "ar": "طوارئ جراحة التجميل",
+          "en": "Plastic surgery emergencies"
+        },
+        "address": {
+          "ar": "",
+          "en": ""
+        },
+        "schedule": [],
+        "phone": "",
+        "map_embed_url": "",
+        "directions_url": "",
+        "lat": null,
+        "lng": null
       }
     ],
+    "working_hours": [],
+    "opening_hours_spec": [],
     "nav_links": [
       {
         "label": {
@@ -1356,6 +1461,25 @@
           "title": {
             "ar": "المزيد من المقالات",
             "en": "More to read"
+          }
+        }
+      }
+    },
+    {
+      "key": "contact.blocks",
+      "content": {
+        "schedule": {
+          "eyebrow": {
+            "ar": "أماكن الكشف",
+            "en": "Where to find us"
+          },
+          "title": {
+            "ar": "مواعيد الكشف خلال الأسبوع",
+            "en": "Weekly clinic schedule"
+          },
+          "description": {
+            "ar": "يستقبل الدكتور المرضى في العيادة الخاصة بمصر الجديدة وفي عدد من المستشفيات بالقاهرة وبنها. اختر اليوم والمكان الأنسب لك، ثم احجز موعدك مسبقًا.",
+            "en": "The doctor sees patients at the private clinic in Heliopolis and at several hospitals in Cairo and Benha. Pick the day and place that suit you, then book your visit in advance."
           }
         }
       }

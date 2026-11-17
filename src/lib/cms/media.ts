@@ -45,16 +45,18 @@ export function mapEmbedSrc(
   locale: string
 ): string {
   const custom = extractIframeSrc(branch.map_embed_url);
-  if (custom) return custom;
+  // Classic `…/maps?…&output=embed` links take the page language; "Embed a map" (`pb=`) ones carry their own.
+  if (custom) return /[?&]output=embed\b/.test(custom) && !/[?&]hl=/.test(custom) ? `${custom}&hl=${locale}` : custom;
   if (branch.lat == null || branch.lng == null) return '';
   return `https://www.google.com/maps?q=${branch.lat},${branch.lng}&z=16&hl=${locale}&output=embed`;
 }
 
-export function directionsHref(branch: {directions_url?: string; lat?: number | null; lng?: number | null; address?: string}): string {
+/** Only a location the clinic set itself (link or coordinates): never a guessed Maps search. */
+export function directionsHref(branch: {directions_url?: string; lat?: number | null; lng?: number | null}): string {
   const custom = (branch.directions_url ?? '').trim();
   if (/^https:\/\//i.test(custom)) return custom;
   if (branch.lat != null && branch.lng != null) {
     return `https://www.google.com/maps/dir/?api=1&destination=${branch.lat},${branch.lng}`;
   }
-  return branch.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.address)}` : '';
+  return '';
 }

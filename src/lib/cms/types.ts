@@ -11,10 +11,18 @@ export type LinkRow = {label: L10n; href: string};
 export type NavLinkRow = LinkRow & {visible?: boolean};
 export type PhoneRow = {value: string; display: string};
 export type SocialRow = {network: string; url: string};
+/**
+ * When the doctor sees patients at a branch: Schema.org weekday names (none = the time alone,
+ * days not fixed) and 24-hour "HH:MM" times. `closes` empty = a start time only.
+ */
+export type ScheduleRow = {days: string[]; opens: string; closes?: string};
 export type BranchRow = {
   id: string;
   name: L10n;
   address: L10n;
+  /** Short tag under the name, e.g. "العيادة الخاصة" or "طوارئ جراحة التجميل". */
+  note?: L10n;
+  schedule?: ScheduleRow[];
   phone?: string;
   /** Google Maps "Embed a map" iframe src (or the whole iframe snippet). */
   map_embed_url?: string;
@@ -83,6 +91,8 @@ export type SectionContents = {
   'reviews.blocks': {grid?: Heading};
   'videos.blocks': {grid?: Heading};
   'articles.blocks': {grid?: Heading};
+  /** Contact page: "where & when" section (weekly schedule + locations). */
+  'contact.blocks': {schedule?: Heading};
 };
 
 export type SectionKey = keyof SectionContents;

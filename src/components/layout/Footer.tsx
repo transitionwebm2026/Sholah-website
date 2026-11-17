@@ -2,12 +2,14 @@
 
 import {Clock, Mail, MapPin, Phone} from 'lucide-react';
 import Image from 'next/image';
-import {useTranslations} from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import transitionMark from '@/assets/images/brand/transition.png';
 import {Link} from '@/i18n/navigation';
+import {joinDays} from '@/lib/cms/schedule';
 import {useSite} from '@/lib/cms/site-context';
 import {telHref} from '@/lib/site';
 import {Container} from '../ui/Container';
+import {DirectionalArrow} from '../ui/DirectionalArrow';
 import {SocialLinks} from '../ui/SocialLinks';
 import {Brand} from './Brand';
 
@@ -42,8 +44,12 @@ function fillCopyright(template: string, name: string) {
 
 export function Footer() {
   const t = useTranslations('Footer');
+  const tDays = useTranslations('Common.weekdays');
+  const locale = useLocale();
   const site = useSite();
   const mainBranch = site.branches[0];
+  // Branch schedules replace the general working hours (kept as the fallback when none are set).
+  const hasSchedules = site.branches.some((b) => b.schedule.length > 0);
 
   const linkClass = 'text-white/75 transition-colors hover:text-gold-300';
   const navLinkClass = 'fx-underline text-white/75 hover:text-gold-300';
@@ -108,7 +114,7 @@ export function Footer() {
                 {site.email}
               </a>
             )}
-            {mainBranch && (
+            {mainBranch?.address && (
               <p className="flex gap-3 text-white/75">
                 <MapPin aria-hidden className="mt-1 size-4 shrink-0 text-gold-400" />
                 <span>{mainBranch.address}</span>
@@ -116,21 +122,46 @@ export function Footer() {
             )}
           </address>
 
-          {site.hours.length > 0 && (
+          {hasSchedules && mainBranch ? (
             <>
-              <h3 className="mt-8 mb-3 flex items-center gap-2 text-sm font-bold text-gold-300">
-                <Clock aria-hidden className="size-4" />
-                {t('hours')}
-              </h3>
-              <dl className="space-y-1.5 text-sm">
-                {site.hours.map((row) => (
-                  <div key={row.days} className="flex justify-between gap-4">
-                    <dt className="text-white/75">{row.days}</dt>
-                    <dd className="text-white">{row.time}</dd>
-                  </div>
-                ))}
-              </dl>
+              {mainBranch.schedule.length > 0 && (
+                <>
+                  <h3 className="mt-8 mb-3 flex items-center gap-2 text-sm font-bold text-gold-300">
+                    <Clock aria-hidden className="size-4 shrink-0" />
+                    {mainBranch.name}
+                  </h3>
+                  <dl className="space-y-1.5 text-sm">
+                    {mainBranch.schedule.map((slot, i) => (
+                      <div key={i} className="flex justify-between gap-4">
+                        <dt className="text-white/75">{slot.days.length > 0 ? joinDays(slot.days.map((d) => tDays(d)), locale) : '—'}</dt>
+                        <dd className="shrink-0 text-white">{slot.time}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </>
+              )}
+              <Link href="/contact#schedule" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold-300">
+                <span className="fx-underline">{t('allSchedule')}</span>
+                <DirectionalArrow />
+              </Link>
             </>
+          ) : (
+            site.hours.length > 0 && (
+              <>
+                <h3 className="mt-8 mb-3 flex items-center gap-2 text-sm font-bold text-gold-300">
+                  <Clock aria-hidden className="size-4" />
+                  {t('hours')}
+                </h3>
+                <dl className="space-y-1.5 text-sm">
+                  {site.hours.map((row) => (
+                    <div key={row.days} className="flex justify-between gap-4">
+                      <dt className="text-white/75">{row.days}</dt>
+                      <dd className="text-white">{row.time}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </>
+            )
           )}
         </div>
       </Container>

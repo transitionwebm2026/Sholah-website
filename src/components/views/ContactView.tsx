@@ -1,11 +1,13 @@
 'use client';
 
-import {Clock, Mail, MapPin, Navigation, Phone} from 'lucide-react';
+import {Clock, Mail, MapPin, Phone} from 'lucide-react';
 import {useTranslations} from 'next-intl';
-import type {ReactNode} from 'react';
+import {useState, type ReactNode} from 'react';
+import {ClinicSchedule, ScheduleLines} from '@/components/contact/ClinicSchedule';
 import {ContactForm} from '@/components/interactive/ContactForm';
 import {Container} from '@/components/ui/Container';
 import {CtaSection} from '@/components/ui/CtaSection';
+import {DirectionalArrow} from '@/components/ui/DirectionalArrow';
 import {PageHero} from '@/components/ui/PageHero';
 import {Section} from '@/components/ui/Section';
 import {SocialLinks} from '@/components/ui/SocialLinks';
@@ -19,7 +21,7 @@ function InfoCard({icon: Icon, title, children}: {icon: typeof Phone; title: str
     // `lg:flex-1`: the cards share out any height the form column has beyond theirs.
     <div data-reveal className="fx-glow rounded-3xl border border-white/10 bg-white/[0.05] p-6 hover:border-gold-400/30 lg:flex-1">
       <h3 className="flex items-center gap-3 font-bold text-gold-300">
-        <span className="grid size-10 place-items-center rounded-full bg-gold-400/15">
+        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-gold-400/15">
           <Icon aria-hidden className="size-5" />
         </span>
         {title}
@@ -33,8 +35,11 @@ export function ContactView({initial}: {initial: ContactViewData}) {
   const v = useLiveView('contact', initial).data ?? initial;
   const t = useTranslations('Contact');
   const tCommon = useTranslations('Common');
+  const tDays = useTranslations('Common.weekdays');
   const site = useSite();
   const navLabel = useNavLabel('contact');
+  // "Book at this location" on a branch card picks it in the form (`n` re-applies a repeated pick).
+  const [pick, setPick] = useState<{clinic: string; n: number} | undefined>();
 
   const formLabels = {
     description: t('form.description'),
@@ -63,9 +68,22 @@ export function ContactView({initial}: {initial: ContactViewData}) {
   const services = [{value: '', label: t('form.serviceUnsure')}, ...site.services.map((c) => ({value: c.slug, label: c.title}))];
   const clinics = site.branches.map((b) => ({value: b.id, label: b.name}));
 
+  // With per-branch schedules the week grid above replaces the old clinics + hours cards.
+  const hasSchedules = site.branches.some((b) => b.schedule.length > 0);
+  const mainBranch = site.branches[0];
+
   return (
     <>
       <PageHero hero={v.hero} crumbs={[{name: navLabel, path: '/contact'}]} />
+
+      {site.branches.length > 0 && (
+        <ClinicSchedule
+          branches={site.branches}
+          heading={v.schedule}
+          phone={site.phones[0]?.value}
+          onBook={(clinic) => setPick((p) => ({clinic, n: (p?.n ?? 0) + 1}))}
+        />
+      )}
 
       {/* Two mirrored columns: same heading row, then the form and the card stack share top and bottom edges. */}
       <Section id="booking" labelledBy="booking-title" tone="deep">
@@ -80,6 +98,7 @@ export function ContactView({initial}: {initial: ContactViewData}) {
               requestTypes={requestTypes}
               services={services}
               clinics={clinics}
+              preselect={pick}
               whatsappNumber={site.whatsapp}
               className="flex-1"
             />
@@ -104,30 +123,45 @@ export function ContactView({initial}: {initial: ContactViewData}) {
               </InfoCard>
             )}
 
-            {site.branches.length > 0 && (
-              <InfoCard icon={MapPin} title={t('info.clinics')}>
-                <ul className="space-y-4">
-                  {site.branches.map((branch) => (
-                    <li key={branch.id}>
-                      <p className="font-semibold">{branch.name}</p>
-                      <p className="mt-1 text-white/75">{branch.address}</p>
-                    </li>
-                  ))}
-                </ul>
+            {hasSchedules && mainBranch ? (
+              <InfoCard icon={MapPin} title={mainBranch.name}>
+                {mainBranch.address && <p className="text-white/75">{mainBranch.address}</p>}
+                {mainBranch.schedule.length > 0 && (
+                  <ScheduleLines slots={mainBranch.schedule} dayLabel={(d) => tDays(d)} className="mt-4" />
+                )}
+                <a href="#schedule" className="group mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold-300">
+                  <span className="fx-underline">{t('schedule.seeAll')}</span>
+                  <DirectionalArrow />
+                </a>
               </InfoCard>
-            )}
+            ) : (
+              <>
+                {site.branches.length > 0 && (
+                  <InfoCard icon={MapPin} title={t('info.clinics')}>
+                    <ul className="space-y-4">
+                      {site.branches.map((branch) => (
+                        <li key={branch.id}>
+                          <p className="font-semibold">{branch.name}</p>
+                          <p className="mt-1 text-white/75">{branch.address}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </InfoCard>
+                )}
 
-            {site.hours.length > 0 && (
-              <InfoCard icon={Clock} title={t('info.hours')}>
-                <dl className="space-y-2">
-                  {site.hours.map((row) => (
-                    <div key={row.days} className="flex justify-between gap-4">
-                      <dt className="text-white/75">{row.days}</dt>
-                      <dd className="font-semibold">{row.time}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </InfoCard>
+                {site.hours.length > 0 && (
+                  <InfoCard icon={Clock} title={t('info.hours')}>
+                    <dl className="space-y-2">
+                      {site.hours.map((row) => (
+                        <div key={row.days} className="flex justify-between gap-4">
+                          <dt className="text-white/75">{row.days}</dt>
+                          <dd className="font-semibold">{row.time}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </InfoCard>
+                )}
+              </>
             )}
 
             <InfoCard icon={Mail} title={tCommon('email')}>
@@ -141,49 +175,6 @@ export function ContactView({initial}: {initial: ContactViewData}) {
           </div>
         </Container>
       </Section>
-
-      {/* Maps: native lazy-loaded iframes, so Google Maps only downloads when scrolled near. */}
-      {site.branches.some((b) => b.mapEmbedUrl) && (
-        <Section id="locations" labelledBy="locations-title" tone="brand">
-          <Container>
-            <h2 id="locations-title" data-reveal="up" className="text-center text-3xl font-bold sm:text-4xl">
-              {t('info.clinics')}
-            </h2>
-            <ul className="mt-12 grid gap-8 lg:grid-cols-2">
-              {site.branches.map((branch) => (
-                <li key={branch.id} data-reveal className="overflow-hidden rounded-[2rem] border border-white/10 bg-navy-950 shadow-luxe">
-                  {branch.mapEmbedUrl && (
-                    <iframe
-                      src={branch.mapEmbedUrl}
-                      title={t('info.mapTitle', {clinic: branch.name})}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="aspect-[4/3] w-full border-0 sm:aspect-[16/10]"
-                    />
-                  )}
-                  <div className="flex flex-wrap items-center justify-between gap-4 p-6">
-                    <div>
-                      <h3 className="font-bold">{branch.name}</h3>
-                      <p className="mt-1 text-sm text-white/75">{branch.address}</p>
-                    </div>
-                    {branch.directionsUrl && (
-                      <a
-                        href={branch.directionsUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-fx fx-wipe inline-flex min-h-11 items-center gap-2 rounded-full border border-gold-400/40 px-5 text-sm font-semibold text-gold-300 transition duration-300 hover:border-gold-400 hover:text-navy-950 focus-visible:text-navy-950"
-                      >
-                        <Navigation aria-hidden className="fx-wiggle size-4" />
-                        {t('info.directions')}
-                      </a>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </Container>
-        </Section>
-      )}
 
       <CtaSection band={v.hero.band} primary="call" />
     </>

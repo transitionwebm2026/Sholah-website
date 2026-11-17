@@ -1,11 +1,13 @@
 import type {Locale} from '@/i18n/routing';
 import {getDataset, getView} from './cms/server';
+import type {OpeningSpecRow} from './cms/types';
 import {tr} from './cms/views';
 import {SCHEMA_ID} from './schema';
 import {absoluteUrl, localizedUrl} from './urls';
 
+/** Branches may list only a name and hours, without an address. */
 function postalAddress(address: string) {
-  return {'@type': 'PostalAddress', streetAddress: address, addressCountry: 'EG'};
+  return address ? {'@type': 'PostalAddress', streetAddress: address, addressCountry: 'EG'} : undefined;
 }
 
 /** Site-wide graph: WebSite + MedicalBusiness (clinic) + Physician. Rendered once in the locale layout. */
@@ -21,12 +23,24 @@ export async function getSiteSchema(locale: Locale) {
   };
   const sameAs = site.social.map((s) => s.url);
   const telephone = site.phones[0]?.value;
-  const openingHoursSpecification = (settings?.opening_hours_spec ?? []).map((h) => ({
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: h.days.map((d) => `https://schema.org/${d}`),
-    opens: h.opens,
-    closes: h.closes
-  }));
+  // Schema.org needs both ends of a period, so schedule lines with only a start time are left out.
+  const hoursSpec = (rows: OpeningSpecRow[] | undefined) => {
+    const spec = (rows ?? [])
+      .filter((h) => h.days?.length && h.opens && h.closes)
+      .map((h) => ({
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: h.days.map((d) => `https://schema.org/${d}`),
+        opens: h.opens,
+        closes: h.closes
+      }));
+    return spec.length ? spec : undefined;
+  };
+  const branchHours = (i: number) => {
+    const b = rawBranches[i];
+    return hoursSpec(b?.schedule?.map((s) => ({days: s.days, opens: s.opens, closes: s.closes ?? ''})));
+  };
+  // The general hours (dashboard, optional) win; otherwise the main clinic's own schedule.
+  const openingHoursSpecification = hoursSpec(settings?.opening_hours_spec) ?? branchHours(0);
   const photo = site.doctor.photo ? absoluteUrl(site.doctor.photo) : undefined;
 
   return {
@@ -62,7 +76,7 @@ export async function getSiteSchema(locale: Locale) {
           address: postalAddress(branch.address),
           telephone: branch.phone || telephone,
           geo: geo(i + 1),
-          openingHoursSpecification
+          openingHoursSpecification: branchHours(i + 1)
         }))
       },
       {

@@ -36,6 +36,8 @@ type Props = {
   requestTypes: Option[];
   services: Option[];
   clinics: Option[];
+  /** Picks a clinic from outside (a branch's "Book here" button); a new `n` applies it again. */
+  preselect?: {clinic: string; n: number};
   whatsappNumber: string;
   className?: string;
 };
@@ -60,7 +62,7 @@ const inputClass =
  * opens WhatsApp with a structured message in the active language pre-filled.
  * Styled as a glass card to match the contact info cards beside it, and stretches to their height.
  */
-export function ContactForm({labelledBy, labels, requestTypes, services, clinics, whatsappNumber, className}: Props) {
+export function ContactForm({labelledBy, labels, requestTypes, services, clinics, preselect, whatsappNumber, className}: Props) {
   const locale = useLocale();
   const formId = useId();
   const formRef = useRef<HTMLFormElement>(null);
@@ -77,6 +79,13 @@ export function ContactForm({labelledBy, labels, requestTypes, services, clinics
     clinic: clinics[0]?.value ?? '',
     message: ''
   });
+
+  // Adjusting state while rendering when a prop changes (no effect, no extra paint).
+  const [appliedPick, setAppliedPick] = useState(preselect?.n);
+  if (preselect && preselect.n !== appliedPick) {
+    setAppliedPick(preselect.n);
+    if (clinics.some((c) => c.value === preselect.clinic)) setValues((v) => ({...v, clinic: preselect.clinic}));
+  }
 
   const set = (field: keyof Values) => (event: {target: {value: string}}) => {
     setValues((v) => ({...v, [field]: event.target.value}));
