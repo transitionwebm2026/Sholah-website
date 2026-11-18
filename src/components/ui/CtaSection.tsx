@@ -4,6 +4,7 @@ import {useSite} from '@/lib/cms/site-context';
 import type {HeroView} from '@/lib/cms/views';
 import {telHref, whatsappHref} from '@/lib/site';
 import {ButtonLink} from './ButtonLink';
+import {CmsButton} from './CmsButton';
 import {Container} from './Container';
 import {DirectionalArrow} from './DirectionalArrow';
 import {WhatsAppIcon} from './Icons';
@@ -11,9 +12,9 @@ import {Section} from './Section';
 import {Eyebrow} from './SectionHeading';
 
 type Props = {
-  /** Each page's band text (Dashboard → Pages → "Bottom call to action"). */
+  /** Each page's band (Dashboard → «شريط الحجز (CTA)» → the page's tab). */
   band: HeroView['band'];
-  /** On the contact page the primary action is a phone call instead of a link to itself. */
+  /** Default buttons only: on the contact page the primary action is a phone call instead of a link to itself. */
   primary?: 'contact' | 'call';
 };
 
@@ -41,8 +42,10 @@ export function CtaSection({band, primary = 'contact'}: Props) {
           </h2>
           {band.text && <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/80">{band.text}</p>}
 
-          <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
-            {primary === 'call' && phone ? (
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+            {band.buttons.length > 0 ? (
+              band.buttons.map((button) => <CmsButton key={`${button.href}-${button.label}`} button={button} />)
+            ) : primary === 'call' && phone ? (
               <ButtonLink href={telHref(phone.value)} external>
                 <Phone aria-hidden className="fx-wiggle size-5" />
                 {tc('callNow')}
@@ -53,7 +56,7 @@ export function CtaSection({band, primary = 'contact'}: Props) {
                 <DirectionalArrow />
               </ButtonLink>
             )}
-            {site.whatsapp && (
+            {!band.buttons.length && site.whatsapp && (
               <ButtonLink href={whatsappHref(site.whatsapp, site.greeting)} external variant="whatsapp">
                 <WhatsAppIcon className="fx-wiggle size-5" />
                 {tc('whatsappChat')}

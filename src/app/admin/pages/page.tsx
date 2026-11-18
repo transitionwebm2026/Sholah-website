@@ -3,7 +3,7 @@
 import {SingletonEditor} from '@/components/admin/SingletonEditor';
 import {TabPanels} from '@/components/admin/TabPanels';
 import {Alert, PageHeader} from '@/components/admin/ui';
-import {contactBlockFields, gridBlockFields, heroFields} from '@/lib/admin/schemas';
+import {contactBlockFields, gridBlockFields, heroFields, SEO_DESCRIPTION, seoFields} from '@/lib/admin/schemas';
 import type {Field} from '@/lib/admin/fields';
 import type {PageKey} from '@/lib/cms/types';
 
@@ -25,7 +25,7 @@ export default function PagesManagerPage() {
     <>
       <PageHeader
         title="رؤوس الصفحات و SEO"
-        description="لكل صفحة: الهيرو (العنوان والوصف والصورة والأزرار)، شريط «احجز الآن» في أسفلها، وعنوان ووصف جوجل. هيرو الصفحة الرئيسية في «الصفحة الرئيسية»."
+        description="لكل صفحة: الهيرو (العنوان والوصف والصورة والأزرار) وعنوان ووصف جوجل. هيرو الصفحة الرئيسية في «الصفحة الرئيسية»، وشريط الحجز في آخر كل صفحة في «شريط الحجز (CTA)»."
       />
       <div className="mb-6">
         <Alert>
@@ -38,10 +38,11 @@ export default function PagesManagerPage() {
           label,
           content: (
             <div className="space-y-6">
-              <SingletonEditor source={{table: 'hero_sections', match: {page}}} fields={heroFields} title={`صفحة «${label}»`} />
+              <SingletonEditor source={{table: 'hero_sections', match: {page}}} fields={heroFields} title={`هيرو صفحة «${label}»`} />
               {blocks && (
                 <SingletonEditor source={{table: 'page_sections', match: {key: blocks.key}, column: 'content'}} fields={blocks.fields} title={blocks.title} />
               )}
+              <SingletonEditor source={{table: 'hero_sections', match: {page}}} fields={seoFields} title="تحسين محركات البحث (SEO)" description={SEO_DESCRIPTION} />
             </div>
           )
         }))}

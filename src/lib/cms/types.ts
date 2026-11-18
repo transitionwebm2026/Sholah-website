@@ -64,7 +64,8 @@ export type HeroRow = {
   description: L10n;
   image_url: string | null;
   buttons: HeroButtonRow[];
-  cta_band: {eyebrow?: L10n; title?: L10n; text?: L10n};
+  /** The booking band at the bottom of the page. No buttons → the default contact + WhatsApp pair. */
+  cta_band: {eyebrow?: L10n; title?: L10n; text?: L10n; buttons?: HeroButtonRow[]};
   meta_title: L10n;
   meta_description: L10n;
   updated_at?: string;

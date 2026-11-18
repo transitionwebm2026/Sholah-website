@@ -229,49 +229,53 @@ export const settingsTabs: Array<{id: string; label: string; fields: Field[]}> =
 
 /* ---------- Page headers (hero_sections) ---------- */
 
+/** Call-to-action buttons (hero and the bottom booking band). An empty list shows the defaults. */
+const buttonsField = (label: string, hint: string): Field => ({
+  type: 'list',
+  key: 'buttons',
+  label,
+  hint: `${hint} الرابط: /contact أو whatsapp أو tel أو رابط كامل، والأيقونة تُختار تلقائيًا حسب الرابط.`,
+  addLabel: 'إضافة زر',
+  newItem: () => ({label: L(), href: '/contact', style: 'primary'}),
+  itemTitle: (item) => arOf(item.label),
+  fields: [
+    {type: 'l10n', key: 'label', label: 'نص الزر', required: true},
+    {type: 'link', key: 'href', label: 'الرابط'},
+    {
+      type: 'select',
+      key: 'style',
+      label: 'الشكل',
+      options: [
+        {value: 'primary', label: 'ذهبي (رئيسي)'},
+        {value: 'outline', label: 'شفاف بإطار'},
+        {value: 'whatsapp', label: 'أخضر واتساب'}
+      ]
+    }
+  ]
+});
+
 export const heroFields: Field[] = [
   {type: 'l10n', key: 'eyebrow', label: 'العنوان الصغير (فوق العنوان)'},
   {type: 'l10n', key: 'title', label: 'العنوان الرئيسي (H1)', required: true, hint: GOLD_HINT},
   {type: 'l10n', key: 'description', label: 'الوصف', multiline: true},
   {type: 'image', key: 'image_url', label: 'صورة الخلفية', folder: 'heroes', maxWidth: 1400, aspect: 'aspect-[4/5]', hint: 'تظهر في منتصف الهيرو. فارغة = صورة الطبيب من ملفه الشخصي.'},
-  {
-    type: 'list',
-    key: 'buttons',
-    label: 'أزرار الهيرو',
-    hint: 'فارغ = «احجز الآن» + «واتساب». الرابط: /contact أو whatsapp أو tel أو رابط كامل.',
-    addLabel: 'إضافة زر',
-    newItem: () => ({label: L(), href: '/contact', style: 'primary'}),
-    itemTitle: (item) => arOf(item.label),
-    fields: [
-      {type: 'l10n', key: 'label', label: 'نص الزر', required: true},
-      {type: 'link', key: 'href', label: 'الرابط'},
-      {
-        type: 'select',
-        key: 'style',
-        label: 'الشكل',
-        options: [
-          {value: 'primary', label: 'ذهبي (رئيسي)'},
-          {value: 'outline', label: 'شفاف بإطار'},
-          {value: 'whatsapp', label: 'أخضر واتساب'}
-        ]
-      }
-    ]
-  },
-  heading('دعوة الحجز أسفل الصفحة'),
-  {
-    type: 'group',
-    key: 'cta_band',
-    label: 'الشريط السفلي',
-    fields: [
-      {type: 'l10n', key: 'eyebrow', label: 'العنوان الصغير'},
-      {type: 'l10n', key: 'title', label: 'العنوان', hint: 'فارغ = إخفاء الشريط.'},
-      {type: 'l10n', key: 'text', label: 'النص', multiline: true}
-    ]
-  },
-  heading('تحسين محركات البحث (SEO)', SEO_HINT),
+  buttonsField('أزرار الهيرو', 'فارغ = «احجز الآن» + «واتساب».')
+];
+
+/** The booking band at the bottom of a page: the `cta_band` column of its hero_sections row. */
+export const ctaBandFields: Field[] = [
+  {type: 'l10n', key: 'eyebrow', label: 'العنوان الصغير (فوق العنوان)'},
+  {type: 'l10n', key: 'title', label: 'العنوان', hint: 'فارغ = إخفاء الشريط من هذه الصفحة.'},
+  {type: 'l10n', key: 'text', label: 'النص', multiline: true},
+  buttonsField('أزرار الشريط', 'فارغ = «تواصل معنا» + «راسلنا على واتساب» (وفي صفحة التواصل: «اتصل الآن» + واتساب).')
+];
+
+export const seoFields: Field[] = [
   {type: 'l10n', key: 'meta_title', label: 'عنوان الصفحة في جوجل', hint: 'حوالي 50–60 حرفًا. فارغ = العنوان الرئيسي.'},
   {type: 'l10n', key: 'meta_description', label: 'وصف الصفحة في جوجل', multiline: true, hint: 'حوالي 140–160 حرفًا.'}
 ];
+
+export const SEO_DESCRIPTION = SEO_HINT;
 
 /* ---------- Home page sections (page_sections) ---------- */
 

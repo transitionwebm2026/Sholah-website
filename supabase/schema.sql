@@ -92,7 +92,8 @@ create table if not exists public.hero_sections (
   image_url        text,
   -- [{"label":{ar,en},"href":"/contact | #booking | whatsapp | tel | https://…","style":"primary|outline|whatsapp"}]
   buttons          jsonb not null default '[]' check (jsonb_typeof(buttons) = 'array'),
-  -- {"title":{ar,en},"text":{ar,en}}
+  -- Bottom booking band: {"eyebrow":{ar,en},"title":{ar,en},"text":{ar,en},"buttons":[same shape as buttons]}.
+  -- Empty title → hidden; no buttons → the default contact + WhatsApp pair.
   cta_band         jsonb not null default '{}' check (jsonb_typeof(cta_band) = 'object'),
   meta_title       jsonb not null default '{"ar":"","en":""}',
   meta_description jsonb not null default '{"ar":"","en":""}',

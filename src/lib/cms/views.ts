@@ -11,6 +11,7 @@ import type {
   ArticleCardRow,
   ButtonStyle,
   Heading,
+  HeroButtonRow,
   HeroRow,
   L10n,
   PageKey,
@@ -55,20 +56,25 @@ export type HeroView = {
   description: string;
   image: string | null;
   buttons: ButtonView[];
-  band: {eyebrow: string; title: string; text: string};
+  band: {eyebrow: string; title: string; text: string; buttons: ButtonView[]};
 };
+
+function buttons(rows: HeroButtonRow[] | undefined, l: Locale): ButtonView[] {
+  return list(rows)
+    .map((b) => ({label: tr(b.label, l), href: (b.href ?? '').trim(), style: b.style ?? 'primary'}))
+    .filter((b) => b.label && b.href);
+}
 
 function hero(rows: HeroRow[] | undefined, page: PageKey, l: Locale): HeroView {
   const row = list(rows).find((r) => r.page === page);
+  const band = row?.cta_band;
   return {
     eyebrow: tr(row?.eyebrow, l),
     title: tr(row?.title, l),
     description: tr(row?.description, l),
     image: row?.image_url || null,
-    buttons: list(row?.buttons)
-      .map((b) => ({label: tr(b.label, l), href: (b.href ?? '').trim(), style: b.style ?? 'primary'}))
-      .filter((b) => b.label && b.href),
-    band: {eyebrow: tr(row?.cta_band?.eyebrow, l), title: tr(row?.cta_band?.title, l), text: tr(row?.cta_band?.text, l)}
+    buttons: buttons(row?.buttons, l),
+    band: {eyebrow: tr(band?.eyebrow, l), title: tr(band?.title, l), text: tr(band?.text, l), buttons: buttons(band?.buttons, l)}
   };
 }
 
